@@ -1,0 +1,20 @@
+.main {
+    display: grid;
+    grid-template-columns: 3 auto;
+    height: 400px;
+}
+
+.main__news {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    grid-column: 3;
+    border: 1px solid black;
+}
+
+.main__my-rooms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column:1/3
+}
