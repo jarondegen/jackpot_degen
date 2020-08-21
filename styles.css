@@ -22,6 +22,8 @@ time, mark, audio, video, details, summary {
 body {
     display: block;
     background-color: lightcoral;
+    overflow-x: hidden;
+    font-family: "Londrina Solid"
 }
 
 

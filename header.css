@@ -1,7 +1,4 @@
 .header {
-    top: 0;
-    left:0;
-    right: 0;
     box-sizing: border-box;
     width: 100%;
     padding:none;
@@ -15,7 +12,6 @@
     width: 100%;
     height: 200px;
     padding: none;
-    /* border: 3px solid black; */
     display: grid;
     grid-template-columns: 1fr 1fr 6fr 1fr 1fr;
     grid-template-rows: 2 auto;
@@ -28,18 +24,25 @@
     justify-content: flex-start;
     align-items: flex-start;
     grid-column: 1/2;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.header__home-icon {
+    padding: 7px;
 }
 
 .header__logo-container {
+    font-size: 2rem;
     text-align: center;
     display: grid;
-    grid-template-rows: 90px 10px;
+    grid-template-rows: 75% 25%;
     grid-column: 2/5;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .header__current-city {
+    font-size: 1.25rem;
+    padding:5px;
     display: flex;
     justify-self: center;
     align-self: flex-end;
@@ -50,34 +53,19 @@
     justify-content: flex-end;
     align-items: flex-start;
     grid-column: 5/6;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
-.header__hit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 4/6;
-    grid-row: 2;
-    border: 1px solid black;
+.header__burger__bars {
+    padding:7px;
 }
 
 .header__ticker {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 3/4;
+    grid-column: 1/6;
     background-color: lightcoral;
-    /* border: 1px solid black; */
-}
-
-.header__biggest-jp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-column: 1/3;
-    grid-row: 2;
-    border: 1px solid black;
 }
 
 .header__nav {
@@ -86,12 +74,10 @@
     justify-content: center;
     align-items: center;
     font-size: .75rem;
-    left: 0;
-    right: 0;
-    top:195px;
     width: 100%;
     height: 35px;
-    border: 1px solid black;
+    border: 1px solid rgba(0,0,0,.3);
+    background-color: rgba(255, 0, 0, .2);
 }
 
 .header__nav-container{
