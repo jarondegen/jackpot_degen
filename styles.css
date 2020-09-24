@@ -18,14 +18,37 @@ time, mark, audio, video, details, summary {
     vertical-align: baseline;
     background: transparent;
 }
+/* 
+html { 
+    background: url("./images/Cards.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  body, html {
+    height: 100%;
+  } */
 
 body {
     display: block;
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     overflow-x: hidden;
     font-family: "Londrina Solid"
 }
 
+
+
+.background__container {
+    background: url("./images/Cards3.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+
+    /* mix-blend-mode: screen; */
+}
 
 
 .footer__div {
@@ -35,7 +58,8 @@ body {
     font-size: .75rem;
     width: 100%;
     height: 50px;
-    background-color: grey;
+    background-color: rgba(139,0,0,1);
+
 }
 
 .footer {
