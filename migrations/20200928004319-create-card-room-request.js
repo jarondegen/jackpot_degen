@@ -1,29 +1,29 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Users', {
+    return queryInterface.createTable('CardRoomRequests', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      email: {
+      stateId: {
         allowNull: false,
-        type: Sequelize.STRING(255),
-        unique: true,
+        type: Sequelize.INTEGER,
+        references: { model: 'States'}
       },
-      username: {
+      cityId: {
         allowNull: false,
-        type: Sequelize.STRING(255),
-        unique: true,
+        type: Sequelize.INTEGER,
+        references: { model: 'Cities'}
       },
-      hashedPassword: {
+      name: {
         allowNull: false,
-        type: Sequelize.STRING(60).BINARY,
+        type: Sequelize.STRING
       },
-      tokenId: {
-        type: Sequelize.STRING(36),
+      address: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -35,7 +35,7 @@ module.exports = {
       }
     });
   },
-  down: (queryInterface) => {
-    return queryInterface.dropTable('Users');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('CardRoomRequests');
   }
 };

@@ -7,9 +7,9 @@ const host = db.host;
 
 module.exports = {
   development: {
-    username,
-    password,
-    database,
+    username: 'jackpot_degen',
+    password: 'jd1234',
+    database: 'jackpot_degen_app',
     host,
     dialect: 'postgres',
     seederStorage: 'sequelize',
