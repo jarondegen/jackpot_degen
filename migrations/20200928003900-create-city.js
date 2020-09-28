@@ -14,6 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       stateId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {model: 'States'}
       },
