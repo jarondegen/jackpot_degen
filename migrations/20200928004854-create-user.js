@@ -10,13 +10,20 @@ module.exports = {
       },
       userName: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(25),
         unique: true,
       },
       email: {
         allowNull: false,
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(50),
         unique: true,
+      },
+      hashedPassword: {
+        allowNull: false,
+        type: Sequelize.STRING(60).BINARY,
+      },
+      tokenId: {
+        type: Sequelize.STRING(36),
       },
       cityId: {
         allowNull: false,

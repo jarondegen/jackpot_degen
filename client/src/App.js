@@ -1,22 +1,36 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import UserList from './components/UsersList';
+import NavBar from './components/NavBar'
+import LogInForm from './components/LogInForm';
+import Dashboard from './components/Dashboard';
+
+
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+//     <Route {...rest} render={(props) => (
+//       rest.needLogin === true
+//         ? <Redirect to='/login' />
+//         : <Component {...props} />
+//     )} />
+//   )
 
 
 function App() {
+  const { loggedIn, id } = useSelector(state => state.Auth)
 
   return (
     <BrowserRouter>
-        <nav>
-            <ul>
-                <li><NavLink to="/" activeClass="active">Home</NavLink></li>
-                <li><NavLink to="/users" activeClass="active">Users</NavLink></li>
-            </ul>
-        </nav>
+        <NavBar />
         <Switch>
-            <Route path="/users">
+            <Route exact path="/users">
                 <UserList />
+            </Route>
+            <Route path="/login">
+                <LogInForm />
+            </Route>
+            <Route path={`/dashboard/${id}`}>
+                <Dashboard />
             </Route>
 
             <Route path="/">

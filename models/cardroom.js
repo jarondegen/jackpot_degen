@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
 
     CardRoom.belongsTo(models.City, { foriegnKey: 'cityId'});
     CardRoom.belongsTo(models.State, { foriegnKey: 'stateId'});
-    CardRoom.hasMany(models.review, { foreignKey: 'roomId' });
+    CardRoom.hasMany(models.Review, { foreignKey: 'roomId' });
     CardRoom.hasMany(models.Jackpot, { foriegnKey: 'roomId'});
     CardRoom.belongsToMany(models.User, ops)
   };
