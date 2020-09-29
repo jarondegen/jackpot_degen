@@ -1,7 +1,8 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
-const { Subscription, CardRoom, Jackpot } = require('../../models')
+const { Subscription, CardRoom, Jackpot, City, User } = require('../../models')
+const sequelize = require('sequelize');
 
 router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     const id = req.params.id
@@ -11,9 +12,6 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     const subs = await Subscription.findAll({attributes: ['roomId'], where: {userId: id}});
     const subsArr = subs.map(obj => obj.dataValues.roomId)
     console.log(subsArr);
-    // subsArr.forEach(sub => {
-    //     roomNames.push(await CardRoom.findByPk(sub))
-    // });
     for (let sub of subsArr) {
         let room = await CardRoom.findOne({attributes: ['name'],  where: {id: sub}})
         let jackpot = await Jackpot.findOne({attributes: ['hit', 'reporterId', 'amount', 'createdAt'],  where: {roomId: sub}})
@@ -23,6 +21,26 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     console.log(jackpots)
     res.json({ roomNames, jackpots });
 }));
+
+
+router.get('/big', asyncHandler(async function (req, res, next) {
+    const bigOne = await Jackpot.findOne({
+        attributes: [[sequelize.fn('max', sequelize.col('amount')), 'Biggest']],
+        where: {'hit': false}
+    })
+    const bigJackpot = await Jackpot.findOne({
+        attributes: ['amount', 'roomId', 'cityId', 'reporterId'],
+        where: {amount: bigOne.dataValues.Biggest}
+    })
+    const cardRoom = await CardRoom.findOne({ attributes: ['name'], where: {id: bigJackpot.dataValues.roomId}})
+    const JCity = await City.findOne({attributes: ['name'], where:{id: bigJackpot.dataValues.cityId}})
+    const reporterUserName = await User.findOne({attributes: ['userName'], where:{id: bigJackpot.dataValues.reporterId}})
+    let amount = bigOne.dataValues.Biggest;
+    let room = cardRoom.dataValues.name;
+    let city = JCity.dataValues.name;
+    let reporter = reporterUserName.dataValues.userName
+    res.json({amount, room, city, reporter})
+}))
 
 
 module.exports = router;

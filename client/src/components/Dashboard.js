@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
+import BiggestCurrentJackpot from './BiggestCurrentJackpot'
 
 const Dashboard = () => {
     const { id } = useSelector(state => state.Auth)
@@ -28,6 +29,8 @@ const Dashboard = () => {
                 <li key={room}>{`${room} - hit: ${subJackpots[i].hit ? subJackpots[i].hit : ''} - amount: $${subJackpots[i].amount ? subJackpots[i].amount : ''} `}</li>
             )}
             </ul>
+            <h1>Biggest Current Jackpot</h1>
+            <BiggestCurrentJackpot />
         </>
     )
 }

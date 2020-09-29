@@ -5,6 +5,8 @@ import UserList from './components/UsersList';
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm';
 import Dashboard from './components/Dashboard';
+import SignUpForm from './components/SignUpForm';
+import UserSuccess from './components/UserSuccess';
 
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -32,7 +34,12 @@ function App() {
             <Route path={`/dashboard/${id}`}>
                 <Dashboard />
             </Route>
-
+            <Route path={`/users/new`}>
+                <SignUpForm />
+            </Route>
+            <Route path={`/users/success`}>
+                <UserSuccess />
+            </Route>
             <Route path="/">
                 <h1>My Home Page</h1>
             </Route>

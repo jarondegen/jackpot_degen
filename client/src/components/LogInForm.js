@@ -1,7 +1,7 @@
 import React from 'react';
 import { setUser, setLoggedIn } from '../store/Auth';
 import { useState } from 'react'
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 const LogInForm = () => {
@@ -49,6 +49,7 @@ const LogInForm = () => {
                     Login
                 </button>
             </form>
+            <Link to='/users/new'>Sign Up</Link>
         </>
     )
 }
