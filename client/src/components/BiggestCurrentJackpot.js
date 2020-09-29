@@ -1,29 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBig } from '../store/Jackpot';
 
 const BiggestCurrentJackpot = () => {
-    const [big, setBig] = useState()
+    const [isLoading, setIsLoading] = useState(true);
+    const dispatch = useDispatch();
+    const { big } = useSelector(state => state.Jackpot)
     
     useEffect(() => {
-    const getBig = async () => {
-        const data = await fetch('/api/dashboard/big');
-        if (data.ok) {
-            const { bigJackpot } = await data.json();
-            // console.log(bigjackpot)
-            setBig(bigJackpot)
-        }
-        console.log(big)
-    }
-    getBig();
+        dispatch(getBig())
+        setIsLoading(false)
     }, [])
     
-    if (!big) {
+
+
+    if (isLoading) {
         return (
             <h4>Loading</h4>
-        )
-    }
+        );
+    };
 
     return (
-        <p>{`Amount: ${big.amount} @ ${big.room} in ${big.city} reported by: ${big.reporter}`}</p>
+        <p>{big && `Amount: ${big.amount} @ ${big.room} in ${big.city} reported by: ${big.reporter}`}</p>
     )
 }
 

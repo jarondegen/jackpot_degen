@@ -25,9 +25,6 @@ function App() {
     <BrowserRouter>
         <NavBar />
         <Switch>
-            <Route exact path="/users">
-                <UserList />
-            </Route>
             <Route path="/login">
                 <LogInForm />
             </Route>

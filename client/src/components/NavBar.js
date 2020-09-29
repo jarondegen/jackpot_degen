@@ -12,7 +12,6 @@ const NavBar =  (props) => {
         <nav>
             <ul>
                 <li><NavLink to="/" activeClassName="active">Home</NavLink></li>
-                <li><NavLink to="/users" activeClassName="active">Users</NavLink></li>
                 <li><NavLink to={`/dashboard/${id}`} activeClassName="active">Dashboard</NavLink></li>
                 <LogOutButton />
             </ul>

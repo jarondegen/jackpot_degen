@@ -1,23 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import BiggestCurrentJackpot from './BiggestCurrentJackpot'
+import BiggestCurrentJackpot from './BiggestCurrentJackpot';
+import { getSubs } from '../store/Jackpot';
 
 const Dashboard = () => {
-    const { id } = useSelector(state => state.Auth)
-    const [cardRoomNames, setCardRoomNames] = useState([])
-    const [subJackpots, setSubJackpots] = useState([{hit:'', amount:0}])
+    const { id } = useSelector(state => state.Auth);
+    const dispatch = useDispatch();
+    const { roomNames, jackpots } = useSelector(state => state.Jackpot.subs)
 
    useEffect(() => {
-        const getRooms = async () => {
-            const response = await fetch(`/api/dashboard/${id}`);
-            if (response.ok) {
-                const { roomNames, jackpots } = await response.json();
-                setCardRoomNames(roomNames);
-                setSubJackpots(jackpots);
-            }
-        }
-        getRooms() 
+        dispatch(getSubs(id))
     }, [])
     
     
@@ -25,8 +18,8 @@ const Dashboard = () => {
         <>
             <h1>Hello</h1>
             <ul>
-            {cardRoomNames.map((room, i) => 
-                <li key={room}>{`${room} - hit: ${subJackpots[i].hit ? subJackpots[i].hit : ''} - amount: $${subJackpots[i].amount ? subJackpots[i].amount : ''} `}</li>
+            {roomNames.map((room, i) => 
+                <li key={room}>{`${room} - hit: ${jackpots[i].hit ? jackpots[i].hit : ''} - amount: $${jackpots[i].amount ? jackpots[i].amount : ''} `}</li>
             )}
             </ul>
             <h1>Biggest Current Jackpot</h1>
