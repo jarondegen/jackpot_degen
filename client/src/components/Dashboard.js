@@ -5,6 +5,7 @@ import BiggestCurrentJackpot from './BiggestCurrentJackpot';
 import { getSubs } from '../store/Jackpot';
 import SubscriptionList from './SubscriptionList';
 import ReportJackpot from './ReportJackpot';
+import NewsFeed from './NewsFeed';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
@@ -27,6 +28,7 @@ const Dashboard = () => {
             <ReportJackpot props={{roomNames, jackpots}}/>
             <h1>Biggest Current Jackpot</h1>
             <BiggestCurrentJackpot />
+            <NewsFeed />
         </>
     )
 }
