@@ -20,9 +20,14 @@ const Dashboard = () => {
         <>
             <h1>{`Hello ${userName}`}</h1>
             <ul>
-                {roomNames.map((room, i) => 
-                    <li key={room}>{jackpots[i] ? `${room} Last Report - Hit: ${jackpots[i].hit ? `Yes` : `No`} - Amount: $${jackpots[i].amount} ` : `${room} No reported Jackpots Yet`} </li>
-                )}
+                {roomNames.map((room, i) => {
+                    const isJackpotHit = jackpots[i].hit ? 'Yes' : 'No';
+                    const lastReport = `${room} - Last Report - Hit: ${isJackpotHit} - Amount: $${jackpots[i].amount}`;
+                    const firstJackpotMessage = `${room} - No reported Jackpots Yet`;
+                    return (
+                        <li key={room}>{jackpots[i] ? lastReport : firstJackpotMessage}</li>
+                    )
+                })}
             </ul>
             <SubscriptionList />
             <ReportJackpot props={{roomNames, jackpots}}/>
