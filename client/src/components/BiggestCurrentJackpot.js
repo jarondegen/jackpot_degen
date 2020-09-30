@@ -21,7 +21,7 @@ const BiggestCurrentJackpot = () => {
     };
 
     return (
-        <p>{big && `Amount: ${big.amount} @ ${big.room} in ${big.city} reported by: ${big.reporter}`}</p>
+        <p>{big && `Amount: $${big.amount} @ ${big.room} in ${big.city} reported by: ${big.reporter}`}</p>
     )
 }
 
