@@ -8,7 +8,6 @@ const CardRooms = () => {
         const getRooms = async () => {
             const data = await fetch('/api/cardrooms');
             const allRooms = await data.json();
-            // console.log(allRooms)
             setRooms(allRooms)
         }
         getRooms()

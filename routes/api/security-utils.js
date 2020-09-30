@@ -8,7 +8,6 @@ function generateToken(user) {
   const data = user.toSafeObject();
   const jwtid = uuid();
 
-  console.log(data)
   return {
     jti: jwtid,
     token: jwt.sign({ data }, secret, { expiresIn: Number.parseInt(expiresIn), jwtid })
@@ -16,7 +15,7 @@ function generateToken(user) {
 }
 
 function restoreUser(req, res, next) {
-  console.log(req.cookies)
+
   const token = req.cookies.token
 
   if (!token) {

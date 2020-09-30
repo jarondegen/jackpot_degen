@@ -12,9 +12,7 @@ const ReportJackpot = ({props}) => {
         setRoomName(e.target.value)
     }
     const handleHitSelect = (e) => {
-        if (e.target.value === 'Yes') {
-            setHit(true)
-        }else setHit(false)
+        setHit(e.target.value)
     }
     const handleAmount = (e) => {
         setAmount(e.target.value)
@@ -45,8 +43,8 @@ const ReportJackpot = ({props}) => {
                 </select>
                 <label htmlFor="hit">Hit?</label>
                 <select name="hit" value={hit} onChange={handleHitSelect}>
-                    <option>Yes</option>
-                    <option>No</option>
+                    <option value={true}>Yes</option>
+                    <option value={false}>No</option>
                 </select>   
                 <input type="number" placeholder="how much $$$?" value={amount} onChange={handleAmount}/>
                 <button type="submit">Report</button>

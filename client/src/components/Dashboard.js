@@ -9,20 +9,19 @@ import ReportJackpot from './ReportJackpot';
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
     const dispatch = useDispatch();
-    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
+    const { roomNames, jackpots } = useSelector(state => state.Jackpot.subs)
 
    useEffect(() => {
         dispatch(getSubs(id))
     }, [])
     
-    
     return (
         <>
             <h1>{`Hello ${userName}`}</h1>
             <ul>
-            {roomNames.map((room, i) => 
-                <li key={room}>{jackpots[i] ? `${room} Last Report - Hit: ${jackpots[i].hit ? `Yes` : `No`} - Amount: $${jackpots[i].amount} ` : `${room} No reported Jackpots Yet`} </li>
-            )}
+                {roomNames.map((room, i) => 
+                    <li key={room}>{jackpots[i] ? `${room} Last Report - Hit: ${jackpots[i].hit ? `Yes` : `No`} - Amount: $${jackpots[i].amount} ` : `${room} No reported Jackpots Yet`} </li>
+                )}
             </ul>
             <SubscriptionList />
             <ReportJackpot props={{roomNames, jackpots}}/>

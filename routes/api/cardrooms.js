@@ -27,7 +27,6 @@ router.get('/', asyncHandler(async (req, res) => {
         include: { model: City, as: 'city', attributes: ['name'] }
     })
     const roomNames = rooms.map(room => [room.dataValues.name, room.dataValues.city.name, room.dataValues.id])
-    console.log(roomNames)
     res.json(roomNames)
 }));
 

@@ -10,7 +10,6 @@ function createPassword(password) {
 
 router.get('/', asyncHandler(async function (req, res, next) {
     const users = await User.findAll({attributes: ['id', 'userName', 'email']});
-    console.log(users)
     res.json({ users });
 }));
 
@@ -24,7 +23,6 @@ router.post('/new', asyncHandler(async function (req, res, next) {
         createdAt: new Date(),
         updatedAt: new Date()
     })
-    console.log(newMember)
     
     res.json('ok');
 }))
