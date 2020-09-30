@@ -4,6 +4,7 @@ import Auth from './Auth';
 import Jackpot from './Jackpot';
 import SignUp from './SignUp';
 import CardRoom from './CardRoom';
+import News from './News';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,6 +13,7 @@ const reducer = combineReducers({
     Jackpot,
     SignUp,
     CardRoom,
+    News,
 });
 
 const configureStore = initialState => {
