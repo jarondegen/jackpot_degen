@@ -19,7 +19,7 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
         jackpots.push(jackpot)
     }
     console.log(jackpots)
-    res.json({ roomNames, jackpots });
+    res.json({ roomNames, jackpots, subsArr });
 }));
 
 
