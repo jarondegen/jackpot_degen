@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     stateId: DataTypes.INTEGER
   }, {});
   City.associate = function(models) {
-    City.belongsTo(models.State, { foriegnKey: 'stateId'});
+    City.belongsTo(models.State, { as: 'state', foriegnKey: 'stateId'});
     City.hasMany(models.CardRoomRequest, { foriegnKey: 'cityId'});
     City.hasMany(models.User, { foriegnKey: 'cityId'});
     City.hasMany(models.CardRoom, { foriegnKey: 'cityId'});

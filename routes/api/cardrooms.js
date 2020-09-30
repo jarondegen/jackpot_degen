@@ -20,5 +20,16 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     res.json({room, cityName, stateName});
 }));
 
+router.get('/', asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const rooms = await CardRoom.findAll({
+        attributes: ['name', 'cityId', 'id'],
+        include: { model: City, as: 'city', attributes: ['name'] }
+    })
+    const roomNames = rooms.map(room => [room.dataValues.name, room.dataValues.city.name, room.dataValues.id])
+    console.log(roomNames)
+    res.json(roomNames)
+}));
+
 
 module.exports = router;

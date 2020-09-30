@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import SignUpForm from './components/SignUpForm';
 import UserSuccess from './components/UserSuccess';
 import CardRoomDetails from './components/CardRoomDetails';
+import CardRooms from './components/CardRooms';
 
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -38,8 +39,9 @@ function App() {
                 <UserSuccess />
             </Route>
             <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
+            <Route path={`/cardrooms`} component={CardRooms} />
             <Route path="/">
-                <h1>My Home Page</h1>
+                <h1>Jackpot Degen</h1>
             </Route>
         </Switch>
     </BrowserRouter>

@@ -25,7 +25,7 @@ const Dashboard = () => {
             )}
             </ul>
             <SubscriptionList />
-            <ReportJackpot props={roomNames, jackpots}/>
+            <ReportJackpot props={{roomNames, jackpots}}/>
             <h1>Biggest Current Jackpot</h1>
             <BiggestCurrentJackpot />
         </>

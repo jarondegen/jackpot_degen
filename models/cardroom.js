@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       through: 'Subscription'
     }
 
-    CardRoom.belongsTo(models.City, { foriegnKey: 'cityId'});
-    CardRoom.belongsTo(models.State, { foriegnKey: 'stateId'});
+    CardRoom.belongsTo(models.City, {as: 'city', foriegnKey: 'cityId'});
+    CardRoom.belongsTo(models.State, {as: 'state', foriegnKey: 'stateId'});
     CardRoom.hasMany(models.Review, { foreignKey: 'roomId' });
     CardRoom.hasMany(models.Jackpot, { foriegnKey: 'roomId'});
     CardRoom.belongsToMany(models.User, ops)
