@@ -43,7 +43,7 @@ const intialState = {
   },
   subs: {
     roomNames: [],
-    jackpots: [],
+    jackpots: [{hit:false}],
   }
 }
 

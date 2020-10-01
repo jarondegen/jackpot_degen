@@ -20,9 +20,30 @@ router.post('/new', asyncHandler(async function (req, res, next) {
     //creating new jackpot
     const newJackpot = await Jackpot.create({
         reporterId, roomName, hit, amount,
-        roomId: id, cityId
+        roomId: id, cityId, createdAt: new Date()
     });
     res.json('ok');
 }));
+
+router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
+    const roomId = req.params.id
+    const jackpots =  await Jackpot.findAll({
+        attributes: ['amount', 'createdAt'],
+        where: {roomId}
+    })
+    const amounts = [];
+    const dates = [];
+    for (let i = 0; i<jackpots.length; i++) {
+        const jackpot = jackpots[i]
+        amounts.push(jackpot.dataValues.amount);
+        dates.push(jackpot.dataValues.createdAt)
+    };
+    const roomNameFind = await CardRoom.findOne({
+        attributes: ['name'],
+        where: {id: roomId}
+    })
+    const roomName = roomNameFind.dataValues.name
+    res.json({amounts, dates, roomName})
+}))
 
 module.exports = router;

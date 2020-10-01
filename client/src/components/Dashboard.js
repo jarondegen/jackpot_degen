@@ -7,6 +7,7 @@ import SubscriptionList from './SubscriptionList';
 import ReportJackpot from './ReportJackpot';
 import NewsFeed from './NewsFeed';
 import '../css/dashboard.css'
+import LineChart from './LineChart';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
@@ -21,15 +22,18 @@ const Dashboard = () => {
         <>
             <div className="dashboard-container">
                 <h2 className="dashboard-greeting" >{`Hello ${userName},`}</h2>
+                <LineChart props={jackpots[0]}/>
                 <div className="my-jackpots-div">
                         {roomNames.map((room, i) => {
-                            const isJackpotHit = jackpots[i].hit ? 'Yes' : 'No';
-                            const lastReport = `${room} -- Hit? -- ${isJackpotHit} -- Amount: $${jackpots[i].amount}`;
                             const firstJackpotMessage = `${room} - No reported Jackpots Yet`;
-                            const isHitClass = jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
+                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Yes' : 'No';
+                            const lastReport = `${room} -- Hit? -- ${isJackpotHit} -- Amount: $${jackpots[i] && jackpots[i].amount}`;
+                            const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
                             return (
                                 <div className="my-jackpots-el-div">
-                                    <a className={`my-jackpots-el ${isHitClass}`} href={`/cardrooms/${jackpots[i].roomId}`}>{jackpots[i] ? lastReport : firstJackpotMessage}</a>
+                                    <a className={`my-jackpots-el ${isHitClass}`} href={`/cardrooms/${jackpots[i] && jackpots[i].roomId}`}>
+                                        {jackpots[i] ? lastReport : firstJackpotMessage}
+                                    </a>
                                 </div>
                             )
                         })}

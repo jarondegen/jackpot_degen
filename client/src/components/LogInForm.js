@@ -2,7 +2,7 @@ import React from 'react';
 import { setUser, setLoggedIn } from '../store/Auth';
 import { useState } from 'react'
 import { Redirect, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../css/login-page.css';
 
 const LogInForm = () => {
@@ -10,7 +10,7 @@ const LogInForm = () => {
     const [password, setPassword] = useState('password');
     const [currentUserId, setCurrentUserId] = useState('');
     const dispatch = useDispatch();
-    // debugger
+    const id = useSelector(state => state.Auth)
 
     const changeEmail = (e) => {
         setEmail(e.target.value)
@@ -37,7 +37,7 @@ const LogInForm = () => {
       }
 
     if (currentUserId) {
-        return <Redirect to="/" />
+        return <Redirect to='/' />
       }
 
     return (

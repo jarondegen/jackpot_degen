@@ -227,3 +227,13 @@
     margin-right:5%;
     overflow: hidden;
 }
+
+.chart-container {
+    grid-column: 1/2;
+    width:100%;
+    /* height: 500px; */
+}
+
+#line-chart {
+    
+}
