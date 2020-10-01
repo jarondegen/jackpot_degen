@@ -75,6 +75,7 @@ const SignUpForm = () => {
     return (
         <div className="signup-page-container">
             <div className="sign-up-form-container">
+                <h3>Let's make you an account.</h3>
                 <form className="sign-up-form-form" onSubmit={handleSubmit}>
                     <input className="signup-form-input signup-form-el" value={userName} type="text" name="userName" placeholder="User Name" onChange={handleUserName}/>
                     <input className="signup-form-input signup-form-el" value={email} type="email" name="email" placeholder="Email" onChange={handleEmail}/>

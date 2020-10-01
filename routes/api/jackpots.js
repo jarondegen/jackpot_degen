@@ -29,7 +29,8 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     const roomId = req.params.id
     const jackpots =  await Jackpot.findAll({
         attributes: ['amount', 'createdAt'],
-        where: {roomId}
+        where: {roomId},
+        limit: 15,
     })
     const amounts = [];
     const dates = [];

@@ -58,7 +58,7 @@ const LogInForm = () => {
                   <input className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
                   <br />
                   <button type="submit" className="login-form-button">
-                      Sign In
+                      Login
                   </button>
               </form>
               <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign Up</Link>

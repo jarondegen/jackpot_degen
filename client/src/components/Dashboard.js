@@ -35,15 +35,16 @@ const Dashboard = () => {
                 <h2 className="dashboard-greeting" >{`Hello ${userName},`}</h2>
                 <LineChart />
                 <div className="my-jackpots-div">
+                        <h3 className="my-jackpot-list-title">Jackpot List</h3>
                         {roomNames.map((room, i) => {
-                            const firstJackpotMessage = `${room} - No reported Jackpots Yet`;
-                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Yes' : 'No';
-                            const lastReport = `${room} -- Hit? -- ${isJackpotHit} -- Amount: $${jackpots[i] && jackpots[i].amount}`;
+                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';
                             const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
                             return (
-                                <div id={jackpots[i].roomId} className="my-jackpots-el-div" onClick={handleJackpotClick}>
-                                    <p id={jackpots[i].roomId} className={`my-jackpots-el ${isHitClass}`}>
-                                        {jackpots[i] ? lastReport : firstJackpotMessage}
+                                <div id={jackpots[i].roomId} className={`my-jackpots-el-div ${isHitClass}`} onClick={handleJackpotClick}>
+                                    <p className="my-jackports-room-name" id={jackpots[i].roomId}>{room}</p>
+                                    <p className="my-jackports-room-hit" id={jackpots[i].roomId}>{isJackpotHit}</p>
+                                    <p className="my-jackports-room-amount" id={jackpots[i].roomId}>
+                                        {jackpots[i] && `$${jackpots[i].amount}`}
                                     </p>
                                 </div>
                             )

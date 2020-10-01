@@ -5,7 +5,7 @@ const ReportJackpot = ({props}) => {
     const { id } = useSelector(state => state.Auth);
     const [roomName, setRoomName] = useState('');
     const [hit, setHit] = useState('Hit?');
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState()
     const [reported, setReported] = useState(false)
 
     const handleRoomSelect = (e) => {
@@ -47,7 +47,10 @@ const ReportJackpot = ({props}) => {
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>   
-                    <input className="report-form-el report-form-input" type="number" placeholder="how much $$$?" value={amount} onChange={handleAmount}/>
+                    <div class="input-icon">
+                        <input className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
+                        <i>$</i>
+                    </div>
                     <button className="report-form-el report-form-button" type="submit">Report</button>
                 </form>
                 {reported ? <p>Thanks!</p> : null}
