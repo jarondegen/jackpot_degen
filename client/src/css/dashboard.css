@@ -30,7 +30,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+/* .my-jackpots-el-div.pointer{
+    cursor: pointer;
+} */
 
 .my-jackpots-el {
     margin: 5%;
@@ -157,7 +162,7 @@
 
 .report-form-el {
     padding-left: 3%;
-    padding-right: 1%;
+    padding-right: 3%;
     margin-left: 1%;
     margin-right: 1%;
     border-radius: 5px;

@@ -12,7 +12,7 @@ import LineChart from './LineChart';
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
     const dispatch = useDispatch();
-    const { roomNames, jackpots, subsArr, roomId } = useSelector(state => state.Jackpot.subs)
+    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
 
    useEffect(() => {
         dispatch(getSubs(id))
@@ -24,8 +24,9 @@ const Dashboard = () => {
     }, [subsArr])
     
     const handleJackpotClick = (e) => {
-        console.log(e.target.id)
+        // console.log(e.target.id)
         dispatch(setChartId(e.target.id))
+
     }
 
     return (

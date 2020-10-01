@@ -77,6 +77,7 @@
 .login-form-link {
     color: rgb(0,200,6);
     text-decoration: none;
+    margin: 2%;
 }
 
 .login-form-link:hover {

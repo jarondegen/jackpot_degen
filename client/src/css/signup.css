@@ -1,0 +1,72 @@
+.signup-page-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.sign-up-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    /* border: 1px solid lightgrey; */
+    height: 600px;
+}
+
+.sign-up-form-form {
+    height: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 5%;
+}
+
+
+.signup-form-input:focus{
+    outline: 1px solid rgb(0,200,6);
+    box-shadow: 0 0 3pt 2pt rgb(0,200,6);
+}
+
+.signup-form-el {
+    margin: 2%;
+    width: 50%;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.signup-form-input {
+    background-color:rgb(231,240,254);
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    padding: 1%
+}
+
+.signup-form-button {
+    background-color: rgb(0,200,6);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    height: 40px;
+}
+
+.signup-form-button:hover {
+    background-color: rgb(6, 189, 12);
+}
+
+.signup-form-have-account {
+    /* margin: 3%; */
+    text-decoration: none;
+    color: black;
+}
+
+.signup-form-have-account:hover {
+    color: rgb(6, 189, 12);
+}

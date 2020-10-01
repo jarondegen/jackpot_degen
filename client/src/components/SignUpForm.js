@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import '../css/signup.css'
 import { getCities, getStates, setState, setCity, setUserName, 
          setEmail, setPassword, setConfirmPassword } from '../store/SignUp';
 
@@ -72,25 +73,32 @@ const SignUpForm = () => {
     }
     
     return (
-        <form onSubmit={handleSubmit}>
-            <input value={userName} type="text" name="userName" placeholder="User Name" onChange={handleUserName}/>
-            <input value={email} type="email" name="email" placeholder="Email" onChange={handleEmail}/>
-            <input value={password} type="password" name="password" placeholder="Password" onChange={handlePassword}/>
-            <input value={confirmPassword} type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleConfirmPassword}/>
-            <select name="State" value={state[0]} onChange={handleStateSelect}>
-                <option >Select A State</option>
-                {states && states.map((state, i) => 
-                    <option key={state[0]} >{state[0]}</option>
-                )}
-            </select>
-            <select name="city" value={city[0]} onChange={handleCitySelect}>
-                <option>Your City</option>
-                {cities && cities.map((city) => 
-                    <option key={city[0]} >{city[0]}</option>)    
-                }
-            </select>
-            <button type="submit" >Sign Up</button>
-        </form>
+        <div className="signup-page-container">
+            <div className="sign-up-form-container">
+                <form className="sign-up-form-form" onSubmit={handleSubmit}>
+                    <input className="signup-form-input signup-form-el" value={userName} type="text" name="userName" placeholder="User Name" onChange={handleUserName}/>
+                    <input className="signup-form-input signup-form-el" value={email} type="email" name="email" placeholder="Email" onChange={handleEmail}/>
+                    <input className="signup-form-input signup-form-el" value={password} type="password" name="password" placeholder="Password" onChange={handlePassword}/>
+                    <input className="signup-form-input signup-form-el" value={confirmPassword} type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleConfirmPassword}/>
+                    <select className="signup-form-el" name="State" value={state[0]} onChange={handleStateSelect}>
+                        <option >Select A State</option>
+                        {states && states.map((state, i) => 
+                            <option key={state[0]} >{state[0]}</option>
+                        )}
+                    </select>
+                    <select className="signup-form-el" name="city" value={city[0]} onChange={handleCitySelect}>
+                        <option>Your City</option>
+                        {cities && cities.map((city) => 
+                            <option key={city[0]} >{city[0]}</option>)    
+                        }
+                    </select>
+                    <button className="signup-form-el signup-form-button" type="submit" >Sign Up</button>
+                </form>
+                <a className="signup-form-have-account" href="/login">
+                    Already have an account? Log in here
+                </a>
+            </div>
+        </div>
     );
 };
 
