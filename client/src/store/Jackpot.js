@@ -1,6 +1,14 @@
 
 const SET_BIG = "jackpotDegen/jackpot/SET_BIG";
 const SET_SUBS = "jackpotDegen/jackpot/SUBS"
+const SET_CHART_ID = "jackpotDegen/jackpot/SET_CHART_ID"
+
+export const setChartId = (value) => {
+  return {
+    type: SET_CHART_ID,
+    roomId: value
+  }
+}
 
 export const setBig = (value) => {
   return {
@@ -44,7 +52,8 @@ const intialState = {
   subs: {
     roomNames: [],
     jackpots: [{hit:false}],
-  }
+    roomId: 1
+  },
 }
 
 export default function reducer(state=intialState, action) {
@@ -60,6 +69,11 @@ export default function reducer(state=intialState, action) {
       return {
         ...newState,
         subs: action.subs
+      }
+    case SET_CHART_ID:
+      return {
+        ...newState,
+        roomId: action.roomId
       }
     default: 
       return state;

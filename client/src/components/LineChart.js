@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Chart from 'chart.js';
+import { useSelector } from 'react-redux';
 
-const LineChart = ({props}) => {
-    console.log(props)
+const LineChart = () => {
+    const { roomId } = useSelector(state => state.Jackpot.subs)
+
     const createChart = async () => {
-        const data = await fetch(`/api/jackpots/${props && props.roomId}`);
+        const data = await fetch(`/api/jackpots/${roomId}`);
             if (data.ok) {
                 const { amounts, dates, roomName } = await data.json();
                 const goodDates = dates.map(date => date.split(":").slice(0,1).join(":").slice(0,10))
@@ -25,7 +27,10 @@ const LineChart = ({props}) => {
             }
     }
 
-    createChart()
+    useEffect(() => {
+        createChart()
+    },[])
+
     return (
         <div className="chart-container" >
             <canvas id="line-chart" width="400" height="200"></canvas>
