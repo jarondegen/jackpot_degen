@@ -7,14 +7,12 @@ const SubscriptionList = () => {
 
     return (
         <>
-            <h4>My Card Rooms</h4>
-            <ul>
-                {roomNames.map((room, i) => 
-                    <li key={room}>
-                        <Link to={`/cardrooms/${subsArr[i]}`}>{room}</Link>
-                    </li>
-                )}
-            </ul>
+            <div className="subscription-container">
+                <h3 classList="subscription-el subscription-title">My Card Rooms</h3>
+                    {roomNames.map((room, i) => 
+                            <Link className="subscription-el subscription-links" key={room} to={`/cardrooms/${subsArr[i]}`}>{room}</Link>              
+                    )}
+            </div>
         </>
     );
 };

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 const ReportJackpot = ({props}) => {
     const { id } = useSelector(state => state.Auth);
     const [roomName, setRoomName] = useState('');
-    const [hit, setHit] = useState(true);
+    const [hit, setHit] = useState('Hit?');
     const [amount, setAmount] = useState(0)
     const [reported, setReported] = useState(false)
 
@@ -33,23 +33,25 @@ const ReportJackpot = ({props}) => {
     
     return (
         <>
-            <h4>Report A Jackpot</h4>
-            <form onSubmit={handleSubmit}>
-                <select value={roomName} onChange={handleRoomSelect} >
-                    <option>Where?</option>
-                    {props.roomNames.map(room =>
-                        <option key={room}>{room}</option>    
-                    )}
-                </select>
-                <label htmlFor="hit">Hit?</label>
-                <select name="hit" value={hit} onChange={handleHitSelect}>
-                    <option value={true}>Yes</option>
-                    <option value={false}>No</option>
-                </select>   
-                <input type="number" placeholder="how much $$$?" value={amount} onChange={handleAmount}/>
-                <button type="submit">Report</button>
-            </form>
-            {reported ? <p>Thanks!</p> : null}
+            <div className="report-jackpot-containeer">
+                <h4 className="report-title" >Report A Jackpot</h4>
+                <form className="report-form-form" onSubmit={handleSubmit}>
+                    <select className="report-form-el" value={roomName} onChange={handleRoomSelect} >
+                        <option>Where?</option>
+                        {props.roomNames.map(room =>
+                            <option key={room}>{room}</option>    
+                        )}
+                    </select>
+                    <select className="report-form-el" name="hit" value={hit} onChange={handleHitSelect}>
+                        <option value={false}>Hit?</option>
+                        <option value={true}>Yes</option>
+                        <option value={false}>No</option>
+                    </select>   
+                    <input className="report-form-el report-form-input" type="number" placeholder="how much $$$?" value={amount} onChange={handleAmount}/>
+                    <button className="report-form-el report-form-button" type="submit">Report</button>
+                </form>
+                {reported ? <p>Thanks!</p> : null}
+            </div>
         </>
     );
 };

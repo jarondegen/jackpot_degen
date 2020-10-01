@@ -1,0 +1,229 @@
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.dashboard-greeting {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.my-jackpots-div {
+    grid-column: 2/3;
+    border: 1px solid lightgrey;
+    margin-top: 50px;
+    width: 27%;
+    margin-left: 10%;
+    height: 700px;
+    font-size: 1rem;
+    font-weight: 200;
+    overflow-y: scroll;
+    position: fixed;
+    left: 60%;
+    right: 7%;
+}
+
+.my-jackpots-el-div{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-jackpots-el {
+    margin: 5%;
+    border-bottom:1px solid lightgrey;
+    padding-bottom: 10%;
+    list-style-type: none;
+    padding-right: 10%;
+    padding-top: 10%;
+    text-decoration: none;
+    text-align: center;
+    padding-left:5%
+}
+
+.jackpot-el-not-hit {
+    color: rgb(0,200,6);
+}
+
+.jackpot-el-hit {
+    color: red
+}
+
+.my-jackpots-logo {
+    width:60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    bottom: 2%
+}
+
+.subscription-container {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+
+.subscription-el {
+    margin: 3%;
+    text-decoration: none;
+    color: black
+}
+
+.subscription-title {
+    font-size: 1.5rem
+}
+
+.subscription-links:hover {
+    color:rgb(0,200,6);
+}
+
+.big-jackpot-container {
+    grid-column: 1/2;
+    /* border-top: 1px solid lightgrey; */
+    margin-top: 5%;
+    text-align: center;
+
+}
+
+.big-jackpot-header {
+    color: rgb(0,200,6);
+}
+
+.report-jackpot-containeer {
+    grid-column: 1/2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 100px;
+    border: 1px solid lightgrey;
+    margin-left: 5%;
+    /* margin-right: 5%; */
+}
+
+.report-title {
+    font-weight: bold;
+    font-size: 1rem
+}
+
+.report-form-label{
+    align-self: center;
+}
+
+.report-form-input{
+    background-color:rgb(231,240,254);
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    margin: 1%;
+}
+
+.report-form-input:focus{
+    outline: 1px solid rgb(0,200,6);
+    box-shadow: 0 0 3pt 2pt rgb(0,200,6);
+}
+
+.report-form-button {
+    background-color: rgb(0,200,6);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    /* height: 40px; */
+}
+
+.report-form-button:hover{
+    background-color: rgb(6, 189, 12);
+}
+
+.report-form-button:focus {
+    border: none;
+    box-shadow: rgb(6, 189, 12);;
+}
+
+.report-form-form {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.report-form-el {
+    padding-left: 3%;
+    padding-right: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 5px;
+
+}
+
+.news-container {
+    grid-column: 1/2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid lightgray;
+    margin-top: 5%;
+    /* width: 50%; */
+}
+
+.news-story-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr 1.5fr 2.5fr;
+    height: 300px;
+    max-width: 95%;
+    margin-left: 5%;
+}
+
+.news-story-container:hover {
+    background-color: lightgray;
+}
+
+.news-story-date {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: .8rem;
+    margin-top:5%;
+}
+
+.news-story-pic {
+    grid-column: 2/3;
+    grid-row: 2/5;
+    width:95%;
+    border-radius:5px;
+    margin-right: 2%;
+
+}
+
+.news-story-link {
+    text-decoration: none;
+    color: black;
+    max-width: 350px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: 1.2rem;
+    margin-left: 5%;
+}
+
+.news-story-link:hover {
+    color: rgb(0,200,6);
+}
+
+.news-story-snippet {
+    grid-column: 1/2;
+    grid-row: 3/5;
+    margin-left:5%;
+    margin-right:5%;
+    overflow: hidden;
+}

@@ -23,18 +23,18 @@ const NewsFeed = () => {
 
     return (
         <>
-            <div>NEWS</div>
-            <div className="news-feed">
-                {feed && feed.map((item, i) => 
-                    <>
-                        <div key={item.content}>
-                            <img key={imgs[i]}src={imgs[i]}/>
-                        </div>
-                        <div key={item.title}>
-                        <Link to={item.link} key={item.link}>{item.title}</Link>
-                        </div>
-                    </>    
-                )}
+            <div className="news-container">
+                <h3>NEWS</h3>
+                    {feed && feed.map((item, i) => 
+                        <>
+                            <div className="news-story-container">
+                                <p className="news-story-date">{item.pubDate.split(" ").slice(0,3).join(" ")}</p>
+                                <img className="news-story-pic" key={imgs[i]}src={imgs[i]}/>
+                                <a className="news-story-link" href={item.link} key={item.link}>{item.title}</a>
+                                <p className="news-story-snippet">{item.contentSnippet}</p>
+                            </div>
+                        </>    
+                    )}
             </div>
         </>
     )

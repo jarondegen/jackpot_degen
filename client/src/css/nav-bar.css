@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+    border: none;
+    padding: none;
+    margin: none;
+    font-family: 'Nunito', sans-serif
+}
+
+nav{
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr, 1fr;
+    border-bottom: 1px solid lightgrey;
+}
+
+.navbar-logo-container {
+    grid-column: 1;
+    height: 100%;
+
+}
+
+.logo-div {
+    height: 100%;
+    margin-left: 5%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-c: ce; */
+}
+
+.navbar-logo {
+    height:60px;
+}
+
+.navbar-title {
+    margin-left: 15%;
+    font-weight: 300;
+    align-self: flex-start;
+    /* margin-bottom: 9%; */
+}
+
+.navbar-link-container {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-shrink: 2;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 3%;
+    text-decoration: none;
+    font-size: .8rem;
+    color: black;
+}
+
+.logout-button {
+ background-color: white;
+ border: none;   
+ font-family: 'Nunito', sans-serif;
+ font-size: .8rem;
+ color: black;
+}
+
+.nav-link:hover{
+    color: rgb(0,200,6);
+}
+
+.logout-button:hover{
+    color: rgb(0,200,6);
+}
