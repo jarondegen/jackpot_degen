@@ -14,7 +14,11 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
 
     for (let sub of subsArr) {
         let room = await CardRoom.findOne({attributes: ['name'],  where: {id: sub}})
-        let jackpot = await Jackpot.findOne({attributes: ['hit', 'reporterId', 'amount', 'createdAt', 'roomId'],  where: {roomId: sub}})
+        let jackpot = await Jackpot.findOne({
+            attributes: ['hit', 'reporterId', 'amount', 'createdAt', 'roomId'],  
+            where: {roomId: sub},
+            order: [['createdAt', 'DESC']]
+        })
         roomNames.push(room.dataValues.name)
         jackpots.push(jackpot)
     }

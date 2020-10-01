@@ -17,14 +17,13 @@ const Dashboard = () => {
    useEffect(() => {
         dispatch(getSubs(id))
         
-    }, [])
+    }, [jackpots])
     
     useEffect(() => {
         dispatch(setChartId(subsArr && subsArr[0]))
     }, [subsArr])
     
     const handleJackpotClick = (e) => {
-        // console.log(e.target.id)
         dispatch(setChartId(e.target.id))
 
     }

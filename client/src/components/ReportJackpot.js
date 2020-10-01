@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getSubs } from '../store/Jackpot'
 
 const ReportJackpot = ({props}) => {
+    const dispatch = useDispatch;
     const { id } = useSelector(state => state.Auth);
     const [roomName, setRoomName] = useState('');
     const [hit, setHit] = useState('Hit?');
@@ -30,6 +32,9 @@ const ReportJackpot = ({props}) => {
             setReported(true);
         }
     }
+    // if (reported) {
+    //     dispatch(getSubs(id));
+    // }
     
     return (
         <>
