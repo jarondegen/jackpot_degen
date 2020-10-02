@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 const LineChart = () => {
     const { roomId } = useSelector(state => state.Jackpot)
+    const { reportMade } = useSelector(state => state.Jackpot);
 
     const createChart = async (id) => {
         if (!roomId) return
@@ -30,7 +31,7 @@ const LineChart = () => {
 
     useEffect(() => {
         createChart(roomId)
-    },[roomId])
+    },[roomId, reportMade])
 
     return (
         <div className="chart-container" >
