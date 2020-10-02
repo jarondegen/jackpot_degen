@@ -71,6 +71,10 @@ nav{
  color: black;
 }
 
+.logout-button:hover {
+    cursor: pointer;
+}
+
 .nav-link:hover{
     color: rgb(0,200,6);
 }

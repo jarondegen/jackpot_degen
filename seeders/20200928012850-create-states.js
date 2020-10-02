@@ -17,6 +17,8 @@ module.exports = {
       { name: 'Illinois', createdAt: new Date(), updatedAt: new Date() },
       { name: 'Michigan', createdAt: new Date(), updatedAt: new Date() },
       { name: 'Florida', createdAt: new Date(), updatedAt: new Date() },
+      
+      
     ], {});
   },
 

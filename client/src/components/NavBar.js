@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutButton from './LogOutButton';
 import '../css/nav-bar.css'
+import SearchBar from './SearchBar';
 
 
 const NavBar =  (props) => {
@@ -21,6 +22,7 @@ const NavBar =  (props) => {
                 <div className="navbar-link-container">
                         {id ? 
                             <>
+                                <SearchBar />
                                 <NavLink className="nav-link" to={`/dashboard/${id}`} activeClassName="active">Dashboard</NavLink>
                                 <NavLink className="nav-link" to={`/cardrooms`} activeClassName="active">Card Rooms</NavLink>
                                 <LogOutButton className="nav-link logout-button"/>

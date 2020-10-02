@@ -5,7 +5,6 @@ const Reviews = ({props}) => {
     const [review, setReview] = useState()
     const { id, userName } = useSelector(state => state.Auth);
     const [reviews, setReviews] = useState([])
-    console.log(props)
     const getReviews = async () => {
         const data = await fetch(`/api/reviews/${props}`)
         if (data.ok) {
@@ -32,7 +31,6 @@ const Reviews = ({props}) => {
             body: JSON.stringify(data),
         })
         if (send.ok) {
-            console.log('NICE')
         }
     }
 

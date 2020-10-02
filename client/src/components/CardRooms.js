@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import '../css/cardrooms.css';
 
 const CardRooms = () => {
-    const [rooms, setRooms] = useState(["Lucky Lady", "San Diego"])
+    const [rooms, setRooms] = useState([])
     
     useEffect(()=>{
         const getRooms = async () => {
@@ -25,10 +24,10 @@ const CardRooms = () => {
                             {rooms && rooms.map(room => 
                                 <tr>
                                     <td key={room}>
-                                        <a className="card-room-table-links" href={`/cardrooms/${room[2]}`}>{room[0]}</a>
+                                        <a className="card-room-table-links" href={`/cardrooms/${room.id}`}>{room.name}</a>
                                     </td>
                                     <td>
-                                        {room[1]}
+                                        {room.city.name}
                                     </td>
                                 </tr>
                             )}

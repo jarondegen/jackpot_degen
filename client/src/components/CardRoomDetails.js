@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { getDetails } from '../store/CardRoom'
 import { useDispatch, useSelector } from 'react-redux';
 import { setChartId } from '../store/Jackpot';
-// import Map from './Map';
 import LineChart from './LineChart';
 import '../css/cardroom.css';
 import ReportJackpot from './ReportJackpot'

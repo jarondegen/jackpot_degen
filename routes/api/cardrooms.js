@@ -28,9 +28,9 @@ router.get('/', asyncHandler(async (req, res) => {
         order: [[{model: City, as: 'city'}, 'name', 'asc']]
           
     })
-    console.log(rooms)
-    const roomNames = rooms.map(room => [room.dataValues.name, room.dataValues.city.name, room.dataValues.id])
-    res.json(roomNames)
+    // console.log(rooms)
+    // const roomNames = rooms.map(room => {room.dataValues.name, room.dataValues.city.name, room.dataValues.id})
+    res.json(rooms)
 }));
 
 
