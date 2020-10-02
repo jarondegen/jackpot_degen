@@ -35,8 +35,8 @@ router.get('/big', asyncHandler(async function (req, res, next) {
         attributes: ['amount', 'roomId', 'cityId', 'reporterId'],
         where: {amount: bigOne.dataValues.Biggest}
     })
-    const cardRoom = await CardRoom.findOne({ attributes: ['name'], where: {id: bigJackpot.dataValues.roomId}})
-    const JCity = await City.findOne({attributes: ['name'], where:{id: bigJackpot.dataValues.cityId}})
+    const cardRoom = await CardRoom.findOne({ attributes: ['name', 'cityId'], where: {id: bigJackpot.dataValues.roomId}})
+    const JCity = await City.findOne({attributes: ['name'], where:{id: cardRoom.dataValues.cityId}})
     const reporterUserName = await User.findOne({attributes: ['userName'], where:{id: bigJackpot.dataValues.reporterId}})
     let amount = bigOne.dataValues.Biggest;
     let room = cardRoom.dataValues.name;
