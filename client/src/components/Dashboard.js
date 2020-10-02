@@ -38,7 +38,7 @@ const Dashboard = () => {
                 <div className="my-jackpots-div">
                         <h3 className="my-jackpot-list-title">Jackpot List</h3>
                         {roomNames.length > 0 ? roomNames.map((room, i) => {
-                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';
+                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';//current
                             const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
                             return (
                                 <div id={jackpots[i].roomId} className={`my-jackpots-el-div ${isHitClass}`} onClick={handleJackpotClick}>
