@@ -10,6 +10,10 @@ const NewsFeed = () => {
     const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
+        if (feed.length > 1) {
+            setIsLoading(false)
+            return
+        }
         dispatch(getFeed())
         setIsLoading(false)
     },[]);
