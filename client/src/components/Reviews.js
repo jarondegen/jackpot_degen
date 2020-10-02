@@ -39,15 +39,15 @@ const Reviews = ({props}) => {
     return (
         <div className="reviews-container">
             <div className="reviews-form-container">
-                <form className="reviews-form" onSubmit={handleSubmit}>
-                    <textarea className="reviews-form-textarea" 
-                    value={review} onChange={handleChange} placeholder="Write your review...">
-                    </textarea>
-                    <button className="reviews-form-submit-button" type="submit">Submit</button>
-                </form>
+                <textarea className="reviews-form-textarea" 
+                value={review} onChange={handleChange} placeholder="Write your review...">
+                </textarea>
+                <button className="reviews-form-submit-button" type="submit" onClick={handleSubmit}>
+                    Submit
+                </button>
             </div>
             <div className="reviews-review-container">
-                {reviews.map(rev => 
+                {reviews.length > 0 ?reviews.map(rev => 
                     <div className="review-container">
                         <p className="review-date">{rev.createdAt}</p>
                         <div className="review-review-container">
@@ -55,7 +55,15 @@ const Reviews = ({props}) => {
                         </div>
                         <p className="review-user-name">{`by ${rev.User.userName}`}</p>
                     </div>    
-                )}
+                ) :
+                <div className="review-container">
+                    <p className="review-date">Today</p>
+                    <div className="review-review-container">
+                        <p className="review-review">No Reviews Yet...</p>
+                    </div>
+                    <p className="review-user-name">{userName}</p>
+                </div>    
+                }
             </div>
         </div>
     );

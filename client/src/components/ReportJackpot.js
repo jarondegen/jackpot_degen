@@ -49,14 +49,13 @@ const ReportJackpot = () => {
         <>
             <div className="report-jackpot-containeer">
                 <h4 className="report-title" >Report A Jackpot</h4>
-                <form className="report-form-form" onSubmit={handleSubmit}>
-                    <select className="report-form-el" value={roomName} onChange={handleRoomSelect} >
+                    <select className="report-form-el report-form-select" value={roomName} onChange={handleRoomSelect} >
                         <option>Where?</option>
                         {roomNames.map(room =>
                             <option key={room}>{room}</option>    
                         )}
                     </select>
-                    <select className="report-form-el" name="hit" value={hit} onChange={handleHitSelect}>
+                    <select className="report-form-el report-form-select" name="hit" value={hit} onChange={handleHitSelect}>
                         <option value="Hit?">Hit?</option>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
@@ -65,8 +64,7 @@ const ReportJackpot = () => {
                         <input className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
                         <i>$</i>
                     </div>
-                    <button className="report-form-el report-form-button" type="submit">Report</button>
-                </form>
+                    <button className="report-form-el report-form-button" onClick={handleSubmit} type="submit">Report</button>
                <p id="report-form-thanks" className="hidden">Thanks!</p>
             </div>
         </>

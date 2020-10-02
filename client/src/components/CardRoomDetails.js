@@ -40,9 +40,9 @@ const CardRoomDetails = ({ match }) => {
                 <h1 className="cardroom-details-title">{cardRoom.name}</h1>
                 <h3 className="cardroom-details-location">{`${city}, ${state}`}</h3>
                 <p className="cardroom-details-food">{`Serving Food: ${cardRoom.food ? 'Yes' : 'No'}`}</p>
-                <form onSubmit={handleSubmit}> 
-                    <button className="cardroom-details-sub-button" type="submit">Add to My Card Rooms</button>
-                </form>
+                <button className="cardroom-details-sub-button" type="submit" onClick={handleSubmit}>
+                    Add to My Card Rooms
+                </button>
                 {added ? <p>Added!</p> : null}
                 
             </div>

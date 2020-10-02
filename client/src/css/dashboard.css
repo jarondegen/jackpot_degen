@@ -168,6 +168,7 @@
     border-radius: 5px;
     color: white;
     border: none;
+    padding: 1.5%;
     /* height: 40px; */
 }
 
@@ -180,19 +181,15 @@
     box-shadow: rgb(6, 189, 12);;
 }
 
-.report-form-form {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 2%;
-    /* flex-wrap: wrap; */
+.report-form-select {
+    border-radius: 5px;
+    padding: 1.5%
 }
 
 .report-form-el {
     padding-left: 3%;
     padding-right: 3%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin: 2%;
     border-radius: 5px;
 
 }
