@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getSubs } from '../store/Jackpot'
+import { setReportMade } from '../store/Jackpot'
 
-const ReportJackpot = ({props}) => {
-    const dispatch = useDispatch;
+const ReportJackpot = () => {
+    const dispatch = useDispatch();
     const { id } = useSelector(state => state.Auth);
     const [roomName, setRoomName] = useState('');
     const [hit, setHit] = useState('Hit?');
-    const [amount, setAmount] = useState()
-    const [reported, setReported] = useState(false)
+    const [amount, setAmount] = useState();
+    const { reportMade } = useSelector(state => state.Jackpot);
+    const { roomNames } = useSelector(state => state.Jackpot.subs)
 
     const handleRoomSelect = (e) => {
         setRoomName(e.target.value)
@@ -29,12 +30,20 @@ const ReportJackpot = ({props}) => {
             body: JSON.stringify(info),
         })
         if (res.ok){
-            setReported(true);
+            // setReported(true);
+            dispatch(setReportMade(true));
         }
     }
-    // if (reported) {
-    //     dispatch(getSubs(id));
-    // }
+
+    useEffect(() => {
+        if (reportMade) {
+            const thanks = document.getElementById('report-form-thanks');
+            thanks.setAttribute('class', 'not-hidden')
+            setTimeout(()=>{
+                thanks.setAttribute('class', 'hidden')
+            },5000)
+        }
+    },[reportMade])
     
     return (
         <>
@@ -43,22 +52,22 @@ const ReportJackpot = ({props}) => {
                 <form className="report-form-form" onSubmit={handleSubmit}>
                     <select className="report-form-el" value={roomName} onChange={handleRoomSelect} >
                         <option>Where?</option>
-                        {props.roomNames.map(room =>
+                        {roomNames.map(room =>
                             <option key={room}>{room}</option>    
                         )}
                     </select>
                     <select className="report-form-el" name="hit" value={hit} onChange={handleHitSelect}>
-                        <option value={false}>Hit?</option>
+                        <option value="Hit?">Hit?</option>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>   
-                    <div class="input-icon">
+                    <div className="input-icon">
                         <input className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
                         <i>$</i>
                     </div>
                     <button className="report-form-el report-form-button" type="submit">Report</button>
                 </form>
-                {reported ? <p>Thanks!</p> : null}
+               <p id="report-form-thanks" className="hidden">Thanks!</p>
             </div>
         </>
     );

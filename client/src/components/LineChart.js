@@ -6,6 +6,7 @@ const LineChart = () => {
     const { roomId } = useSelector(state => state.Jackpot)
 
     const createChart = async (id) => {
+        if (!roomId) return
         const data = await fetch(`/api/jackpots/${id}`);
             if (data.ok) {
                 const { amounts, dates, roomName } = await data.json();

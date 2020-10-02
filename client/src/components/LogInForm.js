@@ -10,7 +10,7 @@ const LogInForm = () => {
     const [password, setPassword] = useState('password');
     const [currentUserId, setCurrentUserId] = useState('');
     const dispatch = useDispatch();
-    const id = useSelector(state => state.Auth)
+    const { id, loggedIn } = useSelector(state => state.Auth)
 
     const changeEmail = (e) => {
         setEmail(e.target.value)
@@ -36,8 +36,8 @@ const LogInForm = () => {
         }
       }
 
-    if (currentUserId) {
-        return <Redirect to='/' />
+    if (loggedIn) {
+        return <Redirect to={`/dashboard/${id}`} />
       }
 
     return (

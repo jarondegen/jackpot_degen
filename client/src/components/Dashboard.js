@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import BiggestCurrentJackpot from './BiggestCurrentJackpot';
-import { getSubs, setChartId } from '../store/Jackpot';
+import { getSubs, setChartId, setReportMade } from '../store/Jackpot';
 import SubscriptionList from './SubscriptionList';
 import ReportJackpot from './ReportJackpot';
 import NewsFeed from './NewsFeed';
@@ -13,11 +13,13 @@ const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
     const dispatch = useDispatch();
     const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
+    const { reportMade } = useSelector(state => state.Jackpot);
 
    useEffect(() => {
-        dispatch(getSubs(id))
+        dispatch(getSubs(id));
+        dispatch(setReportMade(false));
         
-    }, [jackpots])
+    }, [reportMade])
     
     useEffect(() => {
         dispatch(setChartId(subsArr && subsArr[0]))
@@ -56,7 +58,7 @@ const Dashboard = () => {
                     <h2 className="big-jackpot-header">Biggest Current Jackpot</h2>
                     <BiggestCurrentJackpot />
                 </div>
-                <NewsFeed />
+                {/*<NewsFeed />*/}
             </div>
         </>
     )

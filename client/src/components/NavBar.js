@@ -21,7 +21,6 @@ const NavBar =  (props) => {
                 <div className="navbar-link-container">
                         {id ? 
                             <>
-                                <NavLink className="nav-link" to="/" activeClassName="active">Home</NavLink>
                                 <NavLink className="nav-link" to={`/dashboard/${id}`} activeClassName="active">Dashboard</NavLink>
                                 <NavLink className="nav-link" to={`/cardrooms`} activeClassName="active">Card Rooms</NavLink>
                                 <LogOutButton className="nav-link logout-button"/>

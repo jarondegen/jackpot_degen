@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm';
@@ -41,7 +41,11 @@ function App() {
             <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
             <Route path={`/cardrooms`} component={CardRooms} />
             <Route path="/">
-                <h1>Jackpot Degen</h1>
+                {loggedIn ? 
+                <Redirect to="/login" />
+                :
+                <Redirect to={`/dashboard/${id}`} />
+                }
             </Route>
         </Switch>
     </BrowserRouter>
