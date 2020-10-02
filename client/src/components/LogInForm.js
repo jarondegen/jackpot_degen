@@ -42,28 +42,28 @@ const LogInForm = () => {
 
     return (
         <>
-          <div className="page-container">
-            <div className="login-picture-container">
+          <div className="real-page-container">
+            <div className="page-container">
+              <div className="login-picture-container">
+              </div>
+              <div className="login-form-container">
+                <h2 className="login-form-title">
+                  Welcome to Jackpot Degen
+                </h2>
+                    {/*<input type="hidden" value={csrf_token()}/>*/}
+                    <label className="login-form-form-label" htmlFor="email">Email</label>
+                    <input className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
+                    <br />
+                    <label className="login-form-form-label" htmlFor="password">Password</label>
+                    <input className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
+                    <br />
+                    <button type="submit" onClick={handleSubmit} className="login-form-button">
+                        Login
+                    </button>
+                <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign Up</Link>
+              </div>
             </div>
-            <div className="login-form-container">
-              <h2 className="login-form-title">
-                Welcome to Jackpot Degen
-              </h2>
-              <form className="login-form-form" onSubmit={handleSubmit}>
-                  {/*<input type="hidden" value={csrf_token()}/>*/}
-                  <label className="login-form-form-label" htmlFor="email">Email</label>
-                  <input className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
-                  <br />
-                  <label className="login-form-form-label" htmlFor="password">Password</label>
-                  <input className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
-                  <br />
-                  <button type="submit" className="login-form-button">
-                      Login
-                  </button>
-              </form>
-              <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign Up</Link>
-            </div>
-          </div>
+        </div>
         </>
     )
 }

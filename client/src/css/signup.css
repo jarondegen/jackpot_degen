@@ -1,9 +1,9 @@
 .signup-page-container {
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 800px;
+    height: 1500px;
     width: 100%;
     flex-direction: column;
 }
@@ -16,6 +16,7 @@
     width: 50%;
     /* border: 1px solid lightgrey; */
     height: 600px;
+    margin-top: 10%;
 }
 
 .sign-up-form-form {

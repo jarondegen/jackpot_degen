@@ -37,7 +37,7 @@ const Dashboard = () => {
                 <LineChart />
                 <div className="my-jackpots-div">
                         <h3 className="my-jackpot-list-title">Jackpot List</h3>
-                        {roomNames.map((room, i) => {
+                        {roomNames.length > 0 ? roomNames.map((room, i) => {
                             const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';
                             const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
                             return (
@@ -49,7 +49,17 @@ const Dashboard = () => {
                                     </p>
                                 </div>
                             )
-                        })}
+                        })
+                        :
+                        (
+                            <div className="no-rooms-container">
+                                <p>You are not subscribed to any card rooms yet..</p>
+                                <a className="no-rooms-link" href="/cardrooms">
+                                    Find rooms here.
+                                </a>
+                            </div>
+                        )
+                        }
                     <img className="my-jackpots-logo" src="../images/logo.png" />
                 </div>
                 <SubscriptionList className="subscription-container"/>
@@ -58,7 +68,7 @@ const Dashboard = () => {
                     <h2 className="big-jackpot-header">Biggest Current Jackpot</h2>
                     <BiggestCurrentJackpot />
                 </div>
-                {/*<NewsFeed />*/}
+                <NewsFeed />
             </div>
         </>
     )
