@@ -54,7 +54,6 @@ module.exports = {
       { name: 'Long Beach', stateId: 1, createdAt: new Date(), updatedAt: new Date()},
       { name: 'Oakland', stateId: 1, createdAt: new Date(), updatedAt: new Date()},
       { name: 'Bakersfield', stateId: 1, createdAt: new Date(), updatedAt: new Date()},
-      { name: 'Riverside', stateId: 1, createdAt: new Date(), updatedAt: new Date()},
       { name: 'San Bernardino', stateId: 1, createdAt: new Date(), updatedAt: new Date()},
     ], {});
   },
