@@ -24,7 +24,7 @@
 
 //             <div className="google-map">
 //             <GoogleMapReact
-//                 bootstrapURLKeys={{ key: 'AIzaSyCB28Wwk0Qf_tiua1Jt_nYiz7K3-YBLMd8' }}
+//                 bootstrapURLKeys={{ key: }}
 //                 defaultCenter={location}
 //                 defaultZoom={5} >
 //             </GoogleMapReact>

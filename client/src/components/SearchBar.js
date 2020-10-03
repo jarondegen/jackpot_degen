@@ -51,7 +51,7 @@ const SearchBar = () => {
           {options
             .filter(({ name }) => name.toLowerCase().indexOf(search.toLowerCase()) > -1)
             .map((value, i) => {
-              return (
+              return i < 5 ? (
                 <a key={i} href={`/cardrooms/${value.id}`} className="option-link">
                     <div
                         onClick={() => updateRooms(value.name)}
@@ -64,7 +64,9 @@ const SearchBar = () => {
                     <span >{value.city.name}</span>
                     </div>
                 </a>
-              );
+              )
+              :
+               null;
             })}
         </div>
       )}

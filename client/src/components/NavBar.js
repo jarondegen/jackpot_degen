@@ -19,10 +19,10 @@ const NavBar =  (props) => {
                         <h2 className="navbar-title">Jackpot Degen</h2>
                     </div>
                 </div>
+                <SearchBar />
                 <div className="navbar-link-container">
                         {id ? 
                             <>
-                                <SearchBar />
                                 <NavLink className="nav-link" to={`/dashboard/${id}`} activeClassName="active">Dashboard</NavLink>
                                 <NavLink className="nav-link" to={`/cardrooms`} activeClassName="active">Card Rooms</NavLink>
                                 <LogOutButton className="nav-link logout-button"/>

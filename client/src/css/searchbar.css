@@ -1,15 +1,15 @@
-
 input {
     padding: 10px;
     height: 20px;
-    width: 200px;
+    width: 80%;
     border: 1px solid rgb(0,200,6);
-    margin: 10px;
+    margin: 5%;
     font-size: 1rem;
     text-transform: capitalize;
     border-radius: 5px;
-  }
-  
+    justify-self: flex-start;
+}
+
 .pos-rel {
     position: relative;
   }
@@ -20,11 +20,10 @@ input {
     border-style: solid;
     border-color: rgb(6, 189, 12);
     background-color: whitesmoke;
-    right: 10px;
-    top: 52px;
-    width: 220px;
+    right: 10%;
+    top: 77%;
+    width: 84%;
     z-index: 10;
-    max-height: 140px;
     overflow: hidden;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -43,11 +42,14 @@ input {
     font-size: .8rem;
     text-transform: capitalize;
     width: 100%;
+    margin-left: 3%;
+    /* margin-right: 3%; */
 }
   
 .flex-container {
     display: flex;
     margin-top: 1%;
+    grid-column: 2/3;
   }
   
 .flex-column {
