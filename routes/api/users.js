@@ -29,20 +29,13 @@ const password =
     .isLength({
         min: 6})
     .withMessage('Password must be at least 6 characters')
-    // .custom(() => {
-    //     if (password === confirmPassword) {
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-      // })
-      // .withMessage("Passwords don't match.");
+    
 
 const confirmPassword =
     check('confirmPassword')
       .not().isEmpty()
-      .withMessage('Please confirm you password');
-
+      .withMessage('Please confirm you password')
+      
 const userName =
     check('userName')
     .not().isEmpty()

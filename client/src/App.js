@@ -42,7 +42,7 @@ function App() {
                 <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
                 <Route path={`/cardrooms`} component={CardRooms} />
                 <Route path="/">
-                    {loggedIn ? 
+                    {loggedIn === undefined || loggedIn === false ? 
                     <Redirect to="/login" />
                     :
                     <Redirect to={`/dashboard/${id}`} />
