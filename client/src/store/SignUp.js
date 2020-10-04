@@ -81,8 +81,8 @@ export const getCities = (state) => async dispatch => {
 };
 
 const initialState = {
-    states: [['Arizona', 6]],
-    cities: [['San Diego', 1]],
+    states: [['Select State', 1]],
+    cities: [['Select City', 1]],
     state: '',
     city: '',
     userName: '',

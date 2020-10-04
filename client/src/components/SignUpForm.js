@@ -98,7 +98,7 @@ const SignUpForm = () => {
                         )}
                     </select>
                     <select className="signup-form-el" name="cityId" value={city[0]} onChange={handleCitySelect}>
-                        <option>Your City</option>
+                        <option>Select A City</option>
                         {cities && cities.map((city) => 
                             <option key={city[0]} >{city[0]}</option>)    
                         }
