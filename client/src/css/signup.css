@@ -71,3 +71,12 @@
 .signup-form-have-account:hover {
     color: rgb(6, 189, 12);
 }
+
+
+.signup-title{
+    margin-top:20%;
+}
+
+.signup-error{
+    color: red;
+}   

@@ -90,3 +90,7 @@
 .login-form-link:hover {
     text-decoration: none;
 }
+
+.errors-div-error {
+    color: red;
+}

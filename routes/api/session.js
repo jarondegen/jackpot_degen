@@ -11,6 +11,7 @@ const email =
   check('email')
     .isEmail()
     .withMessage('Please provide a valid email address')
+    .not().isEmpty()
     .normalizeEmail();
 
 const password =

@@ -11,6 +11,7 @@ const LogInForm = () => {
     const [currentUserId, setCurrentUserId] = useState('');
     const dispatch = useDispatch();
     const { id, loggedIn } = useSelector(state => state.Auth)
+    const [errors, setErrors] = useState([])
 
     const changeEmail = (e) => {
         setEmail(e.target.value)
@@ -32,7 +33,10 @@ const LogInForm = () => {
           setCurrentUserId(user.id);
           dispatch(setUser(user));
           dispatch(setLoggedIn(true))
-
+        } else {
+          const { error } = await response.json()
+          console.log(error)
+          setErrors(error.errors)
         }
       }
 
@@ -50,7 +54,11 @@ const LogInForm = () => {
                 <h2 className="login-form-title">
                   Welcome to Jackpot Degen
                 </h2>
-                    {/*<input type="hidden" value={csrf_token()}/>*/}
+                    <div className="errors-div">
+                      {errors.length > 0 ? errors.map(error => (
+                        <p className="errors-div-error">{error.msg}</p>
+                      )) : null}
+                    </div>
                     <label className="login-form-form-label" htmlFor="email">Email</label>
                     <input className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
                     <br />
