@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
-const { CardRoom, State, City } = require('../../models')
+const { CardRoom, State, City, Jackpot, User } = require('../../models')
 
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const id = req.params.id
@@ -28,9 +28,26 @@ router.get('/', asyncHandler(async (req, res) => {
         order: [[{model: City, as: 'city'}, 'name', 'asc']]
           
     })
-    // console.log(rooms)
-    // const roomNames = rooms.map(room => {room.dataValues.name, room.dataValues.city.name, room.dataValues.id})
     res.json(rooms)
+}));
+
+router.get('/:id(\\d+)/jackpots', asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const hitJackpots = await Jackpot.findAll({
+        attributes: ['hit', 'amount', 'id', 'createdAt', 'reporterId'],
+        order: [['createdAt', 'DESC']],
+        where: { roomId: id, hit:true }
+    })
+    const reporters = []
+    for (let i=0;i<hitJackpots.length;i++){
+        const jackpot = hitJackpots[i];
+        const user = await User.findOne({
+            attributes:['userName'],
+            where:{id:jackpot.dataValues.reporterId}
+        }) 
+        reporters.push(user)
+    }
+    res.json({hitJackpots, reporters})
 }));
 
 

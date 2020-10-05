@@ -8,12 +8,14 @@ import ReportJackpot from './ReportJackpot'
 import Reviews from './Reviews';
 
 const CardRoomDetails = ({ match }) => {
-    const { id } = match.params
-    const dispatch = useDispatch()
-    const { cardRoom, city, state } = useSelector(state => state.CardRoom)
+    const { id } = match.params;
+    const dispatch = useDispatch();
+    const { cardRoom, city, state } = useSelector(state => state.CardRoom);
     const { Auth } = useSelector(state => state);
-    const [added, setAdded] = useState(false)
-    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
+    const [added, setAdded] = useState(false);
+    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs);
+    const [jpHistory, setJpHistory] = useState([]);
+    const [jpReporters, setJpReporters] = useState([]);
 
     useEffect(() => {
         dispatch(getDetails(id))
@@ -32,6 +34,18 @@ const CardRoomDetails = ({ match }) => {
         }
     }
 
+    const getJackpots = async () => {
+        const data = await fetch(`/api/cardrooms/${id}/jackpots`);
+        if (data.ok) {
+            const {hitJackpots, reporters} = await data.json();
+            setJpHistory(hitJackpots);
+            setJpReporters(reporters);
+        }
+    }
+    useEffect(() => {
+        getJackpots();
+    },[])
+    console.log(jpHistory, jpReporters)
     return (
         <>
         <div className="cardroom-details-page-container">
@@ -48,10 +62,42 @@ const CardRoomDetails = ({ match }) => {
             <div className="cardroom-details-chart-container">
                 <LineChart props={id} />
             </div>
-            <div className="cardroom-details-reviews-container">
-                <Reviews props={id}/>
+            <div className="cardroom-hit-jackpots-container">
+                <h2>{`Jackpot History for ${cardRoom.name}`}</h2>
+
+                <div className="cardroom-hit-table-container">
+                    <table className="cardroom-hit-table">
+                        <thead>
+                            <tr>
+                                <th>Amount</th>
+                                <th>Date Hit</th>
+                                <th>Reported By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {jpHistory.length > 0 && jpReporters.length > 0 && jpHistory.map((jp, i) => ( 
+                                <tr>
+                                    <td >
+                                        {`$${jp.amount}`}
+                                    </td>
+                                    <td >
+                                        {jp.createdAt.split(":").slice(0,1).join(":").slice(0,10)}
+                                    </td>
+                                    <td >
+                                        {jpReporters[i].userName}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="cardroom-details-reviews-container">
+                    <Reviews props={id}/>
+                </div>
             </div>
-        </div>
+
+
+            </div>
         </>
     );
 };

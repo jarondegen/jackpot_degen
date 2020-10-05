@@ -34,11 +34,11 @@ router.post('/new', [roomName, hit, amount], asyncHandler(async function (req, r
         where: {'name': roomName}
     }) 
     //if hit:true than recording all previous records of cardroom to hit
-    if (hit) {
-        const hitJackpots = await Jackpot.update({
-            hit: true},
-            {where: {'roomId': id}})
-    }
+    // if (hit) {
+    //     const hitJackpots = await Jackpot.update({
+    //         hit: true},
+    //         {where: {'roomId': id}})
+    // }
 
     //creating new jackpot
     const newJackpot = await Jackpot.create({

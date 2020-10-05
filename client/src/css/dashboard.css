@@ -89,6 +89,7 @@
     border-bottom: 1px solid lightgray; 
     width: 100%;
     padding-bottom: 8%;
+    font-size: 1.3rem;
 }
 
 .no-rooms-container {
@@ -126,9 +127,9 @@
     align-items: center;
     overflow-x: scroll;
     margin-bottom: 5%;
-    padding-left: 5%;
+    padding-left: 10%;
+    width: 100%;
 }
-
 
 .subscription-el {
     margin: 3%;
