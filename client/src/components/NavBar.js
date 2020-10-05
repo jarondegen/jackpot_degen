@@ -19,7 +19,9 @@ const NavBar =  (props) => {
                         <h2 className="navbar-title">Jackpot Degen</h2>
                     </div>
                 </div>
+                {id ? (
                 <SearchBar />
+                ) : null}
                 <div className="navbar-link-container">
                         {id ? 
                             <>

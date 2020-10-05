@@ -2,7 +2,7 @@
 .cardroom-details-page-container {
     width: 100%;
     display:grid;
-    grid-template-rows: .5fr 1.5fr;
+    grid-template-rows: .4fr 1.5fr;
     grid-template-columns: 1fr 2fr;
     max-width: 1700px;
     min-height: 100vh;
