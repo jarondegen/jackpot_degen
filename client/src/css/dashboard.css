@@ -1,6 +1,7 @@
 .dashboard-container {
     display: grid;
     grid-template-columns: 65% 35%;
+    min-height: 100vh;
 }
 
 .dashboard-greeting {
@@ -109,27 +110,34 @@
     color: rgb(4, 160, 9);
 }
 
-.subscription-container {
+.sub-container {
     grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.subscription-list-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     overflow-x: scroll;
     margin-bottom: 5%;
-    margin-top: 5%;
-    margin-left: 5%;
+    padding-left: 5%;
 }
 
 
 .subscription-el {
     margin: 3%;
     text-decoration: none;
-    color: black
+    color: black;
 }
 
-.subscription-title {
-    font-size: 1.5rem
+#subscription-title {
+    font-size: 1.3rem;
 }
 
 .subscription-links:hover {
@@ -283,6 +291,7 @@
     flex-direction: column;
     border-top: 1px solid gray;
     margin-top: 5%;
+    margin-bottom: 5%;
     /* width: 50%; */
 }
 

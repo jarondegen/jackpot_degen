@@ -6,8 +6,9 @@
     grid-template-rows: .7fr 1.5fr;
     grid-template-columns: 1fr 2fr;
     max-width: 1700px;
-    max-height: 2200px;
+    min-height: 100vh;
     margin-top: 5%;
+
 }
 
 .cardroom-details-container {
