@@ -2,7 +2,7 @@
 .cardroom-details-page-container {
     width: 100%;
     display:grid;
-    grid-template-rows: .7fr 1.5fr;
+    grid-template-rows: .5fr 1.5fr;
     grid-template-columns: 1fr 2fr;
     max-width: 1700px;
     min-height: 100vh;
@@ -23,7 +23,7 @@
 }
 
 .cardroom-details-title {
-    margin-top: 15%;
+    /* margin-top: 15%; */
     font-family: Wire One;
     font-size: 3rem;
 }
@@ -61,7 +61,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 15%;
 }
 
 
@@ -101,6 +101,8 @@
     align-items: center;
     height: 25%;
     min-height: 157px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 3%;
 }
 
 

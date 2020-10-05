@@ -31,8 +31,6 @@ nav{
     margin-top: 4%;
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
-    /* justify-c: ce; */
 }
 
 .navbar-logo {
@@ -44,7 +42,6 @@ nav{
     margin-left: 15%;
     font-weight: 300;
     align-self: flex-start;
-    /* margin-bottom: 9%; */
 }
 
 .navbar-link-container {
