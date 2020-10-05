@@ -51,30 +51,30 @@ const ReportJackpot = () => {
     
     return (
         <>
-            <div className="report-jackpot-containeer">
-                <div className="report-error-container">
-                    {errors.length > 0 ? errors.map(err => 
-                        <p className="report-error">{err.msg}</p>
-                    ): null}
-                </div>
-                <h4 className="report-title" >Report A Jackpot</h4>
+            <div className="report-jackpot-contianer">
+                <h3 className="report-title" >Report A Jackpot</h3>
+                {errors.length > 0 ? errors.map(err => 
+                    <p className="report-error">{err.msg}</p>
+                ): null}
+                <div className="report-jackpot-form-containeer">
                     <select className="report-form-el report-form-select" value={roomName} onChange={handleRoomSelect} >
-                        <option>Where?</option>
-                        {roomNames.map(room =>
-                            <option key={room}>{room}</option>    
-                        )}
-                    </select>
-                    <select className="report-form-el report-form-select" name="hit" value={hit} onChange={handleHitSelect}>
-                        <option>Hit?</option>
-                        <option value={true}>Yes</option>
-                        <option value={false}>No</option>
-                    </select>   
-                    <div className="input-icon">
-                        <input className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
-                        <i>$</i>
-                    </div>
-                    <button className="report-form-el report-form-button" onClick={handleSubmit} type="submit">Report</button>
-               <p id="report-form-thanks" className="hidden">Thanks!</p>
+                            <option>Where?</option>
+                            {roomNames.map(room =>
+                                <option key={room}>{room}</option>    
+                            )}
+                        </select>
+                        <select className="report-form-el report-form-select" name="hit" value={hit} onChange={handleHitSelect}>
+                            <option>Hit?</option>
+                            <option value={true}>Yes</option>
+                            <option value={false}>No</option>
+                        </select>   
+                        <div className="input-icon">
+                            <input placeholder="please be precise" className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
+                            <i>$</i>
+                        </div>
+                        <button className="report-form-el report-form-button" onClick={handleSubmit} type="submit">Report</button>
+                <p id="report-form-thanks" className="hidden">Thanks!</p>
+                </div>
             </div>
         </>
     );
