@@ -5,6 +5,8 @@ const Reviews = ({props}) => {
     const [review, setReview] = useState()
     const { id, userName } = useSelector(state => state.Auth);
     const [reviews, setReviews] = useState([])
+    const [reviewed, setReviewed] = useState(false)
+
     const getReviews = async () => {
         const data = await fetch(`/api/reviews/${props}`)
         if (data.ok) {
@@ -13,17 +15,19 @@ const Reviews = ({props}) => {
             return {...rev, createdAt: rev.createdAt.split(":").slice(0,1).join(":").slice(0,10)}
             })
             setReviews(readyReviews)
+            setReviewed(false)
         }
     }
     useEffect(() => {
         getReviews()
-    }, [])
+    }, [reviewed])
 
     const handleChange = (e) => {
         setReview(e.target.value)
     }
 
     const handleSubmit = async () => {
+        setReviewed(false)
         const data = { userId: id, roomId: props, review }
         const send = await fetch('/api/reviews/new', {
             method: 'POST',
@@ -31,6 +35,8 @@ const Reviews = ({props}) => {
             body: JSON.stringify(data),
         })
         if (send.ok) {
+            setReviewed(true)
+            setReview('')
         }
     }
 

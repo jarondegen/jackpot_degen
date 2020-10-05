@@ -6,10 +6,11 @@ const ReportJackpot = () => {
     const dispatch = useDispatch();
     const { id } = useSelector(state => state.Auth);
     const [roomName, setRoomName] = useState('');
-    const [hit, setHit] = useState('Hit?');
+    const [hit, setHit] = useState();
     const [amount, setAmount] = useState();
     const { reportMade } = useSelector(state => state.Jackpot);
-    const { roomNames } = useSelector(state => state.Jackpot.subs)
+    const { roomNames } = useSelector(state => state.Jackpot.subs);
+    const [errors, setErrors] = useState([]);
 
     const handleRoomSelect = (e) => {
         setRoomName(e.target.value)
@@ -30,13 +31,16 @@ const ReportJackpot = () => {
             body: JSON.stringify(info),
         })
         if (res.ok){
-            // setReported(true);
             dispatch(setReportMade(true));
+        }else {
+            const {error} = await res.json();
+            setErrors(error.errors)
         }
     }
 
     useEffect(() => {
         if (reportMade) {
+            setErrors([])
             const thanks = document.getElementById('report-form-thanks');
             thanks.setAttribute('class', 'not-hidden')
             setTimeout(()=>{
@@ -48,6 +52,11 @@ const ReportJackpot = () => {
     return (
         <>
             <div className="report-jackpot-containeer">
+                <div className="report-error-container">
+                    {errors.length > 0 ? errors.map(err => 
+                        <p className="report-error">{err.msg}</p>
+                    ): null}
+                </div>
                 <h4 className="report-title" >Report A Jackpot</h4>
                     <select className="report-form-el report-form-select" value={roomName} onChange={handleRoomSelect} >
                         <option>Where?</option>
@@ -56,7 +65,7 @@ const ReportJackpot = () => {
                         )}
                     </select>
                     <select className="report-form-el report-form-select" name="hit" value={hit} onChange={handleHitSelect}>
-                        <option value="Hit?">Hit?</option>
+                        <option>Hit?</option>
                         <option value={true}>Yes</option>
                         <option value={false}>No</option>
                     </select>   

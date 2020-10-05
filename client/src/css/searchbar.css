@@ -3,7 +3,7 @@ input {
     height: 20px;
     width: 80%;
     border: 1px solid rgb(0,200,6);
-    margin: 5%;
+    margin: 6%;
     font-size: 1rem;
     text-transform: capitalize;
     border-radius: 5px;
@@ -20,8 +20,8 @@ input {
     border-style: solid;
     border-color: rgb(6, 189, 12);
     background-color: whitesmoke;
-    right: 10%;
-    top: 77%;
+    right: 9.5%;
+    top: 75%;
     width: 84%;
     z-index: 10;
     overflow: hidden;
