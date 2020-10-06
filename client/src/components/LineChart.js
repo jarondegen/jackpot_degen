@@ -11,7 +11,11 @@ const LineChart = () => {
         const data = await fetch(`/api/jackpots/${id}`);
             if (data.ok) {
                 const { amounts, dates, roomName } = await data.json();
-                const goodDates = dates.map(date => date.split(":").slice(0,1).join(":").slice(0,10))
+                const goodDates = dates.map(date => {
+                    const x = date.split(":").slice(0,1).join(":").slice(0,10);
+                    const p = x.split('-')
+                    return `${p.slice(1,2)}/${p.slice(2)}` //year-${p.slice(0,1)}
+                })
                 const ctx = document.getElementById('line-chart');
                 const myChart = new Chart(ctx, {
                     type: 'line',
