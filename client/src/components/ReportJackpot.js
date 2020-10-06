@@ -45,7 +45,10 @@ const ReportJackpot = () => {
             thanks.setAttribute('class', 'not-hidden')
             setTimeout(()=>{
                 thanks.setAttribute('class', 'hidden')
-            },5000)
+                setRoomName('')
+                setAmount('')
+                setHit('')
+            },4000)
         }
     },[reportMade])
     
