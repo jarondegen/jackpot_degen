@@ -45,7 +45,6 @@ const CardRoomDetails = ({ match }) => {
     useEffect(() => {
         getJackpots();
     },[])
-    console.log(jpHistory, jpReporters)
     return (
         <>
         <div className="cardroom-details-page-container">
@@ -76,7 +75,7 @@ const CardRoomDetails = ({ match }) => {
                         </thead>
                         <tbody>
                             {jpHistory.length > 0 && jpReporters.length > 0 && jpHistory.map((jp, i) => ( 
-                                <tr>
+                                <tr key={i}>
                                     <td >
                                         {`$${jp.amount}`}
                                     </td>

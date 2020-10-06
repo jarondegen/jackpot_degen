@@ -30,16 +30,14 @@ const NewsFeed = () => {
             <div className="news-container">
                 <h3>NEWS</h3>
                     {feed && feed.map((item, i) => 
-                        <>
-                            <div className="news-story-container">
-                                <p className="news-story-date">{item.pubDate.split(" ").slice(0,3).join(" ")}</p>
-                                <img className="news-story-pic" key={imgs[i]}src={imgs[i]}/>
-                                <a target="_blank" className="news-story-link" href={item.link} key={item.link}>{item.title}</a>
-                                <p className="news-story-snippet">
-                                    {item.contentSnippet.length > 200 ? `${item.contentSnippet.slice(0,200)}...` : item.contentSnippet}
-                                </p>
-                            </div>
-                        </>    
+                        <div key={i} className="news-story-container">
+                            <p key={item.pubDate} className="news-story-date">{item.pubDate.split(" ").slice(0,3).join(" ")}</p>
+                            <img keu={imgs[i]} className="news-story-pic" key={imgs[i]}src={imgs[i]}/>
+                            <a key={item.link} target="_blank" className="news-story-link" href={item.link} key={item.link}>{item.title}</a>
+                            <p key={item.contentSnippet} className="news-story-snippet">
+                                {item.contentSnippet.length > 200 ? `${item.contentSnippet.slice(0,200)}...` : item.contentSnippet}
+                            </p>
+                        </div>   
                     )}
             </div>
         </>

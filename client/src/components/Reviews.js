@@ -52,7 +52,7 @@ const Reviews = ({props}) => {
             </div>
             <div className="reviews-review-container">
                 {reviews.length > 0 ?reviews.map(rev => 
-                    <div className="review-container">
+                    <div key={rev.review} className="review-container">
                         <p className="review-date">{rev.createdAt}</p>
                         <div className="review-review-container">
                             <p className="review-review">{rev.review}</p>

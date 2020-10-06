@@ -47,4 +47,16 @@
 .card-room-table-links:hover {
     color: rgb(0,200,6);
   }
-  
+
+.cardroom-select-el {
+  margin: 1%;
+  width: 100%;
+  border-radius: 5px;
+  padding: 2%;
+  max-height: 50px;
+}
+
+.selects-container {
+  max-height: 50px;
+  margin-bottom: 5%;
+}

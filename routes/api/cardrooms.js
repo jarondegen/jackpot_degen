@@ -31,6 +31,33 @@ router.get('/', asyncHandler(async (req, res) => {
     res.json(rooms)
 }));
 
+
+router.get('/states/:id(\\d+)', asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const rooms = await CardRoom.findAll({
+        attributes: ['name', 'cityId', 'id'],
+        include: { model: City, as: 'city', attributes: ['name'] },
+        order: [[{model: City, as: 'city'}, 'name', 'asc']],
+        where: {stateId: id}
+
+          
+    })
+    res.json(rooms)
+}));
+
+router.get('/cities/:id(\\d+)', asyncHandler(async (req, res) => {
+    const id = req.params.id
+    const rooms = await CardRoom.findAll({
+        attributes: ['name', 'cityId', 'id'],
+        include: { model: City, as: 'city', attributes: ['name'] },
+        order: [[{model: City, as: 'city'}, 'name', 'asc']],
+        where: {cityId: id}
+
+          
+    })
+    res.json(rooms)
+}));
+
 router.get('/:id(\\d+)/jackpots', asyncHandler(async (req, res) => {
     const id = req.params.id
     const hitJackpots = await Jackpot.findAll({
