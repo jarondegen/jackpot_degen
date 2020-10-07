@@ -28,13 +28,15 @@ const LogInForm = () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
         });
-        if (response.ok) {
-          const { user } = await response.json();
+        const data = await response.json()
+        console.log(data)
+        if (response.ok && !data.error) {
+          const { user } = data //await response.json();
           setCurrentUserId(user.id);
           dispatch(setUser(user));
           dispatch(setLoggedIn(true))
         } else {
-          const { error } = await response.json()
+          const { error } = data //await response.json()
           console.log(error)
           setErrors(error.errors)
         }
@@ -55,7 +57,7 @@ const LogInForm = () => {
                   Welcome to Jackpot Degen
                 </h2>
                     <div className="errors-div">
-                      {errors.length > 0 ? errors.map(error => (
+                      {errors && errors.length > 0 ? errors.map(error => (
                         <p className="errors-div-error">{error.msg}</p>
                       )) : null}
                     </div>

@@ -27,12 +27,16 @@ router.post('/', [email, password], asyncHandler(async (req, res, next) => {
 
   const { email, password } = req.body;
   const user = await UserRepo.findByEmail(email);
-  if (!user.isValidPassword(password)) {
-    const err = new Error('Login failed');
-    err.status = 401;
-    err.title = 'Login failed';
-    err.errors = ['Invalid credentials'];
-    return next(err);
+  console.log(user)
+  if (!user.isValidPassword(password) || !user.dataValues) {
+    const error = new Error('Login failed');
+    error.status = 401;
+    error.title = 'Login failed';
+    error.errors = [{
+      msg: ['Invalid credentials']
+    }];
+    res.json({ error });
+    return next(error);
   }
   const { jti, token } = generateToken(user);
   // user.tokenId = jti;

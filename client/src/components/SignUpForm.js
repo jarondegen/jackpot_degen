@@ -72,6 +72,8 @@ const SignUpForm = () => {
             const { error } = await data.json();
             console.log(error)
             setErrors(error.errors)
+            const eContainer = document.getElementById('ec')
+            eContainer.setAttribute('class', 'errors-container')
         }
     }
     
@@ -79,7 +81,7 @@ const SignUpForm = () => {
         <div className="signup-page-container">
             <div className="sign-up-form-container">
                 <h3 className="signup-title">Let's make you an account.</h3>
-                <div className="errors-container">
+                <div id="ec" className="errors-container hidden">
                     {errors.length > 0 ? errors.map(error => 
                         <p className="signup-error" key={error.param}>
                             {error.msg}
