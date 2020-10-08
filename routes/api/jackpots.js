@@ -70,4 +70,24 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     res.json({amounts, dates, roomName})
 }))
 
+router.get('/user/:id(\\d+)', asyncHandler(async function (req, res, next) {
+    const reporterId = req.params.id
+    const userReports =  await Jackpot.findAll({
+        attributes: ['id', 'createdAt', 'roomId', 'amount',],
+        include: {model: CardRoom, as:'room', attributes: ['name']},
+        order: [['createdAt', 'desc']],
+        where: {reporterId},
+    })
+    res.json({userReports})
+}))
+
+router.delete('/delete/:id(\\d+)', asyncHandler(async function (req, res, next) {
+    const id = req.params.id
+    const deleted =  await Jackpot.destroy({
+        where: {id}
+    })
+    res.json('ok')
+}))
+
+
 module.exports = router;
