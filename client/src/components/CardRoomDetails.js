@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getDetails } from '../store/CardRoom'
 import { useDispatch, useSelector } from 'react-redux';
-import { setChartId } from '../store/Jackpot';
+import { setChartId, getSubs } from '../store/Jackpot';
 import LineChart from './LineChart';
 import '../css/cardroom.css';
-import ReportJackpot from './ReportJackpot'
 import Reviews from './Reviews';
 
 const CardRoomDetails = ({ match }) => {
@@ -13,9 +12,20 @@ const CardRoomDetails = ({ match }) => {
     const { cardRoom, city, state } = useSelector(state => state.CardRoom);
     const { Auth } = useSelector(state => state);
     const [added, setAdded] = useState(false);
-    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs);
+    const { subsArr } = useSelector(state => state.Jackpot.subs);
     const [jpHistory, setJpHistory] = useState([]);
     const [jpReporters, setJpReporters] = useState([]);
+    const [subbed, setSubbed] = useState(false);
+    const [unsubbed, setUnsubbed] = useState(false);
+    
+    useEffect(() => {
+        dispatch(getSubs(Auth.id))
+        subsArr.forEach(sub => {
+            if (sub == id) {
+                setSubbed(true)
+            }
+        })   
+    }, [])
 
     useEffect(() => {
         dispatch(getDetails(id))
@@ -31,6 +41,8 @@ const CardRoomDetails = ({ match }) => {
         })
         if (data.ok) {
             setAdded(true)
+            dispatch(getSubs(Auth.id))
+            setSubbed(true)
         }
     }
 
@@ -45,6 +57,19 @@ const CardRoomDetails = ({ match }) => {
     useEffect(() => {
         getJackpots();
     },[])
+
+    const handleUnsub = async () => {
+        const data = await fetch('/api/subscriptions/delete', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: Auth.id, roomId: id }),
+        })
+        if (data.ok){
+            dispatch(getSubs(Auth.id))
+            setSubbed(false)
+            setUnsubbed(true)
+        }
+    }
     return (
         <>
         <div className="cardroom-details-page-container">
@@ -52,11 +77,18 @@ const CardRoomDetails = ({ match }) => {
                 <h1 className="cardroom-details-title">{cardRoom.name}</h1>
                 <h3 className="cardroom-details-location">{`${city}, ${state}`}</h3>
                 <p className="cardroom-details-food">{`Serving Food: ${cardRoom.food ? 'Yes' : 'No'}`}</p>
-                <button className="cardroom-details-sub-button" type="submit" onClick={handleSubmit}>
-                    Add to My Card Rooms
-                </button>
+                { subbed == true ? (
+                    <button className="cardroom-details-sub-button" onClick={handleUnsub}>
+                        Unsubscribe
+                    </button>
+                    )
+                :
+                    <button className="cardroom-details-sub-button" type="submit" onClick={handleSubmit}>
+                        Add to My Card Rooms
+                    </button>
+                }
                 {added ? <p>Added!</p> : null}
-                
+                {unsubbed ? <p>Deleted!</p> : null}
             </div>
             <div className="cardroom-details-chart-container">
                 <LineChart props={id} />

@@ -13,4 +13,13 @@ router.post('/new', asyncHandler(async function (req, res, next) {
 }));
 
 
+router.post('/delete', asyncHandler(async function (req, res, next) {
+    const { userId, roomId } = req.body
+    
+    const newSub = await Subscription.destroy({
+        where: {userId, roomId}
+    });
+    res.json('ok');
+}));
+
 module.exports = router;

@@ -60,7 +60,8 @@ const intialState = {
   subs: {
     roomNames: [],
     jackpots: [{hit:false}],
-    roomId: 1
+    roomId: 1,
+    subsArr: [],
   },
   reportMade: false
 }

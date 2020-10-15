@@ -20,9 +20,7 @@ const HistoryTab = () => {
     },[deleted])
 
     const handleDelete = (e) => {
-        if (id === 1) {
-            return
-        }
+        if (id === 1) return;
         const deleteJackpot = async() => {
             const data = await fetch(`/api/jackpots/delete/${e.target.id}`, {
                 method: 'DELETE',
