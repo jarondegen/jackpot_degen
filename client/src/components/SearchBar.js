@@ -45,6 +45,7 @@ const SearchBar = () => {
         placeholder="Type to search"
         value={search}
         onChange={event => setSearch(event.target.value)}
+        autocomplete="off"
       />
       {display && (
         <div className="autoContainer">
