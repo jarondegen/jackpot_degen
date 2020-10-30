@@ -9,6 +9,7 @@
     height: 50px;
     margin-top: 15px;
     z-index: inherit;  
+    margin-bottom: 20px;
 }
 
 .footer-created-by {

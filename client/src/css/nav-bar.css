@@ -1,9 +1,22 @@
+body {
+    height: 100%;
+    overflow: auto;
+}
+
+.navbar-nav {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
 html {
     height: 100%;
     border: none;
     padding: none;
     margin: none;
     font-family: 'Nunito', sans-serif;
+    overflow: hidden;
 }
 
 nav{
@@ -17,6 +30,7 @@ nav{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border-bottom: 1px solid lightgrey;
+    background-color: white;
 }
 
 .navbar-logo-container {
@@ -42,6 +56,7 @@ nav{
     margin-left: 15%;
     font-weight: 300;
     align-self: flex-start;
+    margin-top: 25px;
 }
 
 .navbar-link-container {
@@ -52,6 +67,7 @@ nav{
     flex-shrink: 2;
     height: 100%;
     align-items: center;
+    margin-top: 10px;
 }
 
 .nav-link {
@@ -67,6 +83,7 @@ nav{
  font-family: 'Nunito', sans-serif;
  font-size: .8rem;
  color: black;
+ margin-right: 30px;
 }
 
 .logout-button:hover {
