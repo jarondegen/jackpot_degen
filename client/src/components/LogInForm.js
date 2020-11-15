@@ -29,7 +29,6 @@ const LogInForm = () => {
           body: JSON.stringify({ email, password }),
         });
         const data = await response.json()
-        console.log(data)
         if (response.ok && !data.error) {
           const { user } = data //await response.json();
           setCurrentUserId(user.id);

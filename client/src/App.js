@@ -10,31 +10,30 @@ import CardRoomDetails from './components/CardRoomDetails';
 import CardRooms from './components/CardRooms';
 import Footer from './components/Footer';
 
-// const PrivateRoute = ({ component: Component, ...rest }) => (
-//     <Route {...rest} render={(props) => (
-//       rest.needLogin === true
-//         ? <Redirect to='/login' />
-//         : <Component {...props} />
-//     )} />
-//   )
-
-
 function App() {
-  const { loggedIn, id } = useSelector(state => state.Auth)
+  const { id } = useSelector(state => state.Auth)
+  
+  console.log(id)
 
   return (
       <>
         <BrowserRouter>
-            <NavBar />
+            {id && <NavBar />}
             <Switch>
                 <Route path="/login">
-                    <LogInForm />
-                </Route>
-                <Route path={`/dashboard/${id}`}>
-                    <Dashboard />
+                    {id ?
+                        <Redirect to={`/dashboard/${id}`} />
+                        : 
+                        <LogInForm />
+                    }
                 </Route>
                 <Route path={`/users/new`}>
                     <SignUpForm />
+                </Route>
+            </Switch>
+            <Switch>
+                <Route path={`/dashboard/${id}`}>
+                    <Dashboard />
                 </Route>
                 <Route path={`/users/success`}>
                     <UserSuccess />
@@ -42,7 +41,7 @@ function App() {
                 <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
                 <Route path={`/cardrooms`} component={CardRooms} />
                 <Route path="/">
-                    {loggedIn === undefined || loggedIn === false ? 
+                    {!id ? 
                     <Redirect to="/login" />
                     :
                     <Redirect to={`/dashboard/${id}`} />
