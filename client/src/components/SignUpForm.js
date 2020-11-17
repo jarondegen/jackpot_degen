@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import logo from '../images/logo.jpg';
 import '../css/signup.css'
 import { getCities, getStates, setState, setCity, setUserName, 
          setEmail, setPassword, setConfirmPassword } from '../store/SignUp';
@@ -80,14 +81,8 @@ const SignUpForm = () => {
     return (
         <div className="signup-page-container">
             <div className="sign-up-form-container">
+                <div className="signup-logo-div"><img className="signup-form-logo" src={logo}/></div>
                 <h3 className="signup-title">Let's make you an account.</h3>
-                <div id="ec" className="errors-container hidden">
-                    {errors.length > 0 ? errors.map(error => 
-                        <p className="signup-error" key={error.param}>
-                            {error.msg}
-                        </p>
-                    ): null}
-                </div>
                 <form method="post" action="/api/users/new" className="sign-up-form-form" onSubmit={handleSubmit}>
                     <input className="signup-form-input signup-form-el" value={userName} type="text" name="userName" placeholder="User Name" onChange={handleUserName}/>
                     <input className="signup-form-input signup-form-el" value={email} type="email" name="email" placeholder="Email" onChange={handleEmail}/>
@@ -107,6 +102,13 @@ const SignUpForm = () => {
                     </select>
                     <button className="signup-form-el signup-form-button" type="submit" >Sign Up</button>
                 </form>
+                <div id="ec" className="errors-container hidden">
+                    {errors.length > 0 ? errors.map(error => 
+                        <li className="signup-error" key={error.param}>
+                            {error.msg}
+                        </li>
+                    ): null}
+                </div>
                 <a className="signup-form-have-account" href="/login">
                     Already have an account? Log in here
                 </a>

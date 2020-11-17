@@ -10,19 +10,17 @@
 
 .sign-up-form-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 50%;
-    /* border: 1px solid lightgrey; */
-    height: 600px;
-    /* margin-top: 10%; */
+    height: 100%;
 }
 
 .sign-up-form-form {
     height: 95%;
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: flex-start; */
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -66,15 +64,11 @@
     /* margin: 3%; */
     text-decoration: none;
     color: black;
+    margin-bottom: 20%;
 }
 
 .signup-form-have-account:hover {
     color: rgb(6, 189, 12);
-}
-
-
-.signup-title{
-    margin-top:20%;
 }
 
 .signup-error{
@@ -85,5 +79,15 @@
     border: 1px solid red;
     padding: 2%;
     border-radius: 5px;
-    margin-top: 25%;
+    margin-bottom: 5%;
+}
+
+.signup-logo-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.signup-form-logo {
+    width: 30%;
 }
