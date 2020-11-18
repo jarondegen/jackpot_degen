@@ -20,7 +20,6 @@
 .sign-up-form-form {
     height: 95%;
     display: flex;
-    /* justify-content: flex-start; */
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -61,7 +60,6 @@
 }
 
 .signup-form-have-account {
-    /* margin: 3%; */
     text-decoration: none;
     color: black;
     margin-bottom: 20%;
@@ -90,4 +88,5 @@
 
 .signup-form-logo {
     width: 30%;
+    height: 100%;
 }
