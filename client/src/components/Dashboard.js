@@ -16,7 +16,7 @@ const Dashboard = () => {
     const dispatch = useDispatch();
     const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
     const { reportMade } = useSelector(state => state.Jackpot);
-    const [view, setView] = useState(1)
+    const [view, setView] = useState("1")
 
    useEffect(() => {
         dispatch(getSubs(id));

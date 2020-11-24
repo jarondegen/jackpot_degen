@@ -7,20 +7,20 @@ const Reviews = ({props}) => {
     const [reviews, setReviews] = useState([])
     const [reviewed, setReviewed] = useState(false)
 
-    const getReviews = async () => {
-        const data = await fetch(`/api/reviews/${props}`)
-        if (data.ok) {
-            const { reviewsArr } = await data.json()
-            const readyReviews = reviewsArr.map(rev => {
-            return {...rev, createdAt: rev.createdAt.split(":").slice(0,1).join(":").slice(0,10)}
-            })
-            setReviews(readyReviews)
-            setReviewed(false)
-        }
-    }
     useEffect(() => {
+        const getReviews = async () => {
+            const data = await fetch(`/api/reviews/${props}`)
+            if (data.ok) {
+                const { reviewsArr } = await data.json()
+                const readyReviews = reviewsArr.map(rev => {
+                return {...rev, createdAt: rev.createdAt.split(":").slice(0,1).join(":").slice(0,10)}
+                })
+                setReviews(readyReviews)
+                setReviewed(false)
+            }
+        }
         getReviews()
-    }, [reviewed])
+    }, [reviewed, props])
 
     const handleChange = (e) => {
         setReview(e.target.value)

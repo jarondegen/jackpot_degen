@@ -53,11 +53,11 @@ const SignUpForm = () => {
 
     useEffect(()=> {
         dispatch(getStates());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         dispatch(getCities(state));
-    }, [state]);
+    }, [state, dispatch]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

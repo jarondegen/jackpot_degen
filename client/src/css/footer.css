@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content: end;
+    align-content: flex-end;
     position: relative;
     bottom: 0;
     height: 50px;

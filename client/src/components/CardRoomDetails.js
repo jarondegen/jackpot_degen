@@ -19,13 +19,16 @@ const CardRoomDetails = ({ match }) => {
     const [unsubbed, setUnsubbed] = useState(false);
     
     useEffect(() => {
-        dispatch(getSubs(Auth.id))
+        dispatch(getSubs(Auth.id))  
+    }, [dispatch, Auth.id, id])
+
+    useEffect(() => {
         subsArr.forEach(sub => {
             if (sub === id) {
                 setSubbed(true)
             }
-        })   
-    }, [dispatch, Auth.id])
+        })
+    },[subsArr, id])
 
     useEffect(() => {
         dispatch(getDetails(id))
@@ -46,17 +49,17 @@ const CardRoomDetails = ({ match }) => {
         }
     }
 
-    const getJackpots = async () => {
-        const data = await fetch(`/api/cardrooms/${id}/jackpots`);
-        if (data.ok) {
-            const {hitJackpots, reporters} = await data.json();
-            setJpHistory(hitJackpots);
-            setJpReporters(reporters);
-        }
-    }
     useEffect(() => {
+        const getJackpots = async () => {
+            const data = await fetch(`/api/cardrooms/${id}/jackpots`);
+            if (data.ok) {
+                const {hitJackpots, reporters} = await data.json();
+                setJpHistory(hitJackpots);
+                setJpReporters(reporters);
+            }
+        }
         getJackpots();
-    },[])
+    },[id])
 
     const handleUnsub = async () => {
         const data = await fetch('/api/subscriptions/delete', {

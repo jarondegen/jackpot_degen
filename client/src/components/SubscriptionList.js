@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const SubscriptionList = () => {
-    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
+    const { roomNames, subsArr } = useSelector(state => state.Jackpot.subs)
 
     return (
         <>
