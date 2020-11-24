@@ -10,11 +10,12 @@ import '../css/dashboard.css'
 import LineChart from './LineChart';
 import HistoryTab from './HistoryTab';
 import AccountTab from './AccountTab';
+import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
     const dispatch = useDispatch();
-    const { roomNames, jackpots, subsArr } = useSelector(state => state.Jackpot.subs)
+    const { roomNames, jackpots, subsArr, sparkNumbers } = useSelector(state => state.Jackpot.subs)
     const { reportMade } = useSelector(state => state.Jackpot);
     const [view, setView] = useState("1")
 
@@ -69,6 +70,11 @@ const Dashboard = () => {
                                     <div key={jackpots[i].roomId} id={jackpots[i].roomId} className={`my-jackpots-el-div ${isHitClass}`} onClick={handleJackpotClick}>
                                         <p className="my-jackports-room-name" id={jackpots[i].roomId}>{room}</p>
                                         <p className="my-jackports-room-hit" id={jackpots[i].roomId}>{isJackpotHit}</p>
+                                        <div>
+                                            <Sparklines data={sparkNumbers[i]} svgWidth={100} svgHeight={30}>
+                                                <SparklinesLine style={{stroke:jackpots[i].hit ? "red" : "green", strokeWidth:3, fill:jackpots[i].hit ? "red" : "green"}}  />
+                                            </Sparklines>
+                                        </div>
                                         <p className="my-jackports-room-amount" id={jackpots[i].roomId}>
                                             {jackpots[i] && `$${jackpots[i].amount}`}
                                         </p>
@@ -85,6 +91,9 @@ const Dashboard = () => {
                                 </div>
                             )
                             }
+                        <Sparklines data={[88000,80000,35000]} svgWidth={10} svgHeight={10} margin={0}>
+                            <SparklinesLine style={{color:"green", stroke:"red", strokeWidth:2, fill:"black"}}  />
+                        </Sparklines>
                         <img alt="JPD Logo" className="my-jackpots-logo" src="../images/logo.png" />
                     </div>
                     <SubscriptionList className="subscription-container"/>

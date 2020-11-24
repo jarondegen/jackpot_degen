@@ -8,6 +8,7 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
     const id = req.params.id
     const roomNames = [];
     const jackpots = []
+    const sparkNumbers = []
 
     const subs = await Subscription.findAll({attributes: ['roomId'], where: {userId: id}});
     const subsArr = subs.map(obj => obj.dataValues.roomId)
@@ -21,8 +22,20 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
         })
         roomNames.push(room.dataValues.name)
         jackpots.push(jackpot)
+
+        const jackpotsData =  await Jackpot.findAll({
+            attributes: ['amount', 'createdAt'],
+            where: {roomId: sub},
+            order: [['createdAt', 'ASC']]
+        })
+        const amounts = [];
+        for (let i = jackpotsData.length > 10 ?jackpotsData.length -10 : 0; i <jackpotsData.length; i++) {
+            const jackpotSing = jackpotsData[i]
+            amounts.push(jackpotSing.dataValues.amount);
+        };
+        sparkNumbers.push(amounts)
     }
-    res.json({ roomNames, jackpots, subsArr });
+    res.json({ roomNames, jackpots, subsArr, sparkNumbers });
 }));
 
 

@@ -44,8 +44,8 @@ export const getBig = () => async dispatch => {
 export const getSubs = (id) => async dispatch => {
   const response = await fetch(`/api/dashboard/${id}`);
   if (response.ok) {
-      const { roomNames, jackpots, subsArr } = await response.json();
-      dispatch(setSubs({roomNames, jackpots, subsArr}));
+      const { roomNames, jackpots, subsArr, sparkNumbers } = await response.json();
+      dispatch(setSubs({roomNames, jackpots, subsArr, sparkNumbers}));
       
   }
 }
