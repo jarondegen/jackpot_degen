@@ -25,13 +25,9 @@ export const removeUser = () => {
 }
 
 export const logout = () => async dispatch => {
-  const res = await fetch('/api/session', {
+  await fetch('/api/session', {
     method: "DELETE"
   });
-  // console.log('something')
-  if (res.ok) {
-    // console.log('ok');
-  }
 }
 
 function loadUser() {

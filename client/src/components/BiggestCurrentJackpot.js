@@ -10,7 +10,7 @@ const BiggestCurrentJackpot = () => {
     useEffect(() => {
         dispatch(getBig())
         setIsLoading(false)
-    }, [])
+    }, [dispatch])
     
 
 

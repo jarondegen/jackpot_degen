@@ -1,21 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutButton from './LogOutButton';
 import '../css/nav-bar.css'
 import SearchBar from './SearchBar';
 
 
-const NavBar =  (props) => {
+const NavBar =  () => {
+    const history = useHistory()
     const { id } = useSelector(state => state.Auth)
 
+    const handleLogoClick = () => {
+        history.push(`/dashboard/${id}`)
+    }
 
     return (
         <nav className="navbar-nav">
             <div className="navbar-container" >
-                <div className="navbar-logo-container">
+                <div onClick={handleLogoClick} className="navbar-logo-container">
                     <div className="logo-div">
-                        <img className="navbar-logo" src="../../images/logo2.png" />
+                        <img alt="JPD Logo" className="navbar-logo" src="../../images/logo2.png" />
                         <h2 className="navbar-title">Jackpot Degen</h2>
                     </div>
                 </div>

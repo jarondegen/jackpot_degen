@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Chart from 'chart.js';
 import { useSelector } from 'react-redux';
 
@@ -17,7 +17,7 @@ const LineChart = () => {
                     return `${p.slice(1,2)}/${p.slice(2)}` //year-${p.slice(0,1)}
                 })
                 const ctx = document.getElementById('line-chart');
-                const myChart = new Chart(ctx, {
+                new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels : goodDates,
@@ -35,7 +35,7 @@ const LineChart = () => {
 
     useEffect(() => {
         createChart(roomId)
-    },[roomId, reportMade])
+    },[roomId, reportMade, createChart])
 
     return (
         <div className="chart-container" >

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import '../css/searchbar.css';
-import { Redirect } from 'react-router-dom';
 
 const SearchBar = () => {
   const [display, setDisplay] = useState(false);
@@ -45,7 +44,7 @@ const SearchBar = () => {
         placeholder="Type to search"
         value={search}
         onChange={event => setSearch(event.target.value)}
-        autocomplete="off"
+        autoComplete="off"
       />
       {display && (
         <div className="autoContainer">

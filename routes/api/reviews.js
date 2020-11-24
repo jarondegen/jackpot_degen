@@ -16,8 +16,7 @@ router.get('/:id', asyncHandler(async function (req, res, next) {
 
 router.post('/new', asyncHandler(async function (req, res, next) {
     const { userId, roomId, review } = req.body;
-    const newReview = await Review.create({userId, roomId, review});
-    console.log(newReview)
+    await Review.create({userId, roomId, review});
     res.json('ok');
 }));
 

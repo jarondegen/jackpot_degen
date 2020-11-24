@@ -8,7 +8,6 @@ import '../css/login-page.css';
 const LogInForm = () => {
     const [email, setEmail] = useState('demo@example.com');
     const [password, setPassword] = useState('password');
-    const [currentUserId, setCurrentUserId] = useState('');
     const dispatch = useDispatch();
     const { id, loggedIn } = useSelector(state => state.Auth)
     const [errors, setErrors] = useState([])
@@ -30,13 +29,11 @@ const LogInForm = () => {
         });
         const data = await response.json()
         if (response.ok && !data.error) {
-          const { user } = data //await response.json();
-          setCurrentUserId(user.id);
+          const { user } = data
           dispatch(setUser(user));
           dispatch(setLoggedIn(true))
         } else {
-          const { error } = data //await response.json()
-          console.log(error)
+          const { error } = data
           setErrors(error.errors)
         }
       }

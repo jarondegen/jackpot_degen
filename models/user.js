@@ -63,7 +63,6 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   User.prototype.toSafeObject = function () {
-    // console.log(this)
     return {
       email: this.email,
       id: this.id,

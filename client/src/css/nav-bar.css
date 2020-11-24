@@ -36,7 +36,10 @@ nav{
 .navbar-logo-container {
     grid-column: 1;
     height: 100%;
+}
 
+.navbar-logo-container:hover {
+    cursor: pointer;
 }
 
 .logo-div {

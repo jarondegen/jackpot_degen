@@ -12,8 +12,6 @@ import Footer from './components/Footer';
 
 function App() {
   const { id } = useSelector(state => state.Auth)
-  
-  console.log(id)
 
   return (
       <>

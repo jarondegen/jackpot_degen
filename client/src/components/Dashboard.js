@@ -22,11 +22,11 @@ const Dashboard = () => {
         dispatch(getSubs(id));
         dispatch(setReportMade(false));
         
-    }, [reportMade])
+    }, [dispatch, reportMade, id])
     
     useEffect(() => {
         dispatch(setChartId(subsArr && subsArr[0]))
-    }, [subsArr])
+    }, [dispatch, subsArr])
     
     const handleJackpotClick = (e) => {
         dispatch(setChartId(e.target.id))
@@ -55,9 +55,9 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="tabs-content-container">
-                            {view == 1? <LineChart className="the-line-chat"/> : null}
-                            {view == 2? <HistoryTab /> : null}
-                            {view == 3? <AccountTab /> : null}
+                            {view === "1" && <LineChart className="the-line-chat"/>}
+                            {view === "2" && <HistoryTab />}
+                            {view === "3" && <AccountTab />}
                         </div>
                     </div>
                     <div className="my-jackpots-div">
@@ -85,7 +85,7 @@ const Dashboard = () => {
                                 </div>
                             )
                             }
-                        <img className="my-jackpots-logo" src="../images/logo.png" />
+                        <img alt="JPD Logo" className="my-jackpots-logo" src="../images/logo.png" />
                     </div>
                     <SubscriptionList className="subscription-container"/>
                     <ReportJackpot className="report-jackpot" props={{roomNames, jackpots}}/>

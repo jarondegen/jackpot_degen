@@ -23,7 +23,7 @@ export const getFeed = () => async dispatch => {
     const data = await parser.parseURL(CORS_PROXY + 'https://www.pokernews.com/rss.php');
     dispatch(setFeed(data.items))
     const imageSources = []
-    data.items.map(item => {
+    data.items.forEach(item => {
         const spliters = item.content.split(" ")
         imageSources.push(spliters[1].slice(5, -1))
     })

@@ -48,11 +48,9 @@ const cityId =
 
 
 router.post('/new', [email, password, confirmPassword, userName, cityId], asyncHandler(async function (req, res, next) {
-    // console.log(req.body.formDetails)
-    const { cityId, userName, email, password, confirmPassword } = req.body
+    const { cityId, userName, email, password } = req.body
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(req.body)
       return next({ status: 422, errors: errors.array() });
     }
     const newMember =  await User.create({

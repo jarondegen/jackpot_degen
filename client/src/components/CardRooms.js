@@ -50,11 +50,11 @@ const CardRooms = () => {
 
     useEffect(()=> {
         dispatch(getStates());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         dispatch(getCities(state));
-    }, [state]);
+    }, [state, dispatch]);
     //for city search ^^^
 
 

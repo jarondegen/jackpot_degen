@@ -24,6 +24,7 @@
     flex-direction: column;
     width: 100%;
     padding: 5%;
+    min-width: 450px;
 }
 
 
@@ -33,10 +34,10 @@
 }
 
 .signup-form-el {
-    margin: 2%;
+    margin: 1%;
     width: 50%;
     border-radius: 5px;
-    padding: 2%;
+    padding: 1.5%;
 }
 
 .signup-form-input {
@@ -57,6 +58,7 @@
 
 .signup-form-button:hover {
     background-color: rgb(6, 189, 12);
+    cursor: pointer;
 }
 
 .signup-form-have-account {

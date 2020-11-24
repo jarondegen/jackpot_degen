@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFeed } from '../store/News';
 
@@ -16,7 +15,7 @@ const NewsFeed = () => {
         }
         dispatch(getFeed())
         setIsLoading(false)
-    },[]);
+    },[dispatch, feed.length]);
 
     if (isLoading) {
         return (
@@ -32,8 +31,8 @@ const NewsFeed = () => {
                     {feed && feed.map((item, i) => 
                         <div key={i} className="news-story-container">
                             <p key={item.pubDate} className="news-story-date">{item.pubDate.split(" ").slice(0,3).join(" ")}</p>
-                            <img keu={imgs[i]} className="news-story-pic" key={imgs[i]}src={imgs[i]}/>
-                            <a key={item.link} target="_blank" className="news-story-link" href={item.link} key={item.link}>{item.title}</a>
+                            <img alt={imgs[i]} className="news-story-pic" key={imgs[i]}src={imgs[i]}/>
+                            <a rel="noopener noreferrer" target="_blank" className="news-story-link" href={item.link} key={item.link}>{item.title}</a>
                             <p key={item.contentSnippet} className="news-story-snippet">
                                 {item.contentSnippet.length > 200 ? `${item.contentSnippet.slice(0,200)}...` : item.contentSnippet}
                             </p>

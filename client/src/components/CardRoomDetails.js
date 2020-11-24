@@ -21,16 +21,16 @@ const CardRoomDetails = ({ match }) => {
     useEffect(() => {
         dispatch(getSubs(Auth.id))
         subsArr.forEach(sub => {
-            if (sub == id) {
+            if (sub === id) {
                 setSubbed(true)
             }
         })   
-    }, [])
+    }, [dispatch, Auth.id])
 
     useEffect(() => {
         dispatch(getDetails(id))
         dispatch(setChartId(id))
-    }, [])
+    }, [dispatch, id])
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -77,7 +77,7 @@ const CardRoomDetails = ({ match }) => {
                 <h1 className="cardroom-details-title">{cardRoom.name}</h1>
                 <h3 className="cardroom-details-location">{`${city}, ${state}`}</h3>
                 <p className="cardroom-details-food">{`Serving Food: ${cardRoom.food ? 'Yes' : 'No'}`}</p>
-                { subbed == true ? (
+                { subbed === true ? (
                     <button className="cardroom-details-sub-button" onClick={handleUnsub}>
                         Unsubscribe
                     </button>

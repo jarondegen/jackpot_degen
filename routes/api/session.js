@@ -27,7 +27,6 @@ router.post('/', [email, password], asyncHandler(async (req, res, next) => {
 
   const { email, password } = req.body;
   const user = await UserRepo.findByEmail(email);
-  console.log(user)
   if (!user.isValidPassword(password) || !user.dataValues) {
     const error = new Error('Login failed');
     error.status = 401;

@@ -71,7 +71,6 @@ const SignUpForm = () => {
             history.push("/users/success");
         }else {
             const { error } = await data.json();
-            console.log(error)
             setErrors(error.errors)
             const eContainer = document.getElementById('ec')
             eContainer.setAttribute('class', 'errors-container')
@@ -81,7 +80,7 @@ const SignUpForm = () => {
     return (
         <div className="signup-page-container">
             <div className="sign-up-form-container">
-                <div className="signup-logo-div"><img className="signup-form-logo" src={logo}/></div>
+                <div className="signup-logo-div"><img alt="JPD Logo" className="signup-form-logo" src={logo}/></div>
                 <h3 className="signup-title">Let's make you an account.</h3>
                 <form method="post" action="/api/users/new" className="sign-up-form-form" onSubmit={handleSubmit}>
                     <input className="signup-form-input signup-form-el" value={userName} type="text" name="userName" placeholder="User Name" onChange={handleUserName}/>
