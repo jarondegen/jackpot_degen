@@ -5,7 +5,6 @@ const express = require('express');
 const helmet = require('helmet');
 const path = require('path');
 const logger = require('morgan');
-// const csurf = require('csurf');
 const routes = require('./routes');
 
 const { ValidationError } = require("sequelize");
@@ -23,13 +22,6 @@ app.use(cookieParser())
 // Security Middleware
 app.use(cors({ origin: true }));
 app.use(helmet({ hsts: false }));
-// app.use(csurf({
-//   cookie: {
-//     secure: process.env.NODE_ENV === 'production',
-//     sameSite: process.env.NODE_ENV === 'production',
-//     httpOnly: true
-//   }
-// }));
 
 
 app.use(routes);

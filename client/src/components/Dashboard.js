@@ -10,7 +10,7 @@ import '../css/dashboard.css'
 import LineChart from './LineChart';
 import HistoryTab from './HistoryTab';
 import AccountTab from './AccountTab';
-import { Sparklines, SparklinesLine, SparklinesSpots } from 'react-sparklines';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
