@@ -45,6 +45,9 @@ const LogInForm = () => {
     return (
         <>
           <div className="real-page-container">
+            <div>
+              <a href="/about">About</a>
+            </div>
             <div className="page-container">
               <div className="login-picture-container">
               </div>

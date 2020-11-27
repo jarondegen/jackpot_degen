@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import LogInForm from './components/LogInForm';
 import Dashboard from './components/Dashboard';
 import SignUpForm from './components/SignUpForm';
+import AboutPage from './components/AboutPage';
 import UserSuccess from './components/UserSuccess';
 import CardRoomDetails from './components/CardRoomDetails';
 import CardRooms from './components/CardRooms';
@@ -30,6 +31,7 @@ function App() {
                 </Route>
             </Switch>
             <Switch>
+                <Route path="/about" component={AboutPage} />
                 <Route path={`/dashboard/${id}`}>
                     <Dashboard />
                 </Route>
