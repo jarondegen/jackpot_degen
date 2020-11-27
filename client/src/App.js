@@ -19,15 +19,15 @@ function App() {
         <BrowserRouter>
             {id && <NavBar />}
             <Switch>
+                <Route exact={true} path={`/users/new`}>
+                    <SignUpForm />
+                </Route>
                 <Route path="/login">
                     {id ?
                         <Redirect to={`/dashboard/${id}`} />
                         : 
                         <LogInForm />
                     }
-                </Route>
-                <Route path={`/users/new`}>
-                    <SignUpForm />
                 </Route>
             </Switch>
             <Switch>
@@ -40,7 +40,7 @@ function App() {
                 </Route>
                 <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
                 <Route path={`/cardrooms`} component={CardRooms} />
-                <Route path="/">
+                <Route exact={true} path="/">
                     {!id ? 
                     <Redirect to="/login" />
                     :

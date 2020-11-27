@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import logo from '../images/logo.jpg';
 import '../css/signup.css'
 import { getCities, getStates, setState, setCity, setUserName, 
@@ -78,6 +79,11 @@ const SignUpForm = () => {
     }
     
     return (
+        <>
+        <div className="login-page-about-link">
+            <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
+            <NavLink className="nav-link" to={`/login`} activeClassName="active">Log in</NavLink>
+        </div>
         <div className="signup-page-container">
             <div className="sign-up-form-container">
                 <div className="signup-logo-div"><img alt="JPD Logo" className="signup-form-logo" src={logo}/></div>
@@ -113,6 +119,7 @@ const SignUpForm = () => {
                 </a>
             </div>
         </div>
+        </>
     );
 };
 

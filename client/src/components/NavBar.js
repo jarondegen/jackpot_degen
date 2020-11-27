@@ -31,10 +31,14 @@ const NavBar =  () => {
                             <>
                                 <NavLink className="nav-link" to={`/dashboard/${id}`} activeClassName="active">Dashboard</NavLink>
                                 <NavLink className="nav-link" to={`/cardrooms`} activeClassName="active">Card Rooms</NavLink>
+                                <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
                                 <LogOutButton className="nav-link logout-button"/>
                             </>
                             :
-                            <NavLink className="nav-link" to="/login" activeClassName="active">Login</NavLink>
+                            <>
+                                <NavLink className="nav-link" exact={true} to="/login" activeClassName="active">Login</NavLink>
+                                <NavLink className="nav-link" exact={true} to="/users/new" activeClassName="active">Sign Up</NavLink>
+                            </>
                         }
                 </div>
             </div>

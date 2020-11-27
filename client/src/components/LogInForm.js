@@ -3,6 +3,7 @@ import { setUser, setLoggedIn } from '../store/Auth';
 import { useState } from 'react'
 import { Redirect, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import '../css/login-page.css';
 
 const LogInForm = () => {
@@ -45,8 +46,9 @@ const LogInForm = () => {
     return (
         <>
           <div className="real-page-container">
-            <div>
-              <a href="/about">About</a>
+            <div className="login-page-about-link">
+              <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
+              <NavLink className="nav-link" to={`/users/new`} activeClassName="active">Sign Up</NavLink>
             </div>
             <div className="page-container">
               <div className="login-picture-container">

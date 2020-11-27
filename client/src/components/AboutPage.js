@@ -1,13 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import addCardRoomGif from '../images/gifs/add-card-rooms.gif';
 import dashboardGif from '../images/gifs/dashboard.gif';
 import reportGif from '../images/gifs/report.gif';
 import signupGif from '../images/gifs/sign-up.gif';
-import logo from '../images/logo.jpg';
 import '../css/about-page.css';
+import NavBar from '../components/NavBar';
 
 const AboutPage = () => {
+    const { id } = useSelector(state => state.Auth);
     return (
+        <>
+        {!id && <NavBar />}
         <div className="About-page-page-container">
             {/* <h1>About Page</h1> */}
             <div className="about-page-section section-one">
@@ -62,8 +66,8 @@ const AboutPage = () => {
                             jackpots larger
                         </p>
                     </div>
-                    <div className="about-page-how-to-container">
-                        <p className="about-page-how-to-1 winbig">Always be accurate and WIN BIG!</p>
+                    <div id="about-page-last-step" className="about-page-how-to-container">
+                        <p className="about-page-how-to-1 winbig">Always report accurately and WIN BIG!</p>
                         {/* <img className="about-page-how-to-2 win-img" src={logo} /> */}
                     </div>
                 </div>
@@ -89,6 +93,7 @@ const AboutPage = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

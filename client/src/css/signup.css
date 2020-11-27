@@ -92,3 +92,11 @@
     width: 30%;
     height: 100%;
 }
+
+.login-page-about-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    margin-top: 1%;
+}
