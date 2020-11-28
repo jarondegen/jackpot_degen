@@ -37,7 +37,7 @@ const AboutPage = () => {
                     </p>
                     <p>
                         We hope you enjoy using Jackpot Degen and we
-                        are excited to have you part of the Degen community </p>
+                        are excited to have you part of the Degen community. </p>
                 </div>
             </div>
             <div className="about-page-section section-two">
@@ -46,20 +46,20 @@ const AboutPage = () => {
                 </div>
                 <div className="about-section-div 2-2">
                     <div className="about-page-how-to-container">
-                        <p className="about-page-how-to-1"><span className="about-create-word">Create</span> an account</p>
+                        <p className="about-page-how-to-1"><span className="about-create-word">Create</span> an account.</p>
                         <img className="about-page-how-to-2 create-acount-img" src={signupGif} />
                     </div>
                     <div className="about-page-how-to-container">
                         <img className="about-page-how-to-1 add-rooms-img" src={addCardRoomGif} />
                         <p className="about-page-how-to-2">
                             <span className="about-create-word">Search</span> and <span className="about-create-win">add</span> all of your favorite <span className="about-create-word">poker rooms </span> 
-                            in your city or around the country
+                            in your city or around the country.
                         </p>
                     </div>
                     <div className="about-page-how-to-container">
                         <p className="about-page-how-to-1">
                             <span className="about-create-word">Get</span> all your<span className="about-create-word">jackpot stats</span> and<span className="about-create-win">poker news </span> 
-                            straight to your dashboard
+                            straight to your dashboard.
                         </p>
                         <img className="about-page-how-to-2 dashboard-img" src={dashboardGif} />
                     </div>
@@ -68,7 +68,7 @@ const AboutPage = () => {
                         <p className="about-page-how-to-2">
                             <span className="about-create-word">Report</span> bad beat<span className="about-create-word">jackpots</span> while your playing 
                             so others can see and come play with you to make 
-                            jackpots larger
+                            jackpots larger.
                         </p>
                     </div>
                     <div id="about-page-last-step" className="about-page-how-to-container">
