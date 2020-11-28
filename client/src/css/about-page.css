@@ -19,9 +19,7 @@
     width: 50%;
     font-weight: bold;
     font-size: 1.3rem;
-    margin: none;
-    /* color: rgb(0,200,6); */
-    
+    margin: none;    
 }
 
 .about-page-how-to-1 {
@@ -102,17 +100,11 @@
     margin: 2%;
 }
 
-/* #about-page-last-step {
-    background-image: url('../images/falling-cash.gif');
-    background-position: center;
-    background-repeat: no-repeat;
-} */
-
 .about-create-word {
     font-weight: bold;
     font-size: 1.3rem;
     color: rgb(0,200,6);
-    /* text-decoration: underline; */
+    text-transform: none;
 }
 
 .about-create-win {

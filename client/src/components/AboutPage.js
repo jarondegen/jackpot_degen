@@ -58,7 +58,7 @@ const AboutPage = () => {
                     </div>
                     <div className="about-page-how-to-container">
                         <p className="about-page-how-to-1">
-                            <span className="about-create-word">Get</span> all your<span className="about-create-word">jackpot stats</span> and<span className="about-create-win">poker news </span> 
+                            <span className="about-create-word">Get</span> all your<span className="about-create-win">jackpot stats</span> and<span className="about-create-win">poker news </span> 
                             straight to your dashboard.
                         </p>
                         <img className="about-page-how-to-2 dashboard-img" src={dashboardGif} />
