@@ -82,7 +82,7 @@ const SignUpForm = () => {
         <>
         <div className="login-page-about-link">
             <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
-            <NavLink className="nav-link" to={`/login`} activeClassName="active">Log in</NavLink>
+            <NavLink className="nav-link" to={`/login`} activeClassName="active">Sign in</NavLink>
         </div>
         <div className="signup-page-container">
             <div className="sign-up-form-container">
@@ -115,7 +115,7 @@ const SignUpForm = () => {
                     ): null}
                 </div>
                 <a className="signup-form-have-account" href="/login">
-                    Already have an account? Log in here
+                    Already have an account? Sign in here
                 </a>
             </div>
         </div>

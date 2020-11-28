@@ -19,6 +19,8 @@
     width: 50%;
     font-weight: bold;
     font-size: 1.3rem;
+    margin: none;
+    /* color: rgb(0,200,6); */
     
 }
 
@@ -70,10 +72,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 70%;
     margin:auto;
     margin-top: 5%;
     margin-bottom: 5%;
+    
+}
+
+.one-two {
+    font-size: 1.1rem;
 }
 
 .section-four {
@@ -100,3 +107,18 @@
     background-position: center;
     background-repeat: no-repeat;
 } */
+
+.about-create-word {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgb(0,200,6);
+    /* text-decoration: underline; */
+}
+
+.about-create-win {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: rgb(0,200,6);
+    margin-left: 1%;
+    text-transform: none;
+}

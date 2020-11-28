@@ -48,7 +48,7 @@ const LogInForm = () => {
           <div className="real-page-container">
             <div className="login-page-about-link">
               <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
-              <NavLink className="nav-link" to={`/users/new`} activeClassName="active">Sign Up</NavLink>
+              <NavLink className="nav-link" to={`/users/new`} activeClassName="active">Sign up</NavLink>
             </div>
             <div className="page-container">
               <div className="login-picture-container">
@@ -69,9 +69,9 @@ const LogInForm = () => {
                     <input className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
                     <br />
                     <button type="submit" onClick={handleSubmit} className="login-form-button">
-                        Login
+                        Sign in
                     </button>
-                <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign Up</Link>
+                <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign up</Link>
               </div>
             </div>
         </div>

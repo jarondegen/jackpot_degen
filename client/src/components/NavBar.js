@@ -11,7 +11,9 @@ const NavBar =  () => {
     const { id } = useSelector(state => state.Auth)
 
     const handleLogoClick = () => {
-        history.push(`/dashboard/${id}`)
+        if (id) {
+            history.push(`/dashboard/${id}`)
+        }
     }
 
     return (
@@ -36,8 +38,8 @@ const NavBar =  () => {
                             </>
                             :
                             <>
-                                <NavLink className="nav-link" exact={true} to="/login" activeClassName="active">Login</NavLink>
-                                <NavLink className="nav-link" exact={true} to="/users/new" activeClassName="active">Sign Up</NavLink>
+                                <NavLink className="nav-link" exact={true} to="/login" activeClassName="active">Sign in</NavLink>
+                                <NavLink className="nav-link" exact={true} to="/users/new" activeClassName="active">Sign up</NavLink>
                             </>
                         }
                 </div>
