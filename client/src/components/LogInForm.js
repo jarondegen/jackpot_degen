@@ -43,6 +43,12 @@ const LogInForm = () => {
         return <Redirect to={`/dashboard/${id}`} />
       }
 
+      const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            handleSubmit(e)
+          }
+    }
+
     return (
         <>
           <div className="real-page-container">
@@ -63,10 +69,10 @@ const LogInForm = () => {
                       )) : null}
                     </div>
                     <label className="login-form-form-label" htmlFor="email">Email</label>
-                    <input className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
+                    <input onKeyPress={handleEnter} className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
                     <br />
                     <label className="login-form-form-label" htmlFor="password">Password</label>
-                    <input className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
+                    <input onKeyPress={handleEnter} className="login-form-input" name="password" type="password" placeholder="password" value={password} onChange={changePassword}/>
                     <br />
                     <button type="submit" onClick={handleSubmit} className="login-form-button">
                         Sign in

@@ -51,6 +51,12 @@ const ReportJackpot = () => {
             },4000)
         }
     },[reportMade])
+
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            handleSubmit(e)
+          }
+    }
     
     return (
         <>
@@ -72,7 +78,7 @@ const ReportJackpot = () => {
                             <option value={false}>No</option>
                         </select>   
                         <div className="input-icon">
-                            <input placeholder="please be precise" className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
+                            <input onKeyPress={handleEnter} placeholder="please be precise" className="report-form-el report-form-input" type="number" value={amount} onChange={handleAmount}/>
                             <i>$</i>
                         </div>
                         <button className="report-form-el report-form-button" onClick={handleSubmit} type="submit">Report</button>
