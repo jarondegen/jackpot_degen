@@ -63,7 +63,7 @@
 
 @media screen and (max-width:980px) {
   .card-rooms-page-container {
-    width: 100vw;
+    width: 100%;
   }
 
   .card-rooms-title {
@@ -82,18 +82,19 @@
   }
 
   .cardroom-select-el {
-    height: 200px;
-    font-size: 2rem;
+    font-size: 3rem;
     width: 75%;
     margin: 4%;
     padding: 1%;
+    text-indent: 10px;
+    max-height: calc(1.2em + 24px);
+    border-radius: 5px;
   }
   .cardroom-select-el > option {
     font-size: 2rem;
-    height: 100px;
     margin: auto;
-    /* line-height: */
     padding: 1%;
+    max-height: calc(1.2em + 24px);
 
   }
 

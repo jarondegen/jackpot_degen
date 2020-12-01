@@ -197,7 +197,7 @@ nav{
 
     .menu-menu-link-div {
         width: 100%;
-        height: 120px;
+        height: 170px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -217,7 +217,7 @@ nav{
     }
 
     .nav-link {
-        font-size: 2rem;
+        font-size: 3rem;
         width: 100%;
         height: 100%;
         margin: none;
@@ -250,7 +250,7 @@ nav{
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .mobile-logout-button:hover {
