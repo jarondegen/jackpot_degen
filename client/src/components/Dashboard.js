@@ -91,9 +91,6 @@ const Dashboard = () => {
                                 </div>
                             )
                             }
-                        <Sparklines data={[88000,80000,35000]} svgWidth={10} svgHeight={10} margin={0}>
-                            <SparklinesLine style={{color:"green", stroke:"red", strokeWidth:2, fill:"black"}}  />
-                        </Sparklines>
                         <img alt="JPD Logo" className="my-jackpots-logo" src="../images/logo.png" />
                     </div>
                     <SubscriptionList className="subscription-container"/>

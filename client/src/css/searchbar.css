@@ -32,9 +32,6 @@ input:focus {
   
 .autoContainer {
     position: absolute;
-    /* border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: lightgray; */
     background-color: whitesmoke;
     right: 9.5%;
     top: 75%;
