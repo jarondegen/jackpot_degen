@@ -38,3 +38,22 @@
     height: 40px;
     width: 40px;
 }
+
+@media screen and (max-width:980px) {
+    .footer-container {
+        height: 135px;
+    }
+
+    .footer-created-by, .footer-jpd {
+        font-size: 1.7rem;
+    }
+
+    .footer-github-logo {
+        height: 80px;
+        width: 80px;
+    }
+    .footer-github-container {
+        height: 80px;
+        width: 80px;
+    }
+}
