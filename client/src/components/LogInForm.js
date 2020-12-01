@@ -53,8 +53,8 @@ const LogInForm = () => {
         <>
           <div className="real-page-container">
             <div className="login-page-about-link">
-              <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
-              <NavLink className="nav-link" to={`/users/new`} activeClassName="active">Sign up</NavLink>
+              <NavLink className="login-page-links nav-link" to={`/about`} activeClassName="active">About</NavLink>
+              <NavLink className="login-page-links nav-link" to={`/users/new`} activeClassName="active">Sign up</NavLink>
             </div>
             <div className="page-container">
               <div className="login-picture-container">

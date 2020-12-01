@@ -100,3 +100,41 @@
     height: 50px;
     margin-top: 1%;
 }
+
+@media screen and (max-width: 980px) {
+    .signup-page-container {
+        margin-top: 10%;
+    }
+
+    .sign-up-form-container {
+        width: 95%;
+    }
+
+    .signup-form-logo {
+        width: 50%;
+    }
+
+    .signup-title {
+        font-size: 2.5rem;
+    }
+
+    .signup-form-el {
+        height: 100px;
+        font-size: 2rem;
+        width: 75%;
+        margin: 2%;
+    }
+
+    .signup-form-have-account {
+        font-size: 2.5rem;
+    }
+
+    .sign-up-page-link {
+        font-size: 2.5rem;
+        margin-top: 15%;
+    }
+
+    .signup-form-input {
+        padding-left: 5%;
+    }
+}   

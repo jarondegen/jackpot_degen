@@ -81,8 +81,8 @@ const SignUpForm = () => {
     return (
         <>
         <div className="login-page-about-link">
-            <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
-            <NavLink className="nav-link" to={`/login`} activeClassName="active">Sign in</NavLink>
+            <NavLink className="sign-up-page-link nav-link" to={`/about`} activeClassName="active">About</NavLink>
+            <NavLink className="sign-up-page-link nav-link nav-link" to={`/login`} activeClassName="active">Sign in</NavLink>
         </div>
         <div className="signup-page-container">
             <div className="sign-up-form-container">
