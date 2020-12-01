@@ -60,3 +60,54 @@
   max-height: 50px;
   margin-bottom: 5%;
 }
+
+@media screen and (max-width:980px) {
+  .card-rooms-page-container {
+    width: 100vw;
+  }
+
+  .card-rooms-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 15%;
+  }
+
+  .selects-container {
+    width: 80%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardroom-select-el {
+    height: 200px;
+    font-size: 2rem;
+    width: 75%;
+    margin: 4%;
+    padding: 1%;
+  }
+  .cardroom-select-el > option {
+    font-size: 2rem;
+    height: 100px;
+    margin: auto;
+    /* line-height: */
+    padding: 1%;
+
+  }
+
+  .card-rooms-table-container {
+    width: 90%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
+  .card-rooms-table {
+    font-size: 2.3rem;
+  }
+
+  .card-rooms-table  td, .card-rooms-table  th {
+    padding: 4%;
+  }
+}

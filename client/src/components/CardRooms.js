@@ -16,6 +16,7 @@ const CardRooms = () => {
     const { cities } = useSelector(state => state.SignUp)
 
     const handleStateSelect = (e) => {
+        if (e.target.value === 'Select A State') return
         let id;
         states.forEach(state => {
             if (e.target.value === state[0]) {
@@ -32,6 +33,7 @@ const CardRooms = () => {
     };
     
     const handleCitySelect= (e) => {
+        if (e.target.value === 'Select A City') return
         let id;
         cities.forEach(city => {
             if (e.target.value === city[0]) {
