@@ -103,6 +103,7 @@
 
 @media screen and (max-width: 980px) {
     .signup-page-container {
+        width: 100%;
         margin-top: 10%;
     }
 

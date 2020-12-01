@@ -51,7 +51,7 @@ const Reviews = ({props}) => {
                 </button>
             </div>
             <div className="reviews-review-container">
-                {reviews.length > 0 ?reviews.map(rev => 
+                {reviews.length > 0 ? reviews.map(rev => 
                     <div key={rev.review} className="review-container">
                         <p className="review-date">{rev.createdAt}</p>
                         <div className="review-review-container">
