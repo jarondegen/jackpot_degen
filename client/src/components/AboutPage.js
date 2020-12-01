@@ -15,10 +15,10 @@ const AboutPage = () => {
         <div className="About-page-page-container">
             {/* <h1>About Page</h1> */}
             <div className="about-page-section section-one">
-                <div className="about-section-div 1-1">
+                <div className="about-section-div-what-title">
                     <h1>What is Jackpot Degen?</h1>
                 </div>
-                <div className="about-section-div one-two">
+                <div className="about-section-desc-div one-two">
                     <p>Jackpot Degen is an easy-to-use poker room and 
                         bad beat jackpot tracker.  Tired of calling 
                         poker rooms and casinos one-by-one to find out 
@@ -46,33 +46,33 @@ const AboutPage = () => {
                 </div>
                 <div className="about-section-div 2-2">
                     <div className="about-page-how-to-container">
-                        <p className="about-page-how-to-1"><span className="about-create-word">Create</span> an account.</p>
-                        <img className="about-page-how-to-2 create-acount-img" src={signupGif} />
+                        <p className="about-page-how-to-1 mobile-how-to-desc"><span className="about-create-word">Create</span> an account.</p>
+                        <img className="about-page-how-to-2 mobile-how-to-gif-1 create-acount-img" src={signupGif} />
                     </div>
                     <div className="about-page-how-to-container">
-                        <img className="about-page-how-to-1 add-rooms-img" src={addCardRoomGif} />
-                        <p className="about-page-how-to-2">
+                        <img className="about-page-how-to-1 mobile-how-to-gif add-rooms-img" src={addCardRoomGif} />
+                        <p className="about-page-how-to-2 mobile-how-to-desc">
                             <span className="about-create-word">Search</span> and <span className="about-create-win">add</span> all of your favorite <span className="about-create-word">poker rooms </span> 
                             in your city or around the country.
                         </p>
                     </div>
                     <div className="about-page-how-to-container">
-                        <p className="about-page-how-to-1">
+                        <p className="about-page-how-to-1 mobile-how-to-desc">
                             <span className="about-create-word">Get</span> all your<span className="about-create-win">jackpot stats</span> and<span className="about-create-win">poker news </span> 
                             straight to your dashboard.
                         </p>
-                        <img className="about-page-how-to-2 dashboard-img" src={dashboardGif} />
+                        <img className="about-page-how-to-2 mobile-how-to-gif dashboard-img" src={dashboardGif} />
                     </div>
                     <div className="about-page-how-to-container">
-                        <img className="about-page-how-to-1 report-img" src={reportGif} />
-                        <p className="about-page-how-to-2">
+                        <img className="about-page-how-to-1 report-img mobile-how-to-gif" src={reportGif} />
+                        <p className="about-page-how-to-2 mobile-how-to-desc">
                             <span className="about-create-word">Report</span> bad beat<span className="about-create-word">jackpots</span> while your playing 
                             so others can see and come play with you to make 
                             jackpots larger.
                         </p>
                     </div>
                     <div id="about-page-last-step" className="about-page-how-to-container">
-                        <p className="about-page-how-to-1 winbig">Always report accurately and<span className="about-create-win">WIN BIG!</span></p>
+                        <p className="about-page-how-to-1 winbig mobile-how-to-desc">Always report accurately and<span className="about-create-win">WIN BIG!</span></p>
                         {/* <img className="about-page-how-to-2 win-img" src={logo} /> */}
                     </div>
                 </div>
