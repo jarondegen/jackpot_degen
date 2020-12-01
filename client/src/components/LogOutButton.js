@@ -21,7 +21,9 @@ function LogoutButton() {
   return (
     <div id="logout-button-holder">
       <button className="logout-button" onClick={handleClick}>Sign out</button>
+      <div className="mobile-logout-button" onClick={handleClick}>Sign out</div>
     </div>
+
   );
 };
 

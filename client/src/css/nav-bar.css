@@ -100,3 +100,162 @@ nav{
 .logout-button:hover{
     color: rgb(0,200,6);
 }
+
+.navbar-burger-container {
+    display: none;
+}
+
+.mobile-logout-button {
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+    .navbar-nav{
+        height: 175px;
+    }
+
+    .navbar-container {
+        height: 100%;
+        grid-template-rows: 100%;
+    }
+
+    .flex-container, .flex-column  {
+        display: none;
+    }
+
+    .logo-div {
+        margin: auto;
+    }
+
+    .logout-button {
+        display: none;
+    }
+
+    #auto {
+        display: none;
+    }
+
+    .navbar-link-container {
+        display: none;
+    }
+
+    .navbar-logo-container {
+        grid-column: 1/3;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-logo {
+        width: 75px;
+        height: 100px;
+        margin-left: 8%;
+    }
+
+    .navbar-title {
+        margin: auto;
+        margin-left: 15%;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .navbar-burger-container {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .mobile-burger-img {
+        width: 100px;
+        height: 150px;
+        margin-right: 15%;
+    }
+
+    .mobile-burger-img:hover {
+        cursor: pointer;
+    }
+
+    .mobile-menu-container {
+        position: fixed;
+        width: 100vw;
+        /* height: 100%; */
+        display: block;
+        z-index: 1000;
+        
+    }
+
+    .menu-menu-link-div {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        text-align: center;
+        background-color: rgba(255,255,255,0.95);
+    }
+
+    .top-mobile-select {
+        border-top: 1px solid lightgray;
+    }
+
+    .menu-menu-link-div:hover {
+        cursor: pointer;
+        background-color: rgb(234, 234, 234);
+        color: rgb(0,200,6);
+    }
+
+    .nav-link {
+        font-size: 2rem;
+        width: 100%;
+        height: 100%;
+        margin: none;
+        padding: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logout-button {
+        font-size: 1.4rem;
+        margin:auto;
+    }
+
+    .logout-button:hover{
+        background-color: rgb(234, 234, 234);
+    }
+
+    #logout-button-holder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-logout-button {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    .mobile-logout-button:hover {
+        cursor: pointer;
+        color: rgb(0,200,6);
+    }
+    
+}
