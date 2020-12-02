@@ -142,4 +142,8 @@
     .signup-form-input {
         padding-left: 5%;
     }
+
+    .signup-error {
+        font-size: 2rem;
+    }
 }   

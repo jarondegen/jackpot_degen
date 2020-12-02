@@ -95,6 +95,7 @@
 
 .errors-div-error {
     color: red;
+    margin-top: 10%;
 }
 
 .login-page-about-link {
@@ -154,5 +155,10 @@
 
     .login-form-link:hover {
         color: rgb(6, 189, 12);
+    }
+
+    .errors-div-error {
+        font-size: 2rem;
+        margin-top: 15%;
     }
 }

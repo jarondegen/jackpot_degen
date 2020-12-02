@@ -184,7 +184,7 @@
     margin-left: 5%;
     padding: 1%;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
 }
 
 .report-title{
@@ -197,11 +197,6 @@
     color: red;
 }
 
-/* .report-title {
-    font-weight: bold;
-    font-size: 1rem
-} */
-
 .report-form-label{
     align-self: center;
 }
@@ -212,6 +207,7 @@
     border: none;
     height: 40px;
     margin: 2%;
+    text-indent: 5%;
 }
 
 .report-form-input:focus{
@@ -254,8 +250,6 @@
     position: relative;
     padding-left: 1%;
     padding-right: 1%;
-    /* margin-left: 1%;
-    margin-right: 1%; */
   }
   
   .input-icon > i {
@@ -267,6 +261,8 @@
     width: 25px;
     text-align: center;
     font-style: normal;
+    font-size: 2rem;
+    margin-left: 3%;
   }
   
   .input-icon > input {
@@ -525,6 +521,12 @@
     .report-form-el, .report-form-select {
         height: 100px;
         font-size: 2rem;
+    }
+
+    .report-error {
+        font-size: 1.7rem;
+        width: 100%;
+        text-align: center;
     }
 
     .big-jackpot-header {

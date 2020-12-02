@@ -63,7 +63,7 @@ const ReportJackpot = () => {
             <div className="report-jackpot-contianer">
                 <h3 className="report-title" >Report A Jackpot</h3>
                 {errors.length > 0 ? errors.map(err => 
-                    <p className="report-error">{err.msg}</p>
+                    <li className="report-error">{err.msg}</li>
                 ): null}
                 <div className="report-jackpot-form-containeer">
                     <select className="report-form-el report-form-select" value={roomName} onChange={handleRoomSelect} >

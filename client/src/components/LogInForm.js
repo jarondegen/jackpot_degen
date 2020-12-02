@@ -63,11 +63,11 @@ const LogInForm = () => {
                 <h2 className="login-form-title">
                   Welcome to Jackpot Degen
                 </h2>
-                    <div className="errors-div">
+                    {/* <div className="errors-div">
                       {errors && errors.length > 0 ? errors.map(error => (
-                        <p className="errors-div-error">{error.msg}</p>
+                        <li className="errors-div-error">{error.msg}</li>
                       )) : null}
-                    </div>
+                    </div> */}
                     <label className="login-form-form-label" htmlFor="email">Email</label>
                     <input onKeyPress={handleEnter} className="login-form-input" name="email" type="text" placeholder="DemoUser@example.com" value={email} onChange={changeEmail}/>
                     <br />
@@ -77,6 +77,11 @@ const LogInForm = () => {
                     <button type="submit" onClick={handleSubmit} className="login-form-button">
                         Sign in
                     </button>
+                    <div className="errors-div">
+                      {errors && errors.length > 0 ? errors.map(error => (
+                        <li className="errors-div-error">{error.msg}</li>
+                      )) : null}
+                    </div>
                 <Link className="login-form-link" to='/users/new'>Don't Have an Account? Sign up</Link>
               </div>
             </div>
