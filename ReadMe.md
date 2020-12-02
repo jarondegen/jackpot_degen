@@ -43,6 +43,10 @@ As stated before [React](https://reactjs.org/) is used and is at the core of app
 
 ![Frontend Overview](./readme-resources/jsx.png)
 
+Jackpot Degen has also been built with mobile support for devices with smaller width screens.  This was done with CSS media queries and conditional React components. 
+
+![Frontend Overview](./readme-resources/mobile.png)
+
 ## Security & Authorization
 
 [Express](https://expressjs.com/), [express-validator](https://express-validator.github.io/docs/) and,[bcrypt](https://www.npmjs.com/package/bcrypt) are utilized for setting users login sessions in the backend and to handle hashed passwords. 
