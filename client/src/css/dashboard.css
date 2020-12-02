@@ -544,13 +544,16 @@
     }
 
     .news-story-link {
+        grid-column: 1/2;
         grid-row: 2/4;
+        width: 100%;
         font-size: 2rem;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
         overflow: hidden;
+        text-align: center;
     }
 
     .news-story-snippet {
@@ -559,6 +562,7 @@
 
     .news-story-date {
         font-size: 1.5rem;
+        margin-right: 20%;
     }
 
     .mobile-jackports-list {
