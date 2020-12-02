@@ -207,7 +207,7 @@
     border: none;
     height: 40px;
     margin: 2%;
-    text-indent: 5%;
+    /* text-indent: 5%; */
 }
 
 .report-form-input:focus{
@@ -261,8 +261,8 @@
     width: 25px;
     text-align: center;
     font-style: normal;
-    font-size: 2rem;
-    margin-left: 3%;
+    font-size: 1rem;
+    /* margin-left: 3%; */
   }
   
   .input-icon > input {
@@ -393,10 +393,6 @@
     cursor: pointer;
     color:  rgb(0,200,6);
 }
-
-/* .tabs-content-container {
-
-} */
 
 .dashboard-main {
     grid-column: 1/2;
@@ -622,5 +618,14 @@
 
     .history-table-container {
         margin-right: 5%;
+    }
+
+    .input-icon > i {
+        font-size: 2rem;
+        margin-left: 3%;
+    }
+
+    .report-form-input {
+        text-indent: 5%;
     }
 }
