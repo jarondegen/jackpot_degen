@@ -10,7 +10,7 @@ import '../css/dashboard.css'
 import LineChart from './LineChart';
 import HistoryTab from './HistoryTab';
 import AccountTab from './AccountTab';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import JackpotList from './JackpotsList';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
@@ -63,64 +63,11 @@ const Dashboard = () => {
                     </div>
                     <div className="my-jackpots-div">
                             <h3 className="my-jackpot-list-title">Jackpot List</h3>
-                            {roomNames.length > 0 ? roomNames.map((room, i) => {
-                                const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';//current
-                                const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
-                                return (
-                                    <div key={jackpots[i].roomId} id={jackpots[i].roomId} className={`my-jackpots-el-div ${isHitClass}`} onClick={handleJackpotClick}>
-                                        <p className="my-jackports-room-name" id={jackpots[i].roomId}>{room}</p>
-                                        <p className="my-jackports-room-hit" id={jackpots[i].roomId}>{isJackpotHit}</p>
-                                        <div>
-                                            <Sparklines data={sparkNumbers[i]} svgWidth={100} svgHeight={30}>
-                                                <SparklinesLine style={{stroke:jackpots[i].hit ? "red" : "green", strokeWidth:3, fill:jackpots[i].hit ? "red" : "green"}}  />
-                                            </Sparklines>
-                                        </div>
-                                        <p className="my-jackports-room-amount" id={jackpots[i].roomId}>
-                                            {jackpots[i] && `$${jackpots[i].amount}`}
-                                        </p>
-                                    </div>
-                                )
-                            })
-                            :
-                            (
-                                <div className="no-rooms-container">
-                                    <p>You are not subscribed to any card rooms yet..</p>
-                                    <a className="no-rooms-link" href="/cardrooms">
-                                        Find rooms here.
-                                    </a>
-                                </div>
-                            )
-                            }
+                            <JackpotList sparkNumbers={sparkNumbers} handleJackpotClick={handleJackpotClick} jackpots={jackpots }roomNames={roomNames}/>
                         <img alt="JPD Logo" className="my-jackpots-logo" src="../images/logo.png" />
                     </div>
                     <div className="mobile-jackports-list">
-                        {roomNames.length > 0 ? roomNames.map((room, i) => {
-                            const isJackpotHit = jackpots[i] && jackpots[i].hit ? 'Hit' : 'Current';//current
-                            const isHitClass = jackpots[i] && jackpots[i].hit ? "jackpot-el-hit" : "jackpot-el-not-hit"
-                            return (
-                                <div key={jackpots[i].roomId} id={jackpots[i].roomId} className={`my-jackpots-el-div ${isHitClass}`} onClick={handleJackpotClick}>
-                                    <p className="my-jackports-room-name" id={jackpots[i].roomId}>{room}</p>
-                                    <p className="my-jackports-room-hit" id={jackpots[i].roomId}>{isJackpotHit}</p>
-                                    <div>
-                                        <Sparklines data={sparkNumbers[i]} svgWidth={150} svgHeight={40}>
-                                            <SparklinesLine style={{stroke:jackpots[i].hit ? "red" : "green", strokeWidth:3, fill:jackpots[i].hit ? "red" : "green"}}  />
-                                        </Sparklines>
-                                    </div>
-                                    <p className="my-jackports-room-amount" id={jackpots[i].roomId}>
-                                        {jackpots[i] && `$${jackpots[i].amount}`}
-                                    </p>
-                                </div>
-                            )
-                        })
-                        :
-                        (
-                            <div className="no-rooms-container">
-                                <p>You are not subscribed to any card rooms yet..</p>
-                                <a className="no-rooms-link" href="/cardrooms">
-                                    Find rooms here.
-                                </a>
-                            </div>
-                        )}
+                        <JackpotList sparkNumbers={sparkNumbers} handleJackpotClick={handleJackpotClick} jackpots={jackpots }roomNames={roomNames}/>    
                     </div>
                     <SubscriptionList className="subscription-container"/>
                     <ReportJackpot className="report-jackpot" props={{roomNames, jackpots}}/>
