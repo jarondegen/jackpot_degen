@@ -20,11 +20,11 @@ const CardRoomDetails = ({ match }) => {
     
     useEffect(() => {
         dispatch(getSubs(Auth.id))  
-    }, [dispatch, Auth.id, id])
+    }, [dispatch, Auth, id])
 
     useEffect(() => {
         subsArr.forEach(sub => {
-            if (sub === id) {
+            if (sub === parseInt(id)) {
                 setSubbed(true)
             }
         })
@@ -73,6 +73,7 @@ const CardRoomDetails = ({ match }) => {
             setUnsubbed(true)
         }
     }
+
     return (
         <>
         <div className="cardroom-details-page-container">
@@ -80,7 +81,7 @@ const CardRoomDetails = ({ match }) => {
                 <h1 className="cardroom-details-title">{cardRoom.name}</h1>
                 <h3 className="cardroom-details-location">{`${city}, ${state}`}</h3>
                 <p className="cardroom-details-food">{`Serving Food: ${cardRoom.food ? 'Yes' : 'No'}`}</p>
-                { subbed === true ? (
+                { subbed ? (
                     <button className="cardroom-details-sub-button" onClick={handleUnsub}>
                         Unsubscribe
                     </button>
