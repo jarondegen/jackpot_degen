@@ -110,6 +110,10 @@ nav{
     display: none;
 }
 
+#mobile-menu-container {
+    display: none;
+}
+
 @media screen and (max-width: 980px) {
     html,body, #root {
     width: 100%;

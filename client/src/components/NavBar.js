@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutButton from './LogOutButton';
@@ -9,7 +9,7 @@ import burger from '../images/burger.png';
 
 const NavBar =  () => {
     const history = useHistory()
-    const { id } = useSelector(state => state.Auth)
+    const { id } = useSelector(state => state.Auth);
 
     const handleLogoClick = () => {
         if (id) {

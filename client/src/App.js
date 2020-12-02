@@ -16,7 +16,7 @@ function App() {
 
   return (
       <>
-        <BrowserRouter>
+        <BrowserRouter >
             {id && <NavBar />}
             <Switch>
                 <Route exact={true} path={`/users/new`}>

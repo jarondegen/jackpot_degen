@@ -9,11 +9,11 @@ import NavBar from '../components/NavBar';
 
 const AboutPage = () => {
     const { id } = useSelector(state => state.Auth);
+
     return (
         <>
         {!id && <NavBar />}
         <div className="About-page-page-container">
-            {/* <h1>About Page</h1> */}
             <div className="about-page-section section-one">
                 <div className="about-section-div-what-title">
                     <h1>What is Jackpot Degen?</h1>
