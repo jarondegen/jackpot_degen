@@ -367,13 +367,6 @@
     position: relative;
 }
 
-/* #line-chart {
-    
-} */
-
-
-
-
 .user-reports-container {
     grid-column: 1/2;
     text-align: center;
@@ -479,8 +472,11 @@
     }
 
     .dashboard-container {
+        width: 95%;
+        margin: auto;
         grid-template-columns: 100%;
         grid-template-rows: 3 auto;
+        margin: auto;
     }
 
     .dashboard-greeting {
@@ -506,9 +502,16 @@
         text-align: center;
     }
 
+    .subscription-list-container {
+        margin-right: 10%;
+    }
 
     .subscription-el, .subscription-links {
         font-size: 2rem;
+    }
+
+    .report-jackpot-form-containeer {
+        margin-right: 5%;
     }
 
     .report-title {
@@ -564,7 +567,9 @@
 
     .my-jackpots-el-div {
         display: grid;
-        grid-template-columns: 40% 10% 30% 20%;
+        grid-template-columns: 35% 15% 30% 20%;
+        margin: auto;
+        margin-top: 5%;
     }
 
     .my-jackpots-el-div > div {
@@ -574,18 +579,33 @@
     }
 
     .my-jackports-room-name {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
 
     .my-jackports-room-hit {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
 
     .my-jackports-room-amount {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
 
     .sub-container {
         grid-row: 3/4;
+        margin: auto;
+        margin-top: 10%;
+    }
+
+    .chart-container {
+        margin: auto;
+        width: 100%;
+    }
+
+    .chartjs-size-monitor {
+        margin: auto;
+    }
+
+    #line-chart {
+        margin: auto;
     }
 }
