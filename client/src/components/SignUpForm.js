@@ -108,8 +108,8 @@ const SignUpForm = () => {
                     <button className="signup-form-el signup-form-button" type="submit" >Sign Up</button>
                 </form>
                 <div id="ec" className="errors-container hidden">
-                    {errors.length > 0 ? errors.map(error => 
-                        <li className="signup-error" key={error.param}>
+                    {errors.length > 0 ? errors.map((error, i) => 
+                        <li className="signup-error" key={i}>
                             {error.msg}
                         </li>
                     ): null}
