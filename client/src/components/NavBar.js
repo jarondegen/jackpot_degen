@@ -10,7 +10,6 @@ import burger from '../images/burger.png';
 const NavBar =  () => {
     const history = useHistory()
     const { id } = useSelector(state => state.Auth)
-    const [burgerClicked, setBurgerClicked] = useState(false)
 
     const handleLogoClick = () => {
         if (id) {
@@ -18,12 +17,12 @@ const NavBar =  () => {
         }
     }
 
-    const handleBurgerClick = () => {
-        if (!burgerClicked) {
-            setBurgerClicked(true);
-        }else {
-            setBurgerClicked(false); 
+    const handleBurgerClick = (e) => {
+        const mobileMenu = document.getElementById('mobile-menu-container');
+        if (mobileMenu) {
+            mobileMenu.classList.toggle('show')
         }
+        e.stopPropagation();
     }
 
     return (
@@ -59,7 +58,7 @@ const NavBar =  () => {
                     </div>
                 </div>
             </nav>
-            {burgerClicked && <div className="mobile-menu-container">
+            <div className="" id="mobile-menu-container">
                 {id ? 
                     <>
                         <div onClick={handleBurgerClick} className="menu-menu-link-div top-mobile-select">
@@ -88,7 +87,7 @@ const NavBar =  () => {
                         </div>
                     </>
                 }
-            </div>}
+            </div>
         </>
     );
 };
