@@ -8,7 +8,7 @@ const SubscriptionList = () => {
     return (
         <>
             <div className="sub-container">
-                <h3 classlist="subscription-el" id="subscription-title" >My Card Rooms</h3>
+                <h3 classlist="subscription-el" id="subscription-title" >My Card Rooms Pages</h3>
                 <div className="subscription-list-container">
                         {roomNames.map((room, i) => 
                                 <Link className="subscription-el subscription-links" key={room} to={`/cardrooms/${subsArr[i]}`}>{room}</Link>              

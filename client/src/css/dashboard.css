@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: 65% 35%;
     grid-template-rows: 2 auto;
-    /* min-height: 100vh; */
     width: 90%;
     max-width: 1100px;
 }
@@ -49,10 +48,6 @@
     margin-bottom: 8%;
     flex-wrap: wrap;
 }
-
-/* .my-jackpots-el-div.pointer{
-    cursor: pointer;
-} */
 
 .my-jackpots-el {
     margin: 5%;
@@ -470,4 +465,127 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.mobile-jackports-list {
+    display: none;
+}
+
+
+@media screen and (max-width: 980px) {
+    .my-jackpots-div {
+        position: relative;
+        display: none;
+    }
+
+    .dashboard-container {
+        grid-template-columns: 100%;
+        grid-template-rows: 3 auto;
+    }
+
+    .dashboard-greeting {
+        font-size: 5rem;
+    }
+
+    .tab-tab {
+        font-size: 2.8rem;
+    }
+
+    .history-table > thead > tr >th, .history-table > tbody > tr > td, .history-table-delete {
+        font-size: 2rem;
+        padding: 3%;
+    }
+
+    .account-details-container > p {
+        font-size: 3rem;
+    }
+
+    #subscription-title {
+        font-size: 2.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .subscription-el, .subscription-links {
+        font-size: 2rem;
+    }
+
+    .report-title {
+        font-size: 2.8rem;
+    }
+
+    .report-form-el, .report-form-select {
+        height: 100px;
+        font-size: 2rem;
+    }
+
+    .big-jackpot-header {
+        font-size: 2.8rem;
+    }
+
+    .big-jackpot-container > p {
+        font-size: 2rem;
+    }
+
+    .news-story-container {
+        height: 320px;
+    }
+
+    .news-container > h3 {
+        font-size: 2.8rem;
+    }
+
+    .news-story-link {
+        grid-row: 2/4;
+        font-size: 2rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .news-story-snippet {
+        display: none;
+    }
+
+    .news-story-date {
+        font-size: 1.5rem;
+    }
+
+    .mobile-jackports-list {
+        display: flex;
+        flex-direction: column;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        margin-top: 10%;
+    }
+
+    .my-jackpots-el-div {
+        display: grid;
+        grid-template-columns: 40% 10% 30% 20%;
+    }
+
+    .my-jackpots-el-div > div {
+        display: flex;
+        justify-content: center;
+        padding-left: 15%;
+    }
+
+    .my-jackports-room-name {
+        font-size: 1.2rem;
+    }
+
+    .my-jackports-room-hit {
+        font-size: 1.2rem;
+    }
+
+    .my-jackports-room-amount {
+        font-size: 1.2rem;
+    }
+
+    .sub-container {
+        grid-row: 3/4;
+    }
 }
