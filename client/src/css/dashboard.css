@@ -471,6 +471,10 @@
         display: none;
     }
 
+    .dashboard-page-container {
+        width: 100%;
+    }
+
     .dashboard-container {
         width: 95%;
         margin: auto;
@@ -598,7 +602,8 @@
 
     .chart-container {
         margin: auto;
-        width: 100%;
+        width: 95%;
+        margin-right: 5%;
     }
 
     .chartjs-size-monitor {
@@ -607,5 +612,9 @@
 
     #line-chart {
         margin: auto;
+    }
+
+    .history-table-container {
+        margin-right: 5%;
     }
 }
