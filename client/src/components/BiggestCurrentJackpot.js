@@ -6,11 +6,12 @@ const BiggestCurrentJackpot = () => {
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
     const { big } = useSelector(state => state.Jackpot)
+    const { reportMade } = useSelector(state => state.Jackpot);
     
     useEffect(() => {
         dispatch(getBig())
         setIsLoading(false)
-    }, [dispatch])
+    }, [dispatch, reportMade])
     
 
 

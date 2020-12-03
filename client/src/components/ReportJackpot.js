@@ -48,9 +48,10 @@ const ReportJackpot = () => {
                 setRoomName('')
                 setAmount('')
                 setHit('')
+                dispatch(setReportMade(false));
             },4000)
         }
-    },[reportMade])
+    },[reportMade, dispatch])
 
     const handleEnter = (e) => {
         if (e.key === 'Enter') {

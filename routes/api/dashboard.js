@@ -41,12 +41,12 @@ router.get('/:id(\\d+)', asyncHandler(async function (req, res, next) {
 
 router.get('/big', asyncHandler(async function (req, res, next) {
     const bigOne = await Jackpot.findOne({
-        attributes: [[sequelize.fn('max', sequelize.col('amount')), 'Biggest']],
+        attributes: [[sequelize.fn('max', sequelize.col('amount')), 'Biggest']], 
         where: {'hit': false}
     })
     const bigJackpot = await Jackpot.findOne({
         attributes: ['amount', 'roomId', 'cityId', 'reporterId'],
-        where: {amount: bigOne.dataValues.Biggest}
+        where: {amount: bigOne.dataValues.Biggest, hit:false}
     })
     const cardRoom = await CardRoom.findOne({ attributes: ['name', 'cityId'], where: {id: bigJackpot.dataValues.roomId}})
     const JCity = await City.findOne({attributes: ['name'], where:{id: cardRoom.dataValues.cityId}})
