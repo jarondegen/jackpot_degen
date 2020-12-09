@@ -68,6 +68,9 @@ const NavBar =  () => {
                             <NavLink className="nav-link" to={`/cardrooms`} activeClassName="active">Card Rooms</NavLink>
                         </div>
                         <div onClick={handleBurgerClick} className="menu-menu-link-div">
+                            <NavLink className="nav-link" to={`/odds`} activeClassName="active">Odds Calculator</NavLink>
+                        </div>
+                        <div onClick={handleBurgerClick} className="menu-menu-link-div">
                             <NavLink className="nav-link" to={`/about`} activeClassName="active">About</NavLink>
                         </div>
                         <div onClick={handleBurgerClick} className="menu-menu-link-div">

@@ -10,6 +10,7 @@ import UserSuccess from './components/UserSuccess';
 import CardRoomDetails from './components/CardRoomDetails';
 import CardRooms from './components/CardRooms';
 import Footer from './components/Footer';
+import OddsCalc from './components/OddsCalc';
 
 function App() {
   const { id } = useSelector(state => state.Auth)
@@ -32,6 +33,7 @@ function App() {
             </Switch>
             <Switch>
                 <Route path="/about" component={AboutPage} />
+                <Route path="/odds" component={OddsCalc} />
                 <Route path={`/dashboard/${id}`}>
                     <Dashboard />
                 </Route>
