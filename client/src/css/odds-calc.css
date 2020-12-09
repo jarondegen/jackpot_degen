@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-top: 2%; */
 }
 
 .odds-calc-table-container {
@@ -18,6 +17,10 @@
 }
 
 .odds-calc-table {
+    background-color:  rgba(0,200,6,.4);
+    background-blend-mode: darken;
+    background-image: url('../images/felt.jpg');
+    background-size: 100% 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,10 +29,12 @@
     height: 100%;
     border: 1px solid gray;
     border-radius: 100px;
-    background-color:  rgb(0,200,6);
+    box-shadow: 2px 2px 10px gray;
 }
 
 .table-card-1, .table-card-2, .table-card-3, .table-card-4, .table-card-5 {
+    background-image: url('../images/card-back.jpg');
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,14 +46,14 @@
     font-weight: bold;
     font-size: 1.5rem;
     border-radius: 5px;
-    max-width: 88px;
+    max-width: 87px;
     color: black;
 }
 
 .table-card-1:hover, .table-card-2:hover, .table-card-3:hover, .table-card-4:hover, .table-card-5:hover{
     outline: 2px solid rgb(0,255,0);
     cursor: pointer;
-    background-color: lightgray;
+    background-blend-mode: darken;
 }
 
 .table-card-1:focus, .table-card-2:focus, .table-card-3:focus, .table-card-4:focus, .table-card-5:focus {
@@ -78,6 +83,7 @@
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    font-weight: 200;
 }
 
 .player-row-odds {
@@ -87,6 +93,7 @@
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    font-weight: 200;
 }
 
 .player-row-cards-container {
@@ -99,10 +106,12 @@
 }
 
 .player-card {
+    background-image: url('../images/card-back.jpg');
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 43px;
+    width: 42px;
     height: 60px;
     border: 1px solid gray;
     margin: 2%;
@@ -116,12 +125,10 @@
 .player-card:hover {
     outline: 2px solid rgb(0,255,0);
     cursor: pointer;
-    background-color: lightgray;
+    background-blend-mode: darken;
 }
 
 .card-select-container {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -163,7 +170,6 @@ margin: 1%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 15%;
 }
 
 .suit-select-div {
@@ -183,6 +189,11 @@ margin: 1%;
 }
 
 .suit-select-div:hover {
+    cursor: pointer;
+    background-color: rgb(6, 189, 12);
+}
+
+.suit-select-div > span:hover {
     cursor: pointer;
     background-color: rgb(6, 189, 12);
 }

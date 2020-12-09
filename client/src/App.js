@@ -33,7 +33,7 @@ function App() {
             </Switch>
             <Switch>
                 <Route path="/about" component={AboutPage} />
-                <Route path="/odds" component={OddsCalc} />
+                <Route path="/mobile-odds" component={OddsCalc} />
                 <Route path={`/dashboard/${id}`}>
                     <Dashboard />
                 </Route>
