@@ -457,6 +457,10 @@
     display: none;
 }
 
+.viewing {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 @media screen and (max-width: 980px) {
     .my-jackpots-div {
@@ -632,5 +636,14 @@
 
     .desktop-odds-calc-link {
         display: none;
+    }
+
+    .dash-chart-link {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    .tab-container, .dashboard-main {
+        margin: auto;
     }
 }
