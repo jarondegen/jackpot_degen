@@ -43,6 +43,10 @@ As stated before [React](https://reactjs.org/) is used and is at the core of app
 
 ![Frontend Overview](./readme-resources/jsx.png)
 
+The most recent feature that was implemented was the 'Odds Calculator', allowing users to plug in up to 4 poker hands to see each player's chances of winning the hand, step by step.  This was done using a combination of [npm](https://www.npmjs.com/) packages that handle SVG images of the card faces and use simple logic to determine percentages based on the 52 cards in the deck [(images](https://www.npmjs.com/package/@heruka_urgyen/react-playing-cards), [logic)](https://www.npmjs.com/package/poker-odds-calculator) and a little [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) finess to create a gratifying and responsive UI.
+
+![Frontend Overview](./readme-resources/calculator.png)
+
 Jackpot Degen has also been built with mobile support for devices with smaller width screens.  This was done with CSS media queries and conditional React components. 
 
 ![Frontend Overview](./readme-resources/mobile.png)
