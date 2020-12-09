@@ -78,7 +78,7 @@ const OddsCalc = () => {
         currentBoard[currentCard] = <Card deckType="big-face" card={e.target.parentNode.id} height={`${cardSize}px`} />
         setBoard(currentBoard)
         setSelectView(false)
-        if (cardSize === "125") {
+        if (cardSize === "125" || cardSize === "200") {
             const newBoard = CardGroup.fromString(calcBoard + e.target.parentNode.id)
             setCalcBoard(newBoard)
         }else {

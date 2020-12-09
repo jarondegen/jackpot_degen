@@ -281,4 +281,16 @@ margin: 1%;
         justify-content: center;
         align-items: flex-start;
     }
+
+    .suit-select-div {
+        width: 100%;
+    }
+
+    .black {
+        font-size: 3rem;
+    }
+
+    .red {
+        font-size: 3rem;
+    }
 }
