@@ -6,19 +6,19 @@ import {CardGroup, OddsCalculator} from 'poker-odds-calculator';
 
 const OddsCalc = () => {
     const initialBoard = {
-        'tableCard1': '?',
-        'tableCard2': '?',
-        'tableCard3': '?',
-        'tableCard4': '?',
-        'tableCard5': '?',
-        'Player 1 card1': '?',
-        'Player 1 card2': '?',
-        'Player 2 card1': '?',
-        'Player 2 card2': '?',
-        'Player 3 card1': '?',
-        'Player 3 card2': '?',
-        'Player 4 card1': '?',
-        'Player 4 card2': '?',
+        'tableCard1': '',
+        'tableCard2': '',
+        'tableCard3': '',
+        'tableCard4': '',
+        'tableCard5': '',
+        'Player 1 card1': '',
+        'Player 1 card2': '',
+        'Player 2 card1': '',
+        'Player 2 card2': '',
+        'Player 3 card1': '',
+        'Player 3 card2': '',
+        'Player 4 card1': '',
+        'Player 4 card2': '',
     };
     const players =['Player 1', 'Player 2', 'Player 3', 'Player 4'];
     const suits = ["c", "d", "s", "h"];
