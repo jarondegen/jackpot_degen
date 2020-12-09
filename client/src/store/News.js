@@ -40,7 +40,6 @@ export default function reducer(state=intialState, action) {
     const newState = {...state};
     switch (action.type) {
     case SET_FEED: 
-    //   debugger
       return {
         ...newState,
         feed: action.feed

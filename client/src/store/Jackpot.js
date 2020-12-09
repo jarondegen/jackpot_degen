@@ -69,7 +69,6 @@ export default function reducer(state=intialState, action) {
     const newState = {...state};
     switch (action.type) {
     case SET_BIG: 
-    //   debugger
       return {
         ...newState,
         big: action.big

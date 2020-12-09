@@ -21,7 +21,6 @@ const OddsCalc = () => {
         'Player 4 card2': '',
     };
     const players =['Player 1', 'Player 2', 'Player 3', 'Player 4'];
-    const suits = ["c", "d", "s", "h"];
     const ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K", "A"];
     const [usedCards, setUsedCards] = useState([]);
     const [selectView, setSelectView] = useState(false);
@@ -38,11 +37,9 @@ const OddsCalc = () => {
     const [board, setBoard] = useState(initialBoard);
     const [isDesktop, setDesktop] = useState(window.innerWidth > 982);
 
-
     const updateMedia = () => {
         setDesktop(window.innerWidth > 990);
       };    
-
 
     useEffect(() => {
         window.addEventListener("resize", updateMedia);
@@ -82,13 +79,16 @@ const OddsCalc = () => {
             const newBoard = CardGroup.fromString(calcBoard + e.target.parentNode.id)
             setCalcBoard(newBoard)
         }else {
+            /* eslint eqeqeq: 0 */
             if (currentCard.split(" ")[1] == 1) {
                 const newHand = CardGroup.fromString(player1Cards + e.target.parentNode.id)
                 setPlayer1Cards(newHand)
+            /* eslint eqeqeq: 0 */
             }else if (currentCard.split(" ")[1] == 2) {
                 const newHand = CardGroup.fromString(player2Cards + e.target.parentNode.id)
                 setPlayer2Cards(newHand)
             }
+            /* eslint eqeqeq: 0 */
             else if (currentCard.split(" ")[1] == 3) {
                 const newHand = CardGroup.fromString(player3Cards + e.target.parentNode.id)
                 setPlayer3Cards(newHand)
@@ -114,17 +114,16 @@ const OddsCalc = () => {
         }
     }
 
-    const calculateOdds = () => {
-        let playersArray = []
-        if (player1Cards.length > 0) playersArray.push(player1Cards);
-        if (player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player2Cards);
-        if (player3Cards.length > 0 && player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player3Cards);
-        if (player4Cards.length > 0 && player3Cards.length > 0 && player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player4Cards);
-        const result = OddsCalculator.calculate(playersArray, calcBoard);
-        setOdds(result)
-    }
-
     useEffect(() => {
+        const calculateOdds = () => {
+            let playersArray = []
+            if (player1Cards.length > 0) playersArray.push(player1Cards);
+            if (player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player2Cards);
+            if (player3Cards.length > 0 && player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player3Cards);
+            if (player4Cards.length > 0 && player3Cards.length > 0 && player2Cards.length > 0 && player1Cards.length > 0) playersArray.push(player4Cards);
+            const result = OddsCalculator.calculate(playersArray, calcBoard);
+            setOdds(result)
+        }
         if (calcBoard.length === 0 || calcBoard.length === 3 || calcBoard.length === 4|| calcBoard.length === 5)
         calculateOdds()
     }, [player1Cards, player2Cards, player3Cards, player4Cards, calcBoard])
