@@ -226,6 +226,7 @@
 
 .report-form-button:hover{
     background-color: rgb(6, 189, 12);
+    cursor: pointer;
 }
 
 .report-form-button:focus {
@@ -627,5 +628,9 @@
 
     .report-form-input {
         text-indent: 5%;
+    }
+
+    .desktop-odds-calc-link {
+        display: none;
     }
 }

@@ -52,11 +52,11 @@ const Dashboard = () => {
                             <div onClick={handleTabClick} id="2" className="tab-container-history tab-tab">
                                 <p id="2">History</p>
                             </div>
+                            <div onClick={handleTabClick} id="4" className="tab-container-account tab-tab desktop-odds-calc-link">
+                                <p id="4">Odds Calculator</p>
+                            </div>
                             <div onClick={handleTabClick} id="3" className="tab-container-account tab-tab">
                                 <p id="3">Account</p>
-                            </div>
-                            <div onClick={handleTabClick} id="4" className="tab-container-account tab-tab">
-                                <p id="4">Odds Calculator</p>
                             </div>
                         </div>
                         <div className="tabs-content-container">
