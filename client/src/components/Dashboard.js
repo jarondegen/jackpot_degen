@@ -11,6 +11,7 @@ import LineChart from './LineChart';
 import HistoryTab from './HistoryTab';
 import AccountTab from './AccountTab';
 import JackpotList from './JackpotsList';
+import OddsCalc from './OddsCalc';
 
 const Dashboard = () => {
     const { id, userName } = useSelector(state => state.Auth);
@@ -54,11 +55,15 @@ const Dashboard = () => {
                             <div onClick={handleTabClick} id="3" className="tab-container-account tab-tab">
                                 <p id="3">Account</p>
                             </div>
+                            <div onClick={handleTabClick} id="4" className="tab-container-account tab-tab">
+                                <p id="4">Odds Calculator</p>
+                            </div>
                         </div>
                         <div className="tabs-content-container">
                             {view === "1" && <LineChart className="the-line-chat"/>}
                             {view === "2" && <HistoryTab />}
                             {view === "3" && <AccountTab />}
+                            {view === "4" && <OddsCalc />}
                         </div>
                     </div>
                     <div className="my-jackpots-div">
@@ -75,7 +80,7 @@ const Dashboard = () => {
                         <h2 className="big-jackpot-header">Biggest Current Jackpot</h2>
                         <BiggestCurrentJackpot />
                     </div>
-                    <NewsFeed />
+                    {/* <NewsFeed /> */}
                 </div>
             </div>
         </>

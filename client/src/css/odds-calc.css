@@ -1,0 +1,132 @@
+.odds-calc-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.odds-calc-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 200px;
+    margin-top: 5%;
+}
+
+.odds-calc-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    border-radius: 40px;
+    background-color: rgb(14, 160, 16);
+}
+
+.table-card-1, .table-card-2, .table-card-3, .table-card-4, .table-card-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 60%;
+    border: 1px solid gray;
+    margin: 2%;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    max-width: 88px;
+}
+
+.table-card-1:hover, .table-card-2:hover, .table-card-3:hover, .table-card-4:hover, .table-card-5:hover{
+    outline: 2px solid rgb(0,255,0);
+    cursor: pointer;
+}
+
+.table-card-1:focus, .table-card-2:focus, .table-card-3:focus, .table-card-4:focus, .table-card-5:focus {
+    outline: 2px solid rgb(0,255,0);
+}
+
+.player-hands-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.player-row-div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 45% 25%;
+    height: 75px;
+}
+
+.player-row-name {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.player-row-odds {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.player-row-cards-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 43px;
+    height: 60px;
+    border: 1px solid gray;
+    margin: 2%;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.player-card:hover {
+    outline: 2px solid rgb(0,255,0);
+    cursor: pointer;
+}
+
+.card-select-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-select-card {
+margin: 1%;
+}
+
+.card-select-card:hover {
+    cursor: pointer;
+}
