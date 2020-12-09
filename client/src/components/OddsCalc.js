@@ -139,10 +139,10 @@ const OddsCalc = () => {
             {selectView && (
                 <>
                     {!suitChosen && <div className="suit-select-container">
-                        <div id="d" className="suit-select-div" onClick={handleSuitSelect}>Diamonds</div>
-                        <div id="c" className="suit-select-div" onClick={handleSuitSelect}>Clubs</div>
-                        <div id="s" className="suit-select-div" onClick={handleSuitSelect}>Spades</div>
-                        <div id="h" className="suit-select-div" onClick={handleSuitSelect}>Hearts</div>
+                        <div id="d" className="suit-select-div" onClick={handleSuitSelect}><span onClick={handleSuitSelect} id="d"className="suit-emoj red">♢</span>Diamonds <span onClick={handleSuitSelect} id="d" className="suit-emoj red"> ♢</span></div>
+                        <div id="c" className="suit-select-div" onClick={handleSuitSelect}><span onClick={handleSuitSelect} id="c"  className="suit-emoj black">♧</span>Clubs <span onClick={handleSuitSelect} id="c" className="suit-emoj black"> ♧</span></div>
+                        <div id="h" className="suit-select-div" onClick={handleSuitSelect}><span onClick={handleSuitSelect} id="h" className="suit-emoj red">♥</span>Hearts <span onClick={handleSuitSelect} id="h" className="suit-emoj red"> ♥</span></div>
+                        <div id="s" className="suit-select-div" onClick={handleSuitSelect}><span onClick={handleSuitSelect} id="s" className="suit-emoj black">♤</span>Spades <span onClick={handleSuitSelect} id="s" className="suit-emoj black"> ♤</span></div>
                     </div>}
                     <div className="card-select-container">
                     {suitChosen && cardCollection().map(card => (

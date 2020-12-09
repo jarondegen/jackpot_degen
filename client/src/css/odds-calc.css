@@ -187,6 +187,24 @@ margin: 1%;
     background-color: rgb(6, 189, 12);
 }
 
+.red {
+    color: red;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.black {
+    color: black;
+    text-align: center;
+    margin-right: 5%;
+    font-size: 1.3rem;
+}
+
+.red:hover, .black:hover {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 980px) {
     .odds-calc-container {
         height: 99vh;
