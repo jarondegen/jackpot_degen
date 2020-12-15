@@ -218,8 +218,9 @@ margin: 1%;
 
 @media screen and (max-width: 980px) {
     .odds-calc-container {
-        height: 99vh;
+        min-height: 100vh;
         justify-content: flex-start;
+        margin-bottom: 8%;
     }
 
     .calc-reset-button {
