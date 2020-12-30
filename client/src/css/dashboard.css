@@ -207,6 +207,9 @@
 
 #subscription-title {
     font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding-left: 10%;
 }
 
 .subscription-links:hover {
@@ -215,7 +218,7 @@
 
 .big-jackpot-container {
     grid-column: 1/2;
-    /* border-top: 1px solid lightgrey; */
+    padding-left: 10%;
     margin-top: 5%;
     text-align: center;
 
@@ -248,7 +251,9 @@
 
 .report-title{
     text-align: center;
-    font-size:1.3rem;
+    font-size:1.2rem;
+    width: 100%;
+    padding-left: 10%;
 }
 
 .report-error {
@@ -359,6 +364,11 @@
     margin-top: 5%;
     margin-bottom: 5%;
     padding-top: 5%;
+}
+
+.news-container > h3 {
+    padding-left: 10%;
+    font-size: 1.2rem;
 }
 
 .news-story-container {
@@ -525,6 +535,22 @@
 }
 
 @media screen and (max-width: 980px) {
+    #subscription-title {
+        padding-left: 0px;
+    }
+
+    .my-jackpot-list-title {
+        padding-left: 0px;
+    }
+
+    .report-title {
+        padding-left: 0px;
+    }
+
+    .news-container > h3 {
+        padding-left: 0px;
+    }
+
     .tabs-content-container {
         min-height: 5vh;
     }
@@ -650,7 +676,8 @@
         display: grid;
         grid-template-columns: 35% 15% 30% 20%;
         margin: auto;
-        margin-top: 5%;
+        margin-top: 0%;
+        margin-bottom: 2%;
     }
 
     .my-jackpots-el-div > div {

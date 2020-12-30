@@ -27,7 +27,7 @@ const NewsFeed = () => {
     return (
         <>
             <div className="news-container">
-                <h3>NEWS</h3>
+                <h3>News</h3>
                     {feed && feed.map((item, i) => 
                         <div key={i} className="news-story-container">
                             <p key={item.pubDate} className="news-story-date">{item.pubDate.split(" ").slice(0,3).join(" ")}</p>
