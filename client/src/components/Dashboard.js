@@ -67,7 +67,10 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <div className="my-jackpots-div">
-                            <h3 className="my-jackpot-list-title">Jackpot List</h3>
+                            <div className="my-jackpot-title-container">
+                                <h3 className="my-jackpot-list-title">Jackpot List</h3>
+                                <a className="my-jackpot-list-add-button" href="/cardrooms"><h3>+</h3></a>
+                            </div>
                             <JackpotList sparkNumbers={sparkNumbers} handleJackpotClick={handleJackpotClick} jackpots={jackpots }roomNames={roomNames}/>
                         <img alt="JPD Logo" className="my-jackpots-logo" src="../images/logo.png" />
                     </div>
