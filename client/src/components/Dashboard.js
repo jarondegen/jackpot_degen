@@ -80,7 +80,7 @@ const Dashboard = () => {
                         <h2 className="big-jackpot-header">Biggest Current Jackpot</h2>
                         <BiggestCurrentJackpot />
                     </div>
-                    {/* <NewsFeed /> */}
+                    <NewsFeed />
                 </div>
             </div>
         </>
