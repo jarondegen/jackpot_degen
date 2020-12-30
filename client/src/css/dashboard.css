@@ -437,10 +437,12 @@
     flex-direction: column;
     margin-left: 3%;
 }
-
-.the-line-chat {
-    height: 47vh;
+.tabs-content-container {
+    min-height: 47vh;
 }
+/* .the-line-chat {
+    height: 47vh;
+} */
 
 .history-table-container {
     overflow-y: scroll;
@@ -497,6 +499,14 @@
 }
 
 @media screen and (max-width: 980px) {
+    .tabs-content-container {
+        min-height: 5vh;
+    }
+
+    .history-table-container {
+        height: 47vh;
+    }
+
     .my-jackpots-div {
         position: relative;
         display: none;
