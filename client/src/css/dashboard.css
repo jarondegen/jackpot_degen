@@ -40,13 +40,20 @@
 
 .my-jackpots-el-div{
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
     cursor: pointer;
     border-bottom: 1px solid lightgray;
-    margin-bottom: 8%;
+    padding-bottom: 4%;
+    padding-top: 4%;
     flex-wrap: wrap;
+}
+
+.my-jackpots-el-div:hover {
+    background-color: rgb(245, 243, 243);
 }
 
 .my-jackpots-el {
@@ -76,10 +83,27 @@
     bottom: 2%
 }
 
+.my-jackports-room-name-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+}
+
 .my-jackports-room-name{
     color: black;
     font-weight: bold;
     margin: 3%;
+
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.my-jackports-room-name:hover {
+    cursor: pointer;
+    color: rgb(4, 160, 9);
 }
 
 .my-jackports-room-hit{
@@ -94,10 +118,22 @@
 
 .my-jackpot-list-title {
     padding-left: 8%;
+    text-align: left;
     border-bottom: 1px solid lightgray; 
     width: 100%;
     padding-bottom: 8%;
     font-size: 1.3rem;
+    margin-bottom: 0px;
+}
+
+.jp-amount-and-hit-div {
+    text-align: center;
+}
+
+.jackpot-sparkline-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .no-rooms-container {
