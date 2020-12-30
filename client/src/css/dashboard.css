@@ -444,7 +444,7 @@
 
 .history-table-container {
     overflow-y: scroll;
-    max-height: 47vh;
+    height: 47vh;
     border-bottom: 1px solid lightgray;
 }
 
