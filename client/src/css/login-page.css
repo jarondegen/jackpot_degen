@@ -10,6 +10,10 @@
     margin-top: 5%;
 }
 
+.mobile-login-page-logo-container {
+    display: none;
+}
+
 .login-picture-container {
     height: 100%;
     background-image: url("../images/pokerdraw.png");
@@ -115,11 +119,25 @@
         display: none;
     }
 
+    .mobile-login-page-logo-container {
+        margin-top: 15%;
+        grid-column: 1/3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobile-login-page-logo {
+        height: 200px;
+        width: 160px;
+    }
+
     .login-form-container {
         grid-column: 1/3;
         align-items: center;
         justify-content: flex-start;
-        margin-top: 15%;
+        margin-top: 0%;
     }
 
     .login-form-title {

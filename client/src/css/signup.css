@@ -108,7 +108,7 @@
 
     .signup-page-container {
         width: 100%;
-        margin-top: 10%;
+        margin-top: 15%;
     }
 
     .sign-up-form-container {
@@ -116,7 +116,8 @@
     }
 
     .signup-form-logo {
-        width: 50%;
+        height: 200px;
+        width: 160px;
     }
 
     .signup-title {

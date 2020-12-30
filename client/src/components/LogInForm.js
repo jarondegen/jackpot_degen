@@ -5,6 +5,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../css/login-page.css';
+import logo from '../images/logo.jpg';
 
 const LogInForm = () => {
     const [email, setEmail] = useState('demo@example.com');
@@ -58,6 +59,9 @@ const LogInForm = () => {
             </div>
             <div className="page-container">
               <div className="login-picture-container">
+              </div>
+              <div className="mobile-login-page-logo-container">
+                <img className="mobile-login-page-logo" alt="jackpot degen logo" src={logo}/>
               </div>
               <div className="login-form-container">
                 <h2 className="login-form-title">
