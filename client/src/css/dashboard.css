@@ -94,7 +94,6 @@
     color: black;
     font-weight: bold;
     margin: 3%;
-
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -335,6 +334,7 @@
     border-top: 1px solid gray;
     margin-top: 5%;
     margin-bottom: 5%;
+    padding-top: 5%;
 }
 
 .news-story-container {
@@ -349,7 +349,7 @@
 }
 
 .news-story-container:hover {
-    background-color: lightgray;
+    background-color: rgb(245, 243, 243);
 }
 
 .news-story-date {
