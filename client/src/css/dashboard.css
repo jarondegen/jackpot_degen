@@ -36,13 +36,11 @@
     right: 7%;
     box-shadow:  0px 0px 14px 14px rgb(238, 238, 238);
     overflow-x: hidden;
+    max-width: 365px;
 }
 
 .my-jackpots-el-div{
     width: 100%;
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center; */
     display: grid;
     grid-template-columns: 30% 40% 30%;
     cursor: pointer;
