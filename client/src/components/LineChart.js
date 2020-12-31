@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Chart from 'chart.js';
 import { useSelector } from 'react-redux';
 
 const LineChart = () => {
     const { roomId } = useSelector(state => state.Jackpot)
     const { reportMade } = useSelector(state => state.Jackpot);
+    const [roomName, setRoomName] = useState('')
 
     useEffect(() => {
         const createChart = async (id) => {
@@ -17,6 +18,7 @@ const LineChart = () => {
                         const p = x.split('-')
                         return `${p.slice(1,2)}/${p.slice(2)}` //year-${p.slice(0,1)}
                     })
+                    setRoomName(`${roomName} Jackpot Reports`)
                     const ctx = document.getElementById('line-chart');
                     new Chart(ctx, {
                         type: 'line',
@@ -25,19 +27,31 @@ const LineChart = () => {
                             datasets: [{
                                 label: `${roomName} Jackpot Reports`,
                                 data: amounts,
-                                backgroundColor: [' rgb(6, 189, 12)'],
-                                borderColor: [],
+                                backgroundColor: ['rgba(6, 189, 12, 0.65)'],
+                                borderColor: ['rgb(5, 161, 10)'],
                                 borderWidth: 1,
+                                pointBorderWidth: 5,
+                                pointHitRadius: 15,
+                                lineTension: 0,
                             }]
+                        },
+                        options: {
+                            legend: {
+                                display: false,
+                                labels: {
+                                    fontSize: '12'
+                                }
+                            }
                         }
                     })
                 }
         }
-        createChart(roomId)
+        createChart(roomId);
     },[roomId, reportMade])
 
     return (
         <div className="chart-container" >
+            <p className="chart-room-label">{roomName}</p>
             <canvas id="line-chart" width="400" height="200"></canvas>
         </div>
     )

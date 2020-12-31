@@ -300,7 +300,8 @@
 
 .report-form-select {
     border-radius: 5px;
-    padding: 1.5%
+    padding: 1.5%;
+    border: 1px solid lightgray;
 }
 
 .report-form-el {
@@ -434,6 +435,12 @@
     position: relative;
 }
 
+.chart-room-label {
+    text-align: center;
+    padding-left: 10%;
+    color: rgb(17, 17, 17);
+}
+
 .user-reports-container {
     grid-column: 1/2;
     text-align: center;
@@ -535,6 +542,11 @@
 }
 
 @media screen and (max-width: 980px) {
+    .chart-room-label {
+        text-align: center;
+        font-size: 2rem;
+    }
+
     #subscription-title {
         padding-left: 0px;
     }
