@@ -200,6 +200,7 @@
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 40px;
+    white-space: nowrap;
 }
 .subscription-el:hover {
     background-color: rgb(245, 243, 243);
@@ -542,6 +543,10 @@
 }
 
 @media screen and (max-width: 980px) {
+    .big-jackpot-container {
+        padding-left: 0px;
+    }
+
     .chart-room-label {
         text-align: center;
         font-size: 2rem;

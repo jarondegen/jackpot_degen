@@ -47,6 +47,7 @@ const LineChart = () => {
                 }
         }
         createChart(roomId);
+        //return somthing for cleanup
     },[roomId, reportMade])
 
     return (
