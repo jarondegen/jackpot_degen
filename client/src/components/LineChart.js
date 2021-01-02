@@ -32,7 +32,7 @@ const LineChart = () => {
                                 borderWidth: 1,
                                 pointBorderWidth: 5,
                                 pointHitRadius: 15,
-                                lineTension: 0,
+                                lineTension: 0.1,
                             }]
                         },
                         options: {

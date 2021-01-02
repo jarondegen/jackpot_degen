@@ -98,7 +98,7 @@ const CardRoomDetails = ({ match }) => {
                 <LineChart props={id} />
             </div>
             <div className="cardroom-hit-jackpots-container">
-                <h2>{`Jackpot History for ${cardRoom.name}`}</h2>
+                <h2>{jpHistory.length > 0 ? `Jackpot History for ${cardRoom.name}` : `No Jackpot Have Been Reported "Hit" At ${cardRoom.name} Yet`}</h2>
 
                 <div className="cardroom-hit-table-container">
                     <table className="cardroom-hit-table">
