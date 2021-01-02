@@ -6,8 +6,16 @@ const LineChart = () => {
     const { roomId } = useSelector(state => state.Jackpot)
     const { reportMade } = useSelector(state => state.Jackpot);
     const [roomName, setRoomName] = useState('')
+    const [chart, setChart] = useState(null)
 
     useEffect(() => {
+        if (chart) {
+            while (chart.data.datasets.length > 0) {
+              chart.data.datasets.pop();
+            }
+        }
+
+
         const createChart = async (id) => {
             if (!roomId) return
             const data = await fetch(`/api/jackpots/${id}`);
@@ -20,7 +28,7 @@ const LineChart = () => {
                     })
                     setRoomName(`${roomName} Jackpot Reports`)
                     const ctx = document.getElementById('line-chart');
-                    new Chart(ctx, {
+                    const newChart = new Chart(ctx, {
                         type: 'line',
                         data: {
                             labels : goodDates,
@@ -44,10 +52,11 @@ const LineChart = () => {
                             }
                         }
                     })
+                    setChart(newChart)
                 }
         }
         createChart(roomId);
-        //return somthing for cleanup
+        return createChart;
     },[roomId, reportMade])
 
     return (
