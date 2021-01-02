@@ -1,13 +1,13 @@
 #auto {
+    position: absolute;
     padding: 10px;
-    height: 20px;
-    width: 80%;
+    height: 17px;
+    width: 225px;
     border: 1px solid lightgray;
-    margin: 6%;
+    margin: 20px;
+    margin-top: 25px;
     font-size: 1rem;
-    text-transform: capitalize;
-    border-radius: 5px;
-    justify-self: flex-start;
+    justify-self: center;
 
 }
 
@@ -33,9 +33,9 @@ input:focus {
 .autoContainer {
     position: absolute;
     background-color: whitesmoke;
-    right: 9.5%;
-    top: 75%;
-    width: 84%;
+    left: 7%;
+    top: 64px;
+    width: 245px;
     z-index: 10;
     overflow: hidden;
     border-bottom-left-radius: 5px;
@@ -46,7 +46,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 200px;
+    width: 320px;
     padding: 5px;
   }
   
@@ -60,9 +60,14 @@ input:focus {
 }
   
 .flex-container {
-    display: flex;
-    margin-top: 1%;
+    position: absolute;
+    left: 39%;
     grid-column: 2/3;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 90%;
+    width: 300px;
   }
   
 .flex-column {
