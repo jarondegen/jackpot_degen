@@ -622,6 +622,7 @@
 
     .subscription-el, .subscription-links {
         font-size: 2rem;
+        padding: 2%;
     }
 
     .report-jackpot-form-containeer {
@@ -691,10 +692,18 @@
 
     .my-jackpots-el-div {
         display: grid;
-        grid-template-columns: 35% 15% 30% 20%;
+        grid-template-columns: 35% 20% 45%;
         margin: auto;
         margin-top: 0%;
         margin-bottom: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .jp-amount-and-hit-div {
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
     .my-jackpots-el-div > div {
