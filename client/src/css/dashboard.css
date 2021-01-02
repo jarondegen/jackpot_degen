@@ -23,11 +23,11 @@
 
 .my-jackpots-div {
     grid-column: 2/3;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 27%;
     margin-left: 10%;
     margin-right: 15%;
-    height: calc(90% - 100px);
+    height: calc(89% - 100px);
     font-size: 1rem;
     font-weight: 200;
     overflow-y: scroll;
@@ -37,6 +37,7 @@
     box-shadow:  0px 0px 14px 14px rgb(238, 238, 238);
     overflow-x: hidden;
     max-width: 365px;
+    background-color: white;
 }
 
 .my-jackpots-el-div{
