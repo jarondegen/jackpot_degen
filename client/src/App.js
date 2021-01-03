@@ -11,6 +11,13 @@ import CardRoomDetails from './components/CardRoomDetails';
 import CardRooms from './components/CardRooms';
 import Footer from './components/Footer';
 import OddsCalc from './components/OddsCalc';
+import ReactGA from 'react-ga';
+
+function initializeReactGA() {
+    ReactGA.initialize('G-7YJXG91VDX');
+    ReactGA.pageview('/homepage');
+}
+initializeReactGA()
 
 function App() {
   const { id } = useSelector(state => state.Auth)
