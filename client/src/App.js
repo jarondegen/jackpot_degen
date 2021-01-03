@@ -16,12 +16,12 @@ import ReactGA from 'react-ga';
 function initializeReactGA() {
     ReactGA.initialize('G-7YJXG91VDX');
     ReactGA.pageview('/homepage');
-}
-initializeReactGA()
+};
 
 function App() {
-  const { id } = useSelector(state => state.Auth)
-
+    const { id } = useSelector(state => state.Auth);
+    initializeReactGA();
+    
   return (
       <>
         <BrowserRouter >
@@ -61,6 +61,6 @@ function App() {
         <Footer />
     </>
   );
-}
+};
 
 export default App;
