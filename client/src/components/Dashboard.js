@@ -46,8 +46,8 @@ const Dashboard = () => {
                     <div className="dashboard-main">
                         <h2 className="dashboard-greeting" >{`Hello ${userName},`}</h2>
                         <div className="tab-container">
-                            <div onClick={handleTabClick} id="1" className={`tab-container-chart tab-tab ${view === '1' ? 'viewing' : null}}`}>
-                                <p className={`${view === '1' ? 'viewing' : null} dash-chart-link`} id="1">Chart</p>
+                            <div onClick={handleTabClick} id="1" className={`tab-container-chart tab-tab ${view === '1' ? 'viewing' : 'chart-tab-container'}`}>
+                                <p id="1">Chart</p>
                             </div>
                             <div onClick={handleTabClick} id="2" className={`tab-container-chart tab-tab ${view === '2' ? 'viewing' : null}`}>
                                 <p id="2">History</p>
@@ -55,7 +55,7 @@ const Dashboard = () => {
                             <div onClick={handleTabClick} id="4" className={`desktop-odds-calc-link tab-container-chart tab-tab ${view === '4' ? 'viewing' : null}`}>
                                 <p id="4">Odds Calculator</p>
                             </div>
-                            <div onClick={handleTabClick} id="3" className={`tab-container-chart tab-tab ${view === '3' ? 'viewing' : null}`}>
+                            <div onClick={handleTabClick} id="3" className={`tab-container-chart tab-tab ${view === '3' ? 'viewing' : 'account-tab-container-link'}`}>
                                 <p id="3">Account</p>
                             </div>
                         </div>

@@ -49,7 +49,7 @@ function App() {
                 </Route>
                 <Route path={`/cardrooms/:id(\\d+)`} component={CardRoomDetails} />
                 <Route path={`/cardrooms`} component={CardRooms} />
-                <Route exact={true} path="/">
+                <Route path="/">
                     {!id ? 
                     <Redirect to="/login" />
                     :
