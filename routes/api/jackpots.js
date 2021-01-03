@@ -41,7 +41,7 @@ router.post('/new', [roomName, hit, amount], asyncHandler(async function (req, r
     // }
 
     //deleting all jackpots with that roomId where hit is false
-    if (hit) {
+    if (hit === true) {
         const hitJackpots = await Jackpot.destroy(
             {where: {'roomId': id, 'hit': false}})
     }
