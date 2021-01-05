@@ -25,9 +25,9 @@ const HistoryTab = () => {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
             })
-        }
-        deleteJackpot()
-        setDeleted(true)
+        };
+        deleteJackpot();
+        setDeleted(true);
     }
     return (
         <div className="history-table-container">
@@ -55,4 +55,4 @@ const HistoryTab = () => {
     );
 };
 
-export default HistoryTab
+export default HistoryTab;
