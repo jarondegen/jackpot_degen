@@ -11,16 +11,16 @@ const LogInForm = () => {
     const [email, setEmail] = useState('demo@example.com');
     const [password, setPassword] = useState('password');
     const dispatch = useDispatch();
-    const { id, loggedIn } = useSelector(state => state.Auth)
-    const [errors, setErrors] = useState([])
+    const { id, loggedIn } = useSelector(state => state.Auth);
+    const [errors, setErrors] = useState([]);
 
     const changeEmail = (e) => {
-        setEmail(e.target.value)
-    }
+        setEmail(e.target.value);
+    };
 
     const changePassword = (e) => {
-        setPassword(e.target.value)
-    }
+        setPassword(e.target.value);
+    };
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,20 +35,20 @@ const LogInForm = () => {
           dispatch(setUser(user));
           dispatch(setLoggedIn(true))
         } else {
-          const { error } = data
-          setErrors(error.errors)
+          const { error } = data;
+          setErrors(error.errors);
         }
-      }
+      };
 
     if (loggedIn) {
         return <Redirect to={`/dashboard/${id}`} />
-      }
+      };
 
       const handleEnter = (e) => {
         if (e.key === 'Enter') {
             handleSubmit(e)
-          }
-    }
+          };
+    };
 
     return (
         <>
@@ -86,8 +86,8 @@ const LogInForm = () => {
             </div>
         </div>
         </>
-    )
-}
+    );
+};
 
 
 export default LogInForm;

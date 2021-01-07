@@ -40,4 +40,4 @@ const JackpotList = ({roomNames, jackpots, handleJackpotClick, sparkNumbers}) =>
     );
 };
 
-export default JackpotList
+export default JackpotList;
