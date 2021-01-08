@@ -5,8 +5,8 @@ import { getFeed } from '../store/News';
 
 const NewsFeed = () => {
     const dispatch = useDispatch();
-    const { feed, imgs } = useSelector(state => state.News)
-    const [isLoading, setIsLoading] = useState(true)
+    const { feed, imgs } = useSelector(state => state.News);
+    const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
         if (feed.length > 1) {
@@ -40,7 +40,7 @@ const NewsFeed = () => {
                     )}
             </div>
         </>
-    )
-}
+    );
+};
 
 export default NewsFeed;

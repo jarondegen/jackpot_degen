@@ -2,26 +2,26 @@ import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LogOutButton from './LogOutButton';
-import '../css/nav-bar.css'
+import '../css/nav-bar.css';
 import SearchBar from './SearchBar';
 import burger from '../images/burger.png';
 
 
 const NavBar =  () => {
-    const history = useHistory()
+    const history = useHistory();
     const { id } = useSelector(state => state.Auth);
 
     const handleLogoClick = () => {
         if (id) {
-            history.push(`/dashboard/${id}`)
-        }
-    }
+            history.push(`/dashboard/${id}`);
+        };
+    };
 
     const handleBurgerClick = (e) => {
         const mobileMenu = document.getElementById('mobile-menu-container');
         if (mobileMenu) {
-            mobileMenu.classList.toggle('show')
-        }
+            mobileMenu.classList.toggle('show');
+        };
         e.stopPropagation();
     }
 
