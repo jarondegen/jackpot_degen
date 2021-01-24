@@ -30,7 +30,6 @@ const Dashboard = () => {
     }, [dispatch, subsArr])
     
     const handleJackpotClick = (e) => {
-        console.log('clicked')
         const tabsView = document.querySelector('.dashboard-page-container');
         setTimeout(() => tabsView.scrollIntoView({ behavior: 'smooth' }), 100)
         dispatch(setChartId(e.target.id))
