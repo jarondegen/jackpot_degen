@@ -11,7 +11,7 @@ const db = {};
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(`${process.env[config.use_env_variable]}?sslmode=require`, {
-    url: process.env.DATABASE_URI,
+    url: process.env.DATABASE_URL,
     dialect: 'postgres',
     logging: false,
     dialectOptions: {
