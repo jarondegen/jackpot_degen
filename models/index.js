@@ -10,7 +10,7 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(`${process.env[config.use_env_variable]}?sslmode=require`, {
+  sequelize = new Sequelize(process.env[config.use_env_variable], {
     url: process.env.DATABASE_URL,
     dialect: 'postgres',
     logging: false,
