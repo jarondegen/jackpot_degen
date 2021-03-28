@@ -30,9 +30,8 @@ const Dashboard = () => {
     }, [dispatch, subsArr])
     
     const handleJackpotClick = (e) => {
-        const tabsView = document.querySelector('.dashboard-page-container');
-        setTimeout(() => tabsView.scrollIntoView({ behavior: 'smooth' }), 100)
         dispatch(setChartId(e.target.id))
+        setView("1")
 
     }
 
@@ -84,7 +83,7 @@ const Dashboard = () => {
                         <h2 className="big-jackpot-header">Biggest Current Jackpot</h2>
                         <BiggestCurrentJackpot />
                     </div>
-                    <NewsFeed />
+                    {/* <NewsFeed /> */}
                 </div>
             </div>
         </>
