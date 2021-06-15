@@ -61,6 +61,7 @@ const Dashboard = () => {
                         </div>
                         <div className="tabs-content-container">
                             {view === "1" && <LineChart className="the-line-chat"/>}
+                            {view === "2" && <h4 className="my_reports_h3">My Reports</h4>}
                             {view === "2" && <HistoryTab />}
                             {view === "3" && <AccountTab />}
                             {view === "4" && <OddsCalc />}

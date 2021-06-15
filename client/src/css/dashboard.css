@@ -514,6 +514,10 @@
     min-height: 47vh;
 }
 
+.my_reports_h3 {
+  text-align: center;
+}
+
 .history-table-container {
     overflow-y: scroll;
     height: 47vh;
@@ -525,7 +529,7 @@
     border-collapse: collapse;
     width: 100%;
     border: none;
-    margin-top: 5%;
+    /* margin-top: 5%; */
 }
   
 .history-table  td, .history-table  th {
@@ -595,6 +599,11 @@
 
     .tabs-content-container {
         min-height: 5vh;
+    }
+
+    .my_reports_h3 {
+      font-size: 2rem;
+      color: black;
     }
 
     .history-table-container {

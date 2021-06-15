@@ -48,14 +48,17 @@ const LineChart = () => {
                 }
         }
         createChart(roomId);
-    },[roomId, reportMade])
+      },[roomId, reportMade])
 
     return (
+      <>
         <div className="chart-container" >
             <p className="chart-room-label">{roomName}</p>
             <canvas id="line-chart" width="400" height="200"></canvas>
         </div>
+      </>
     )
+
 }
 
 export default LineChart;
